@@ -1,0 +1,14 @@
+{"type":"server-started","port":49747,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:49747","screen_dir":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content","state_dir":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/state"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/approaches.html"}
+{"source":"user-event","type":"click","text":"C\n    \n      Growth Arc Story (Recommended)\n      Opens with mission: \"I build software that teaches the world.\" Tells the journey — D3 Telkom → 4 companies → Senior Eng powering 32M lessons — as a human story. Impact numbers appear as proof points, not headlines. Warm, authoritative, memorable.\n      Best for: All audiences — jobs, freelance, competitions, personal brand\n      Trade-off: Needs strong copy discipline to stay tight, not bloated","choice":"c","id":null,"timestamp":1778968289017}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/hero-options.html"}
+{"source":"user-event","type":"click","text":"B\n    \n      Impact-First (Recommended)\n      \n        Hero Preview\n        \n          Hi, I'm Fery — Senior Software Engineer\n          32 Million Lessons.One Engineer Behind the Stack.\n          Full-stack engineer with 7 years building EdTech at scale.React · Next.js · AI-assisted development · CI/CD\n          \n            See Projects\n            Let's Talk\n          \n        \n      \n      Tone: Bold, numbers-first, stops the scroll immediately","choice":"b","id":null,"timestamp":1778968348864}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/about-options.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/experience-options.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/experience-v2.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/projects-options.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/skills-options.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/skills-v2.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/education-cta.html"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/11604-1778967068/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}

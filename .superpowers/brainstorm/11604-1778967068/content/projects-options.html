@@ -1,0 +1,101 @@
+<h2>Projects Section — Showcasing 10+ Work</h2>
+<p class="subtitle">How to present your portfolio without overwhelming visitors.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Flat Grid — All Projects Equal</h3>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Preview</div>
+        <div class="mockup-body" style="padding:1rem">
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; font-size:0.78rem">
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:0.75rem">
+              <div style="height:2rem; background:rgba(255,255,255,0.08); border-radius:4px; margin-bottom:0.5rem"></div>
+              <strong>edbot.ai</strong><div style="opacity:0.5; font-size:0.7rem">React · Next.js</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:0.75rem">
+              <div style="height:2rem; background:rgba(255,255,255,0.08); border-radius:4px; margin-bottom:0.5rem"></div>
+              <strong>Learnalytics</strong><div style="opacity:0.5; font-size:0.7rem">React · Laravel</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:0.75rem">
+              <div style="height:2rem; background:rgba(255,255,255,0.08); border-radius:4px; margin-bottom:0.5rem"></div>
+              <strong>SICC</strong><div style="opacity:0.5; font-size:0.7rem">.NET MVC</div>
+            </div>
+          </div>
+          <div style="opacity:0.4; font-size:0.72rem; margin-top:0.5rem; text-align:center">... + 7 more projects</div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem; font-size:0.82rem"><strong>Trade-off:</strong> Shows range but no hierarchy — flagship work gets lost</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Featured 3 + Filterable Grid (Recommended)</h3>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Preview</div>
+        <div class="mockup-body" style="padding:1rem; font-size:0.82rem">
+          <!-- Filter tabs -->
+          <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem; flex-wrap:wrap">
+            <span style="background:#4a9eff22; color:#4a9eff; font-size:0.7rem; padding:0.2rem 0.6rem; border-radius:20px">All</span>
+            <span style="opacity:0.5; font-size:0.7rem; padding:0.2rem 0.6rem; border:1px solid rgba(255,255,255,0.15); border-radius:20px">Web App</span>
+            <span style="opacity:0.5; font-size:0.7rem; padding:0.2rem 0.6rem; border:1px solid rgba(255,255,255,0.15); border-radius:20px">UX/UI</span>
+            <span style="opacity:0.5; font-size:0.7rem; padding:0.2rem 0.6rem; border:1px solid rgba(255,255,255,0.15); border-radius:20px">Mobile</span>
+          </div>
+          <!-- Featured row -->
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:0.6rem; margin-bottom:0.6rem">
+            <div style="background:rgba(74,158,255,0.08); border:1px solid rgba(74,158,255,0.25); border-radius:8px; padding:0.85rem">
+              <span style="font-size:0.65rem; color:#4a9eff; text-transform:uppercase; letter-spacing:1px">⭐ Featured</span>
+              <div style="font-weight:600; margin:0.3rem 0 0.2rem">edbot.ai</div>
+              <div style="font-size:0.75rem; opacity:0.7">AI learning platform · 32M+ lessons · React, Next.js, Django</div>
+            </div>
+            <div style="background:rgba(74,158,255,0.06); border:1px solid rgba(74,158,255,0.15); border-radius:8px; padding:0.85rem">
+              <span style="font-size:0.65rem; color:#4a9eff; text-transform:uppercase; letter-spacing:1px">⭐ Featured</span>
+              <div style="font-weight:600; margin:0.3rem 0 0.2rem">Learnalytics</div>
+              <div style="font-size:0.75rem; opacity:0.7">Analytics dashboard · React, Laravel</div>
+            </div>
+          </div>
+          <!-- Regular grid -->
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem">
+            <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:0.65rem; font-size:0.75rem"><strong>Dawn of Civilization</strong><div style="opacity:0.5">Django · Fullstack</div></div>
+            <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:0.65rem; font-size:0.75rem"><strong>SICC</strong><div style="opacity:0.5">.NET · Singapore</div></div>
+            <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:0.65rem; font-size:0.75rem"><strong>+ 8 more</strong><div style="opacity:0.5">View all →</div></div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem; font-size:0.82rem"><strong>Best for:</strong> Directing attention to flagship work while showing full breadth on demand</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Case Study Cards — Story Per Project</h3>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Preview</div>
+        <div class="mockup-body" style="padding:1rem; font-size:0.82rem">
+          <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:1rem; margin-bottom:0.6rem">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap">
+              <strong>edbot.ai — AI Learning Platform</strong>
+              <span style="font-size:0.7rem; opacity:0.5">Fullstack · 2018–Present</span>
+            </div>
+            <p style="opacity:0.7; margin:0.4rem 0 0.5rem; font-size:0.8rem">Built from ground up. Serves learners in 10+ countries. 32M+ completed lessons.</p>
+            <div style="display:flex; gap:0.75rem; font-size:0.75rem">
+              <span style="color:#4a9eff">Problem →</span>
+              <span style="color:#4a9eff">Solution →</span>
+              <span style="color:#4a9eff">Impact →</span>
+            </div>
+          </div>
+          <div style="opacity:0.5; font-size:0.78rem; text-align:center; padding:0.5rem">More case studies below...</div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem; font-size:0.82rem"><strong>Trade-off:</strong> Deepest storytelling but requires more writing per project — better for 4–5 projects max</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:1rem">
+  <p class="subtitle">Rec: <strong>B</strong> — Featured 3 (edbot.ai, Learnalytics, SICC or Dawn of Civ) get spotlight treatment with context. Filter tabs let visitors find Web/UX/Mobile work fast. Remaining 7+ projects visible via "View all" — no one gets buried, nothing overwhelms.</p>
+</div>
