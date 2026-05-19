@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>document.documentElement.classList.add("dark-theme");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Fery Yundara Putera | Senior Software Engineer</title>
+    <meta name="description" content="Technical articles, engineering insights, and lessons from 12+ years of software development by Fery Yundara Putera.">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+
+    <!-- CSS LIBRARIES -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/google-fonts.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body class="blog-page">
+
+    <!-- START NAVIGATION DOCK -->
+    <div class="nav-container animate__animated animate__fadeInUp">
+        <nav class="nav-dock">
+            <a href="index.html" class="dock-item">
+                <i class="fa-solid fa-house-user"></i>
+                <span>Home</span>
+            </a>
+            <a href="resume.html" class="dock-item">
+                <i class="fa-solid fa-file-invoice"></i>
+                <span>Resume</span>
+            </a>
+            <a href="works.html" class="dock-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Projects</span>
+            </a>
+            <a href="blog.html" class="dock-item active">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Feed</span>
+            </a>
+            <a href="contact.html" class="dock-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+                <a href="#" class="dock-item scroll-top-btn" id="scrollTopBtn" aria-label="Back to top">
+                <i class="fa-solid fa-chevron-up"></i>
+                <span>Top</span>
+            </a>
+</nav>
+    </div>
+    <!-- END NAVIGATION DOCK -->
+
+    <div class="container bento-container">
+
+        <!-- START HEADER -->
+        <header class="d-flex justify-content-between align-items-center mb-5 animate__animated animate__fadeInDown">
+            <div class="logo-text">FYP.</div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- START HERO SECTION -->
+        <div class="bento-card card-hero wow animate__fadeInLeft">
+            <span class="card-number">01 / INSIGHTS</span>
+            <div class="badge-status">
+                <i class="fa-solid fa-circle"></i>
+                Engineering Articles &amp; Logs
+            </div>
+            <h1 class="hero-title">DECODING<br><span>DIGITAL</span><br>LOGIC.</h1>
+            <p class="hero-desc">Documenting technical breakthroughs, EdTech architecture, and lessons from 12+ years of full-stack engineering.</p>
+        </div>
+        <!-- END HERO SECTION -->
+
+        <!-- START STATS SECTION -->
+        <div class="bento-card card-feed-stats wow animate__fadeInRight">
+            <span class="card-number">02 / CORE</span>
+            <div class="stat-item mb-4">
+                <div class="stat-num">4</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">12+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+        <!-- END STATS SECTION -->
+
+        <!-- START FEED GRID -->
+        <div class="blog-grid-wrapper col-12 container-fluid px-0">
+
+            <!-- Loading state -->
+            <div id="blog-loading" class="text-center py-5">
+                <i class="fa-solid fa-spinner fa-spin fa-2x opacity-30"></i>
+                <p class="small opacity-30 mt-3 fw-bold text-uppercase">Loading from Medium...</p>
+            </div>
+
+            <!-- Error state -->
+            <div id="blog-error" class="text-center py-5 d-none">
+                <i class="fa-solid fa-triangle-exclamation fa-2x opacity-30"></i>
+                <p class="small opacity-30 mt-3 fw-bold text-uppercase">Could not load articles. <a href="https://medium.com/@feryyp" target="_blank" class="opacity-50">View on Medium</a></p>
+            </div>
+
+            <div class="row g-4" id="blog-feed"></div>
+
+        </div>
+        <!-- END FEED GRID -->
+
+        <!-- START FOOTER -->
+        <footer class="card-footer col-12">
+            <p class="small opacity-50 fw-bold">© 2026 Fery Yundara Putera.</p>
+        </footer>
+        <!-- END FOOTER -->
+
+    </div>
+
+    <!-- JS LIBRARIES -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+    (function () {
+        var MEDIUM_RSS = 'https://medium.com/feed/@feryyp';
+        var API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(MEDIUM_RSS) + '&count=10&t=' + Date.now();
+
+        function formatDate(dateStr) {
+            var d = new Date(dateStr);
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase();
+        }
+
+        function readTime(content) {
+            var words = content.replace(/<[^>]+>/g, '').split(/\s+/).length;
+            return Math.max(1, Math.round(words / 200)) + ' Min Read';
+        }
+
+        var FALLBACK_IMG = './assets/img/blog-1.jpg';
+
+        function getPostId(item) {
+            var guid = item.guid || '';
+            return guid.split('/').pop();
+        }
+
+        // Returns img tag src + onerror chain: tries .png → .jpg → .webp → fallback
+        function getThumbnail(item) {
+            var postId = getPostId(item);
+            if (!postId) return FALLBACK_IMG;
+            return './assets/img/posts/' + postId + '.png';
+        }
+
+        function imgOnerror(postId) {
+            return 'if(this.src.indexOf(\'.png\')>-1){this.src=\'./assets/img/posts/' + postId + '.jpg\'}' +
+                   'else if(this.src.indexOf(\'.jpg\')>-1){this.src=\'./assets/img/posts/' + postId + '.webp\'}' +
+                   'else{this.onerror=null;this.src=\'' + FALLBACK_IMG + '\'}';
+        }
+
+        function getCategories(item) {
+            if (item.categories && item.categories.length) {
+                return item.categories.slice(0, 2).join(', ');
+            }
+            return 'Article';
+        }
+
+        function buildFeatured(item, img) {
+            var pid = getPostId(item);
+            return '<div class="col-lg-8">' +
+                '<article class="blog-featured animate__animated animate__fadeInLeft blog-card-link" onclick="window.open(\'' + item.link + '\',\'_blank\')" style="cursor:pointer;">' +
+                    '<div class="bf-img"><img src="' + img + '" alt="' + item.title + '" loading="lazy" onerror="' + imgOnerror(pid) + '"></div>' +
+                    '<div class="bf-gradient"></div>' +
+                    '<div class="bf-content">' +
+                        '<div class="d-flex align-items-center gap-3 mb-3">' +
+                            '<span class="post-tag">' + getCategories(item) + '</span>' +
+                            '<span class="post-read"><i class="fa-regular fa-clock me-1"></i>' + readTime(item.content) + '</span>' +
+                        '</div>' +
+                        '<h2><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></h2>' +
+                        '<div class="post-author-row d-flex align-items-center gap-2 mt-4">' +
+                            '<img src="./assets/img/profile.webp" alt="Fery" class="rounded-circle" style="width:28px;height:28px;object-fit:cover;">' +
+                            '<span>Fery Yundara Putera</span>' +
+                            '<span class="ms-auto">' + formatDate(item.pubDate) + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="bf-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>' +
+                '</article>' +
+            '</div>';
+        }
+
+        function buildSideCard(item, img, delay) {
+            var pid = getPostId(item);
+            var style = 'cursor:pointer;' + (delay ? 'animation-delay:' + delay + ';' : '');
+            return '<article class="blog-side-card blog-card-link animate__animated animate__fadeInRight" onclick="window.open(\'' + item.link + '\',\'_blank\')" style="' + style + '">' +
+                '<div class="bsc-img"><img src="' + img + '" alt="' + item.title + '" loading="lazy" onerror="' + imgOnerror(pid) + '"></div>' +
+                '<div class="bsc-body">' +
+                    '<span class="post-tag">' + getCategories(item) + '</span>' +
+                    '<h5><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></h5>' +
+                    '<div class="d-flex align-items-center gap-2 mt-auto pt-3">' +
+                        '<span class="post-read"><i class="fa-regular fa-clock me-1"></i>' + readTime(item.content) + '</span>' +
+                        '<span class="post-date ms-auto">' + formatDate(item.pubDate) + '</span>' +
+                    '</div>' +
+                '</div>' +
+            '</article>';
+        }
+
+        function buildGridCard(item, img) {
+            var pid = getPostId(item);
+            return '<div class="col-lg-4 animate__animated animate__fadeInUp">' +
+                '<article class="blog-post-card blog-card-link h-100" onclick="window.open(\'' + item.link + '\',\'_blank\')" style="cursor:pointer;">' +
+                    '<div class="bpc-img">' +
+                        '<img src="' + img + '" alt="' + item.title + '" loading="lazy" onerror="' + imgOnerror(pid) + '">' +
+                        '<span class="post-tag">' + getCategories(item) + '</span>' +
+                    '</div>' +
+                    '<div class="bpc-body">' +
+                        '<h5><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></h5>' +
+                        '<div class="d-flex align-items-center gap-2 mt-auto pt-3">' +
+                            '<span class="post-read"><i class="fa-regular fa-clock me-1"></i>' + readTime(item.content) + '</span>' +
+                            '<span class="post-date ms-auto">' + formatDate(item.pubDate) + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</article>' +
+            '</div>';
+        }
+
+        fetch(API)
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                document.getElementById('blog-loading').classList.add('d-none');
+
+                if (!data.items || !data.items.length) {
+                    document.getElementById('blog-error').classList.remove('d-none');
+                    return;
+                }
+
+                var items = data.items;
+
+                // Article count in stats card
+                var statNums = document.querySelectorAll('.stat-num');
+                if (statNums.length) statNums[0].textContent = items.length;
+
+                var feed = document.getElementById('blog-feed');
+                var html = '';
+
+                html += buildFeatured(items[0], getThumbnail(items[0]));
+
+                if (items.length > 1) {
+                    html += '<div class="col-lg-4 d-flex flex-column gap-4">';
+                    html += buildSideCard(items[1], getThumbnail(items[1]), '0s');
+                    if (items.length > 2) html += buildSideCard(items[2], getThumbnail(items[2]), '0.1s');
+                    html += '</div>';
+                }
+
+                for (var i = 3; i < items.length; i++) {
+                    html += buildGridCard(items[i], getThumbnail(items[i]));
+                }
+
+                html += '<div class="col-12 text-center pt-4">' +
+                    '<a href="https://medium.com/@feryyp" target="_blank" rel="noopener" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold text-uppercase">' +
+                        'View All on Medium <i class="fa-brands fa-medium ms-2"></i>' +
+                    '</a>' +
+                '</div>';
+
+                feed.innerHTML = html;
+            })
+            .catch(function () {
+                document.getElementById('blog-loading').classList.add('d-none');
+                document.getElementById('blog-error').classList.remove('d-none');
+            });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+{"type":"server-started","port":53990,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:53990","screen_dir":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/88842-1778984544/content","state_dir":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/88842-1778984544/state"}
+{"type":"screen-added","file":"/Users/feryyp/Project/sideAPP/lomba/.superpowers/brainstorm/88842-1778984544/content/redesign-directions.html"}
+{"type":"server-stopped","reason":"idle timeout"}

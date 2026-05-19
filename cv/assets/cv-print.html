@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Fery Yundara Putera</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #1b74e4;
+    --dark: #0f172a;
+    --muted: #475569;
+    --light: #94a3b8;
+    --border: #e2e8f0;
+    --bg-tag: #f1f5f9;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: var(--dark);
+    font-size: 9.5pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 16mm 14mm 16mm;
+  }
+
+  /* HEADER */
+  .cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .cv-header-left h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .cv-header-left .title {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .cv-header-right {
+    text-align: right;
+    font-size: 8.5pt;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .cv-header-right a { color: var(--accent); text-decoration: none; }
+  .cv-header-right a:hover { text-decoration: underline; }
+
+  /* COLUMNS LAYOUT */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 62% 34%;
+    gap: 0 4%;
+  }
+
+  .cv-full {
+    grid-column: 1 / -1;
+  }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 4%;
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 12px; }
+
+  .section-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* SUMMARY */
+  .summary-text {
+    font-size: 9pt;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 10px; }
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1px;
+  }
+
+  .exp-company {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: var(--dark);
+  }
+
+  .exp-period {
+    font-size: 8pt;
+    color: var(--light);
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+
+  .exp-role {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .exp-location {
+    font-size: 7.5pt;
+    color: var(--light);
+    margin-bottom: 4px;
+  }
+
+  .exp-bullets { list-style: none; padding: 0; }
+
+  .exp-bullets li {
+    font-size: 8.5pt;
+    color: var(--muted);
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 2px;
+    line-height: 1.5;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 7pt;
+    top: 1px;
+  }
+
+  .exp-metrics {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .metric-chip {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: var(--accent);
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 7px; }
+  .edu-school { font-weight: 700; font-size: 9pt; color: var(--dark); }
+  .edu-degree { font-size: 8.5pt; color: var(--muted); margin-top: 1px; }
+  .edu-meta { font-size: 8pt; color: var(--light); }
+
+  /* SKILLS */
+  .skill-group { margin-bottom: 7px; }
+  .skill-group-label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .skill-tag {
+    font-size: 7.5pt;
+    color: var(--muted);
+    background: var(--bg-tag);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+  .skill-tag.focus {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* PROJECTS */
+  .proj-item { margin-bottom: 7px; }
+  .proj-name { font-weight: 700; font-size: 9pt; color: var(--dark); }
+  .proj-stack { font-size: 7.5pt; color: var(--light); margin-bottom: 2px; }
+  .proj-desc { font-size: 8.5pt; color: var(--muted); line-height: 1.5; }
+
+  /* CERTIFICATIONS */
+  .cert-item { margin-bottom: 7px; }
+  .cert-name { font-weight: 600; font-size: 8.5pt; color: var(--dark); }
+  .cert-issuer { font-size: 8pt; color: var(--light); }
+
+  /* STATS ROW */
+  .stats-row {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .stat-block {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-block:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    line-height: 1.2;
+  }
+
+  .stat-lbl {
+    font-size: 6.5pt;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  /* CONTACT LINKS */
+  .contact-links { list-style: none; }
+  .contact-links li {
+    font-size: 8.5pt;
+    color: var(--muted);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .contact-links .icon {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media print {
+    html, body { margin: 0; padding: 0; }
+    body { font-size: 8.5pt; }
+    .page { padding: 8mm 10mm; margin: 0; width: 100%; }
+    .cv-header-left h1 { font-size: 18pt; }
+    .cv-header-left .title { font-size: 8.5pt; }
+    .stats-row { margin-bottom: 8px; }
+    .stat-block { padding: 4px 3px; }
+    .stat-num { font-size: 11pt; }
+    .section { margin-bottom: 8px; }
+    .exp-item { margin-bottom: 7px; }
+    .skill-group { margin-bottom: 5px; }
+    .proj-item { margin-bottom: 5px; }
+    .edu-item { margin-bottom: 5px; }
+    .exp-bullets li { margin-bottom: 1px; line-height: 1.4; }
+    .summary-text { line-height: 1.4; }
+    a { color: inherit !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div class="cv-header-left">
+      <h1>Fery Yundara Putera</h1>
+      <div class="title">Senior Software Engineer · Full-Stack · AI-Assisted Dev</div>
+    </div>
+    <div class="cv-header-right">
+      <div><a href="mailto:feryyp.work@gmail.com">feryyp.work@gmail.com</a></div>
+      <div>Indonesia (Remote)</div>
+      <div><a href="https://github.com/daefery" target="_blank">github.com/daefery</a></div>
+      <div><a href="https://linkedin.com/in/feryyp" target="_blank">linkedin.com/in/feryyp</a></div>
+    </div>
+  </div>
+
+  <!-- STATS ROW -->
+  <div class="stats-row">
+    <div class="stat-block">
+      <span class="stat-num">12+</span>
+      <span class="stat-lbl">Years Exp</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">5</span>
+      <span class="stat-lbl">Companies</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">32M+</span>
+      <span class="stat-lbl">Lessons Delivered</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">10+</span>
+      <span class="stat-lbl">Products Shipped</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">10+</span>
+      <span class="stat-lbl">Countries Reached</span>
+    </div>
+  </div>
+
+  <!-- BODY: 2 COLUMNS -->
+  <div class="cv-body">
+
+    <!-- LEFT COLUMN -->
+    <div class="cv-left">
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <div class="section-label">Profile</div>
+        <p class="summary-text">
+          12 years across industrial, telecom, and EdTech. The last 8 at Solve Education as part of the core team behind edbot.ai, 32M+ lessons in 10+ countries. React, Next.js, Node.js, Django, Laravel, CI/CD, and AI-agentic workflows. Published Android developer (Lampalampa Indonesia).
+        </p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-label">Experience</div>
+
+        <!-- Solve Education -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-company">Solve Education!</span>
+            <span class="exp-period">Jun 2018 – Present</span>
+          </div>
+          <div class="exp-role">Senior Software Engineer</div>
+          <div class="exp-location">Indonesia</div>
+          <ul class="exp-bullets">
+            <li>Core developer of edbot.ai. AI-powered free learning platform, cross-functional team across 10+ countries</li>
+            <li>Built CI/CD pipelines and Selenium E2E testing; reduced deployment failures significantly</li>
+            <li>Shipped 10+ internal tools: Learnalytics, Content+, Localizy, Dawn of Civilization, edbot.ai v2</li>
+          </ul>
+          <div class="exp-metrics">
+            <span class="metric-chip">32M+ Lessons</span>
+            <span class="metric-chip">100K+ Peak MAU</span>
+            <span class="metric-chip">10+ Products</span>
+            <span class="metric-chip">10+ Countries</span>
+          </div>
+        </div>
+
+        <!-- Xtremax -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-company">Xtremax</span>
+            <span class="exp-period">2016 – 2018</span>
+          </div>
+          <div class="exp-role">Backend Developer</div>
+          <div class="exp-location">Singapore &amp; Indonesia</div>
+          <ul class="exp-bullets">
+            <li>Maintained 3 live client projects; certified CRM Sitefinity, MVC .NET + JavaScript</li>
+            <li>Cross-border teams across Singapore and Indonesia</li>
+          </ul>
+        </div>
+
+        <!-- Elephant Talk -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-company">Elephant Talk (Pareteum)</span>
+            <span class="exp-period">2015 – 2017</span>
+          </div>
+          <div class="exp-role">Software Developer</div>
+          <div class="exp-location">Spain &amp; Indonesia</div>
+          <ul class="exp-bullets">
+            <li>Built C# microservices and 2 Angular JS + C# web apps end-to-end</li>
+            <li>Implemented integration and unit testing across the codebase</li>
+          </ul>
+        </div>
+
+        <!-- Suzuki -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-company">PT. Suzuki Indomobil Motor</span>
+            <span class="exp-period">2014 – 2015</span>
+          </div>
+          <div class="exp-role">.NET Developer</div>
+          <div class="exp-location">Indonesia</div>
+          <ul class="exp-bullets">
+            <li>Built Dealer Management System deployed to all main branch offices nationwide</li>
+            <li>Modernised UI with Angular JS; delivered complete technical documentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-label">Selected Projects</div>
+
+        <div class="proj-item">
+          <div class="proj-name">edbot.ai</div>
+          <div class="proj-stack">React · Next.js · Django · Laravel · CI/CD · Selenium</div>
+          <div class="proj-desc">AI-powered free learning platform. Part of the core team that shipped 32M+ lessons to 100K+ peak MAU across 10+ countries.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-name">Content+</div>
+          <div class="proj-stack">React · Node.js · Django · LLM Integration</div>
+          <div class="proj-desc">Content management tool with LLM integration to help the marketing team draft and publish faster. Real-time collaboration.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="cv-right">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag focus">React</span>
+            <span class="skill-tag focus">Next.js</span>
+            <span class="skill-tag focus">TypeScript</span>
+            <span class="skill-tag">Angular JS</span>
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">Tailwind</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag focus">Node.js</span>
+            <span class="skill-tag focus">Express</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Laravel</span>
+            <span class="skill-tag">.NET / C#</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">GraphQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Database</div>
+          <div class="skill-tags">
+            <span class="skill-tag focus">MongoDB</span>
+            <span class="skill-tag focus">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">DevOps &amp; QA</div>
+          <div class="skill-tags">
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Selenium</span>
+            <span class="skill-tag">JEST</span>
+            <span class="skill-tag">Unit Testing</span>
+            <span class="skill-tag">Agile / Scrum</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">AI &amp; Emerging</div>
+          <div class="skill-tags">
+            <span class="skill-tag focus">AI Agentic Workflows</span>
+            <span class="skill-tag">LLM Integration</span>
+            <span class="skill-tag">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Mobile &amp; Design</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Android</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">UI Design</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Also Proficient</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Apollo</span>
+            <span class="skill-tag">jQuery</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">Lumen</span>
+            <span class="skill-tag">WordPress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-label">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-school">Bina Nusantara University</div>
+          <div class="edu-degree">S1 — Information Systems</div>
+          <div class="edu-meta">GPA 3.51 / 4.0 · Jakarta · 2015–2017</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-school">Telkom University</div>
+          <div class="edu-degree">D3 — Computer Engineering</div>
+          <div class="edu-meta">GPA 3.45 / 4.0 · Bandung · 2010–2013</div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section">
+        <div class="section-label">Languages</div>
+        <div class="skill-tags" style="margin-bottom:4px;">
+          <span class="skill-tag focus">Indonesian (Native)</span>
+          <span class="skill-tag">English (Professional)</span>
+        </div>
+      </div>
+
+      <!-- QADHA -->
+      <div class="section">
+        <div class="section-label">Published App</div>
+        <div class="proj-item">
+          <div class="proj-name">Qadha: Build Salah Consistency</div>
+          <div class="proj-stack">React Native · Android · Play Store</div>
+          <div class="proj-desc">Prayer tracking app for Muslims to log and manage missed prayers. Calendar, reminders, and progress tracking. Published on Google Play under Lampalampa Indonesia.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

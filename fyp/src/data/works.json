@@ -40,7 +40,9 @@
       "modal": {
         "badge": "Web App",
         "images": [
-          { "src": "works/learnalytics/cover.webp", "alt": "Learnalytics Detail" }
+          { "src": "works/learnalytics/cover.webp", "alt": "Learnalytics Detail" },
+          { "src": "works/learnalytics/1.webp", "alt": "Learnalytics Dashboard" },
+          { "src": "works/learnalytics/2.webp", "alt": "Learnalytics Content+" }
         ],
         "brief": "Internal analytics tool built to help the team understand how learners were actually using the platform. Tracks learning patterns and course performance so curriculum decisions are grounded in real data.",
         "info": [
@@ -135,7 +137,9 @@
       "modal": {
         "badge": "Web App",
         "images": [
-          { "src": "works/content-plus/cover.webp", "alt": "Content+ Detail" }
+          { "src": "works/content-plus/cover.webp", "alt": "Content+ Detail" },
+          { "src": "works/content-plus/1.webp", "alt": "Content+ Browse" },
+          { "src": "works/content-plus/2.webp", "alt": "Content+ Question" }
         ],
         "brief": "Content management tool with LLM integration to help the marketing team draft and publish faster. React SPA with real-time collaboration.",
         "info": [
