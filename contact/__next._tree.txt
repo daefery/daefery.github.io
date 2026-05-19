@@ -1,0 +1,6 @@
+:HL["/feryyp/_next/static/chunks/04za3hu5nilvo.css","style"]
+:HL["/feryyp/_next/static/chunks/01~n2tv9ilc5i.css","style"]
+:HL["/feryyp/_next/static/chunks/0kqra03l_2fc8.css","style"]
+:HC["/",""]
+:HL["https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&family=Archivo:wght@300&family=Space+Grotesk:wght@300&display=swap","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"contact","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"ZqVGKfCJAvwI4e5Nwtjfd"}

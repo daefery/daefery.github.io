@@ -1,0 +1,50 @@
+# Fery Yundara Putera — Portfolio
+
+> Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale.
+
+## Identity
+
+- **Name:** Fery Yundara Putera
+- **Role:** Senior Software Engineer
+- **Location:** Indonesia
+- **LinkedIn:** https://linkedin.com/in/feryyp
+- **GitHub:** https://github.com/daefery
+- **Blog:** https://medium.com/@feryyp
+- **Portfolio:** https://daefery.github.io/feryyp
+
+## Summary
+
+Fery is a senior full-stack engineer specialising in EdTech platforms, AI-assisted development, and high-throughput web systems. Core developer on edbot.ai — an AI learning platform delivering 32M+ lessons across 10+ countries with 100K+ peak monthly active learners.
+
+12 years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
+
+## Tech Stack
+
+React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, Android (Java), PostgreSQL, MySQL, SQL Server, Docker, GitHub Actions, Selenium, Figma
+
+## Key Projects
+
+- **edbot.ai** — AI learning platform, 32M+ lessons, 10+ countries, 100K+ MAU (Solve Education!)
+- **Learnalytics** — Internal analytics dashboard for learner engagement (Solve Education!)
+- **Dawn of Civilization** — Fullstack educational history game in Django (Solve Education!)
+- **Plareon: Daily Hoops** — Android basketball training game with IAP
+- **Solve Employment** — Job platform for edtech graduates across Southeast Asia
+- **Dompu Apps** — Government mobile app for public services (React Native + Figma)
+- **SICC Singapore** — Cricket club membership portal in ASP.NET MVC (Xtremax)
+- **Localizy** — Localisation SaaS for multi-language content workflows (Xtremax)
+- **Content+** — AI-assisted content creation platform with LLM integration
+- **Mendaki Challenge** — Gamified youth engagement portal (Xtremax)
+
+## Career
+
+- **Solve Education!** — Core developer, EdTech platform engineering, AI-first product development
+- **Xtremax** — Enterprise web and government portal development
+- Independent mobile and UX/UI projects (Android, React Native, Figma)
+
+## Site Structure
+
+- `/` — Overview, philosophy, stats
+- `/resume` — Full professional history and skills
+- `/works` — Portfolio of 12+ shipped products
+- `/blog` — Engineering articles and technical logs (via Medium RSS)
+- `/contact` — Contact and collaboration enquiries
