@@ -1,8 +1,16 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Contact - Fery Yundara Putera | Senior Software Engineer',
-  description: 'Get in touch with Fery Yundara Putera for software engineering projects and technical collaboration.',
+  title: 'Contact — Fery Yundara Putera',
+  description:
+    'Get in touch with Fery Yundara Putera for software engineering, EdTech, and AI-first product collaboration.',
+  openGraph: {
+    title: 'Contact — Fery Yundara Putera | Senior Software Engineer',
+    description:
+      'Get in touch for software engineering, EdTech, and AI-first product collaboration.',
+    url: 'https://daefery.github.io/feryyp/contact',
+  },
+  alternates: { canonical: 'https://daefery.github.io/feryyp/contact' },
 }
 
 export default function ContactPage() {
@@ -23,7 +31,7 @@ export default function ContactPage() {
           <span className="card-number">01 / CONNECTION</span>
           <div className="badge-status">
             <i className="fa-solid fa-circle"></i>
-            Open to work — accepting projects from June 2026
+            Open to work, available now
           </div>
           <h1 className="hero-title">LET&apos;S<br /><span>BUILD</span><br />TOGETHER.</h1>
           <p className="hero-desc">Available for full-stack, EdTech, and AI-first engineering projects. Drop a message and I&apos;ll respond within 24 hours.</p>
@@ -42,7 +50,7 @@ export default function ContactPage() {
                 <i className="fa-solid fa-paper-plane"></i>
               </div>
               <div>
-                <span className="cci-label">Email Protocol</span>
+                <span className="cci-label">Email</span>
                 <a href="mailto:feryyp.work@gmail.com" className="cci-value">feryyp.work@gmail.com</a>
               </div>
             </div>
@@ -69,7 +77,7 @@ export default function ContactPage() {
                 <i className="fa-solid fa-location-crosshairs"></i>
               </div>
               <div>
-                <span className="cci-label">Base Station</span>
+                <span className="cci-label">Location</span>
                 <span className="cci-value">Indonesia (Remote)</span>
               </div>
             </div>
@@ -92,7 +100,7 @@ export default function ContactPage() {
           </div>
           <div className="ccs-metric ccs-green">Open</div>
           <div className="ccs-title">Open to Work</div>
-          <div className="ccs-desc">Accepting new projects from June 2026.</div>
+          <div className="ccs-desc">Available now. Let&apos;s build something great.</div>
         </div>
 
         {/* Response Card */}
@@ -103,7 +111,7 @@ export default function ContactPage() {
           </div>
           <div className="ccs-metric">{'<'} 24h</div>
           <div className="ccs-title">Response Time</div>
-          <div className="ccs-desc">Fast replies to every project brief sent.</div>
+          <div className="ccs-desc">I usually reply same day.</div>
         </div>
 
         {/* Experience Card */}
@@ -135,9 +143,9 @@ export default function ContactPage() {
 
           <div className="cta-inner">
             <div className="cta-left">
-              <p className="cta-eyebrow text-uppercase fw-bold small opacity-50 mb-3">Ready to collaborate?</p>
+              <p className="cta-eyebrow text-uppercase fw-bold small opacity-50 mb-3">Got a project in mind?</p>
               <h2 className="cta-headline text-uppercase">Let&apos;s Build<br /><span>Something</span><br />Great.</h2>
-              <p className="cta-sub mt-3 mb-0 opacity-60 small">Drop a line — I reply within 24 hours. No commitments required to get started.</p>
+              <p className="cta-sub mt-3 mb-0 opacity-60 small">Drop a message. I reply within 24 hours.</p>
             </div>
 
             <div className="cta-right">
@@ -160,7 +168,7 @@ export default function ContactPage() {
                 </a>
               </div>
               <p className="small opacity-30 fw-bold mt-4 mb-0 text-uppercase" style={{ letterSpacing: '1px' }}>
-                <i className="fa-solid fa-circle-check me-2 text-success"></i>Open to work · Remote · Jun 2026
+                <i className="fa-solid fa-circle-check me-2 text-success"></i>Open to work · Remote · Available now
               </p>
             </div>
           </div>

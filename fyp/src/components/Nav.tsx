@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const navItems = [
   { href: '/', icon: 'fa-house-user', label: 'Home' },
@@ -12,7 +13,20 @@ const navItems = [
 ]
 
 export default function Nav() {
-  const pathname = usePathname()
+  const rawPathname = usePathname()
+  const pathname = rawPathname.replace(/\/$/, '') || '/'
+  const [scrollVisible, setScrollVisible] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrollVisible(window.scrollY > 300)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const handleScrollTop = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <div className="nav-container animate__animated animate__fadeInUp">
@@ -26,6 +40,16 @@ export default function Nav() {
             </Link>
           )
         })}
+        <a
+          href="#"
+          className={`dock-item scroll-top-btn${scrollVisible ? ' visible' : ''}`}
+          id="scrollTopBtn"
+          aria-label="Back to top"
+          onClick={handleScrollTop}
+        >
+          <i className="fa-solid fa-chevron-up"></i>
+          <span>Top</span>
+        </a>
       </nav>
     </div>
   )

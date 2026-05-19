@@ -2,25 +2,33 @@ import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 
 export const metadata = {
-  title: 'FYP. - Senior Software Engineer',
-  description: 'Premium portfolio of Fery Yundara Putera, Senior Software Engineer.',
+  title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+  description:
+    'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
+  openGraph: {
+    title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+    description:
+      'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
+    url: 'https://daefery.github.io/feryyp',
+  },
+  alternates: { canonical: 'https://daefery.github.io/feryyp' },
 }
 
 const logos = [
   { src: 'edbot.webp', alt: 'Edbot.ai' },
-  { src: 'learnalytics.png', alt: 'Learnalytics' },
-  { src: 'se.png', alt: 'Solve Education' },
-  { src: 'localizy.png', alt: 'Localizy' },
+  { src: 'learnalytics.webp', alt: 'Learnalytics' },
+  { src: 'se.webp', alt: 'Solve Education' },
+  { src: 'localizy.webp', alt: 'Localizy' },
   { src: 'xtremax.png', alt: 'Xtremax' },
-  { src: 'etak.png', alt: 'Elephant Talk' },
-  { src: 'suzuki.png', alt: 'Suzuki' },
-  { src: 'kuntoem.png', alt: 'Kuntoem' },
-  { src: 'content.png', alt: 'Content' },
-  { src: 'ymbb.png', alt: 'YMBB' },
-  { src: 'plareon.png', alt: 'Plareon' },
-  { src: 'qadha.png', alt: 'Qadha' },
-  { src: 'lampalampa.png', alt: 'Lampalampa' },
-  { src: 'playnology.png', alt: 'Playnology' },
+  { src: 'etak.webp', alt: 'Elephant Talk' },
+  { src: 'suzuki.webp', alt: 'Suzuki' },
+  { src: 'kuntoem.webp', alt: 'Kuntoem' },
+  { src: 'content.webp', alt: 'Content' },
+  { src: 'ymbb.webp', alt: 'YMBB' },
+  { src: 'plareon.webp', alt: 'Plareon' },
+  { src: 'qadha.webp', alt: 'Qadha' },
+  { src: 'lampalampa.webp', alt: 'Lampalampa' },
+  { src: 'playnology.webp', alt: 'Playnology' },
 ]
 
 export default function Home() {
@@ -40,11 +48,10 @@ export default function Home() {
           Open to work
         </div>
         <h1 className="hero-title">
-          ENGINEERING<br /><span>THE FUTURE</span><br />OF EDTECH.
+          32 MILLION<br /><span>LESSONS.</span><br />PART OF THE TEAM.
         </h1>
         <p className="hero-desc">
-          I build high-performance digital ecosystems that merge technical
-          depth with AI-first engineering — shipping at scale for 10+ countries.
+          12 years across industrial, telecom, and software. The last 8 at Solve Education, building the platform behind 32M+ lessons. React, Next.js, Node.js, and a lot of AI tooling lately.
         </p>
       </div>
       {/* END HERO SECTION */}
@@ -73,33 +80,33 @@ export default function Home() {
 
       {/* START ABOUT SECTION */}
       <div className="bento-card card-about wow animate__fadeInUp">
-        <span className="card-number">03 / LOGIC</span>
-        <h2 className="text-uppercase">Engineering<br />Philosophy.</h2>
+        <span className="card-number">03 / ABOUT</span>
+        <h2 className="text-uppercase">How I<br />work.</h2>
         <p className="text-muted small mb-4">
-          Building scalable EdTech systems with AI-first thinking and continuous delivery discipline.
+          I care about systems that hold up in production. Not just demos that work once.
         </p>
 
         <div className="pillar-grid">
           <div className="pillar-item">
-            <div className="pillar-title">Scalable EdTech</div>
+            <div className="pillar-title">EdTech at scale</div>
             <p className="pill-text">
               Core developer on platform powering 32M+ lessons across 10+ countries.
             </p>
           </div>
           <div className="pillar-item">
-            <div className="pillar-title">AI-First Dev</div>
+            <div className="pillar-title">AI in the workflow</div>
             <p className="pill-text">
-              Agentic workflows and AI-assisted engineering at scale.
+              I use AI tools daily. Not as a novelty, but because they genuinely speed things up.
             </p>
           </div>
           <div className="pillar-item">
-            <div className="pillar-title">Full Stack Depth</div>
+            <div className="pillar-title">Top to bottom</div>
             <p className="pill-text">12 years across React, Node.js, Django, Laravel, .NET.</p>
           </div>
           <div className="pillar-item">
-            <div className="pillar-title">Continuous Delivery</div>
+            <div className="pillar-title">Shipping without drama</div>
             <p className="pill-text">
-              CI/CD pipelines and automated E2E testing.
+              CI/CD and Selenium so deploys don&apos;t feel like coin flips.
             </p>
           </div>
         </div>
@@ -108,7 +115,7 @@ export default function Home() {
 
       {/* START STATS SECTION */}
       <div
-        className="bento-card card-skills wow animate__zoomIn"
+        className="bento-card card-skills wow animate__fadeInUp"
         data-wow-delay="0.1s"
       >
         <span className="card-number">04 / STATS</span>
@@ -118,7 +125,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="bento-card card-skills wow animate__zoomIn"
+        className="bento-card card-skills wow animate__fadeInUp"
         data-wow-delay="0.2s"
       >
         <span className="card-number">05 / STATS</span>
@@ -134,7 +141,7 @@ export default function Home() {
         <span className="card-number">06 / JOURNEY</span>
         <h3 className="text-uppercase mb-2">My Resume.</h3>
         <p className="small mb-4">
-          Explore my technical mastery and professional evolution.
+          See where I&apos;ve worked and what I&apos;ve shipped.
         </p>
         <div className="mt-auto">
           <Link
@@ -152,9 +159,9 @@ export default function Home() {
         <span className="card-number">07 / PHILOSOPHY</span>
 
         <div className="mission-header mb-4">
-          <h3 className="text-uppercase">Engineering Mission.</h3>
+          <h3 className="text-uppercase">What I value.</h3>
           <p className="small opacity-50 fw-bold">
-            Defining the future of EdTech and AI-first engineering
+            Things I&apos;ve learned building products that actually matter.
           </p>
         </div>
 
@@ -176,7 +183,7 @@ export default function Home() {
             <div>
               <div className="value-title">CONTINUOUS DELIVERY</div>
               <p className="small opacity-60 mb-0">
-                CI/CD pipelines and Selenium E2E testing that ship with confidence.
+                CI/CD and E2E testing. Because manual deploys at midnight aren&apos;t fun.
               </p>
             </div>
           </div>
@@ -186,7 +193,7 @@ export default function Home() {
             <div>
               <div className="value-title">AI-FIRST ENGINEERING</div>
               <p className="small opacity-60 mb-0">
-                Agentic workflows and AI-assisted development at production scale.
+                Not just prompting. I build workflows where AI handles the repetitive parts.
               </p>
             </div>
           </div>
@@ -201,7 +208,7 @@ export default function Home() {
       {/* START SERVICES SECTION */}
       <div className="bento-card card-services wow animate__fadeInUp">
         <span className="card-number">08 / MASTERY</span>
-        <h3 className="text-uppercase mb-4">Core Mastery.</h3>
+        <h3 className="text-uppercase mb-4">What I do well.</h3>
         <div className="expertise-list">
           <div className="expertise-item">
             <i className="fa-solid fa-gem"></i>

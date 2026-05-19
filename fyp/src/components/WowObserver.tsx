@@ -1,8 +1,10 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import useWow from '@/hooks/useWow'
 
 export default function WowObserver() {
-  useWow()
+  const pathname = usePathname()
+  useWow(pathname)
   return null
 }

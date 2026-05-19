@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export default function useWow() {
+export default function useWow(pathname?: string) {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>('.wow')
     if (!elements.length) return
@@ -12,6 +12,7 @@ export default function useWow() {
           const el = entry.target as HTMLElement
           const delay = el.dataset.wowDelay ?? '0s'
           el.style.animationDelay = delay
+          el.style.visibility = 'visible'
           el.classList.add('animate__animated')
           observer.unobserve(el)
         })
@@ -21,5 +22,5 @@ export default function useWow() {
 
     elements.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 }

@@ -2,8 +2,16 @@ import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 
 export const metadata = {
-  title: 'Resume - Fery Yundara Putera | Senior Software Engineer',
-  description: 'Professional journey and technical expertise of Fery Yundara Putera, Senior Software Engineer.',
+  title: 'Resume — Fery Yundara Putera',
+  description:
+    '12+ years of full-stack engineering across EdTech, enterprise, and government sectors. React, Next.js, Django, Laravel, .NET, React Native.',
+  openGraph: {
+    title: 'Resume — Fery Yundara Putera | Senior Software Engineer',
+    description:
+      '12+ years of full-stack engineering across EdTech, enterprise, and government sectors.',
+    url: 'https://daefery.github.io/feryyp/resume',
+  },
+  alternates: { canonical: 'https://daefery.github.io/feryyp/resume' },
 }
 
 export default function ResumePage() {
@@ -25,10 +33,10 @@ export default function ResumePage() {
           Senior Software Engineer
         </div>
         <h1 className="hero-title">
-          CURATED<br /><span>TECHNICAL</span><br />JOURNEY.
+          12 YEARS.<br /><span>5 COMPANIES.</span><br />STILL BUILDING.
         </h1>
         <p className="hero-desc">
-          Documenting 12+ years of engineering high-performance ecosystems across EdTech, enterprise, and beyond.
+          From writing .NET for Suzuki dealerships to EdTech platforms running in 10+ countries. Here&apos;s the full story.
         </p>
       </div>
       {/* END HERO SECTION */}
@@ -38,7 +46,7 @@ export default function ResumePage() {
         <span className="card-number">02 / IMPACT</span>
         <div className="stat-item mt-4">
           <span className="stat-num">12+</span>
-          <span className="stat-label d-block">Years of Vision</span>
+          <span className="stat-label d-block">Years Building</span>
         </div>
         <p className="text-muted small fw-bold text-uppercase mt-4">
           Full Stack &amp; AI-First
@@ -69,7 +77,7 @@ export default function ResumePage() {
             <div className="timeline-content">
               <h4 className="role">Senior Software Engineer</h4>
               <p className="small text-muted">
-                Core developer of edbot.ai — 32M+ lessons, 10+ countries, 100K+ peak MAL. Built CI/CD pipelines, Selenium E2E testing. Products: Learnalytics, Content+, Localizy, Dawn of Civilization, Solve Employment. Indonesia.
+                Core developer of edbot.ai. 32M+ lessons, 10+ countries, 100K+ peak MAL. Built CI/CD pipelines and Selenium E2E testing. Products: Learnalytics, Content+, Localizy, Dawn of Civilization, Solve Employment. Indonesia.
               </p>
             </div>
           </div>
@@ -122,7 +130,7 @@ export default function ResumePage() {
         data-wow-delay="0.1s"
       >
         <span className="card-number">04 / STACK</span>
-        <h3 className="text-uppercase mb-4">Neural Stack.</h3>
+        <h3 className="text-uppercase mb-4">Tech Stack.</h3>
         <div className="tech-grid">
           {['React / Next.js', 'TypeScript', 'Node.js / Express', 'Django', 'Laravel',
             '.NET / C#', 'MongoDB / MySQL', 'CI/CD / DevOps', 'Selenium / JEST',
@@ -142,17 +150,17 @@ export default function ResumePage() {
         <span className="card-number">05 / ACADEMIC</span>
         <h3 className="text-uppercase mb-4">Education.</h3>
         <div className="edu-item mb-4">
-          <div className="edu-meta">Bina Nusantara University (Binus) — Jakarta</div>
+          <div className="edu-meta">Bina Nusantara University (Binus), Jakarta</div>
           <h5 className="edu-title">S1 Information Systems</h5>
           <p className="small text-muted">
-            GPA 3.51/4.0 — 2015–2017
+            GPA 3.51/4.0, 2015–2017
           </p>
         </div>
         <div className="edu-item">
-          <div className="edu-meta">Telkom University — Bandung</div>
+          <div className="edu-meta">Telkom University, Bandung</div>
           <h5 className="edu-title">D3 Computer Engineering</h5>
           <p className="small text-muted">
-            GPA 3.45/4.0 — 2010–2013
+            GPA 3.45/4.0, 2010–2013
           </p>
         </div>
       </div>
@@ -161,7 +169,7 @@ export default function ResumePage() {
       {/* START SKILLS SECTION */}
       <div className="bento-card card-skills-full wow animate__fadeInUp">
         <span className="card-number">06 / MASTERY</span>
-        <h3 className="text-uppercase mb-5">Working Skills.</h3>
+        <h3 className="text-uppercase mb-5">Skills.</h3>
 
         <div className="skill-meter-grid">
           {[
