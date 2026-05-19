@@ -18,4 +18,4 @@
 :HL["/feryyp/assets/img/qadha.webp","image"]
 :HL["/feryyp/assets/img/lampalampa.webp","image"]
 :HL["/feryyp/assets/img/playnology.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"ZqVGKfCJAvwI4e5Nwtjfd"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"-L9mw7_u88NZD9gn32JXb"}

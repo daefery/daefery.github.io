@@ -9,6 +9,8 @@
 :HL["/feryyp/assets/img/works/edbot/4.webp","image"]
 :HL["/feryyp/assets/img/works/edbot/5.webp","image"]
 :HL["/feryyp/assets/img/works/learnalytics/cover.webp","image"]
+:HL["/feryyp/assets/img/works/learnalytics/1.webp","image"]
+:HL["/feryyp/assets/img/works/learnalytics/2.webp","image"]
 :HL["/feryyp/assets/img/works/dawn/cover.webp","image"]
 :HL["/feryyp/assets/img/works/plareon/cover.webp","image"]
 :HL["/feryyp/assets/img/works/localizy/1.webp","image"]
@@ -16,6 +18,8 @@
 :HL["/feryyp/assets/img/works/localizy/3.webp","image"]
 :HL["/feryyp/assets/img/works/localizy/4.webp","image"]
 :HL["/feryyp/assets/img/works/content-plus/cover.webp","image"]
+:HL["/feryyp/assets/img/works/content-plus/1.webp","image"]
+:HL["/feryyp/assets/img/works/content-plus/2.webp","image"]
 :HL["/feryyp/assets/img/works/ymbb/cover.webp","image"]
 :HL["/feryyp/assets/img/works/solve/1.webp","image"]
 :HL["/feryyp/assets/img/works/solve/2.webp","image"]
@@ -42,4 +46,4 @@
 :HL["/feryyp/assets/img/works/ed/1.webp","image"]
 :HL["/feryyp/assets/img/works/ed/2.webp","image"]
 :HL["/feryyp/assets/img/works/qadha/cover.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"works","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"ZqVGKfCJAvwI4e5Nwtjfd"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"works","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"-L9mw7_u88NZD9gn32JXb"}
