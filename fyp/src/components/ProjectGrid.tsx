@@ -38,8 +38,12 @@ export default function ProjectGrid() {
     setVisibleCount(PAGE_SIZE)
   }
 
-  const visibleFeatured = featuredItems.filter((p) => itemMatchesFilter(p.cats, activeFilter))
-  const filteredGrid = gridItems.filter((item) => itemMatchesFilter(item.cats, activeFilter))
+  const showFeaturedRow = activeFilter === '*'
+  const visibleFeatured = showFeaturedRow ? featuredItems : []
+  const filteredGrid = [
+    ...(showFeaturedRow ? [] : featuredItems.filter((p) => itemMatchesFilter(p.cats, activeFilter))),
+    ...gridItems.filter((item) => itemMatchesFilter(item.cats, activeFilter)),
+  ]
   const visibleGrid = filteredGrid.slice(0, visibleCount)
   const hasMore = filteredGrid.length > visibleCount
 

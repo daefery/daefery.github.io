@@ -2,6 +2,7 @@ import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 import ProjectGrid from '@/components/ProjectGrid'
 import worksData from '@/data/works.json'
+import PageFooter from '@/components/PageFooter'
 
 export const metadata = {
   title: 'Works — Fery Yundara Putera',
@@ -62,9 +63,7 @@ export default function WorksPage() {
         {/* END PROJECTS HUB */}
 
         {/* START FOOTER */}
-        <footer className="card-footer col-12">
-          <p className="small opacity-50 fw-bold">© 2026 Fery Yundara Putera.</p>
-        </footer>
+        <PageFooter col12 />
         {/* END FOOTER */}
       </div>
 

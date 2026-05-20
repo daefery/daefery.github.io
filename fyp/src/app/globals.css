@@ -2420,7 +2420,6 @@ article:hover .post-tag {
 /* Blog mobile responsive */
 @media (max-width: 767px) {
   .blog-grid-wrapper {
-    overflow-x: hidden;
     width: 100%;
   }
 

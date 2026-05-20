@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
+import PageFooter from '@/components/PageFooter'
 
 export const metadata = {
   title: 'Resume — Fery Yundara Putera',
@@ -193,11 +194,7 @@ export default function ResumePage() {
       {/* END SKILLS SECTION */}
 
       {/* START FOOTER */}
-      <footer className="card-footer">
-        <p className="small opacity-50 fw-bold">
-          © 2026 Fery Yundara Putera.
-        </p>
-      </footer>
+      <PageFooter />
       {/* END FOOTER */}
     </div>
   )

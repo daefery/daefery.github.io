@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import BASE_PATH from '@/lib/basePath'
+import PageFooter from '@/components/PageFooter'
 
 interface FeedItem {
   title: string
@@ -197,23 +198,21 @@ export default function BlogPage() {
                 </div>
               ))}
 
-              <div className="col-12 text-center pt-4">
+              <div className="col-12 text-center pt-4 pb-2">
                 <a
                   href="https://medium.com/@feryyp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-outline-light rounded-pill px-5 py-3 fw-bold text-uppercase"
                 >
-                  View All on Medium <i className="fa-brands fa-medium ms-2"></i>
+                  View All on Medium <i className="fa-brands fa-medium ms-2" style={{ verticalAlign: 'middle' }}></i>
                 </a>
               </div>
             </div>
           )}
         </div>
 
-        <footer className="card-footer col-12">
-          <p className="small opacity-50 fw-bold">© 2026 Fery Yundara Putera.</p>
-        </footer>
+        <PageFooter col12 />
       </div>
     </div>
   )

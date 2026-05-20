@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
+import PageFooter from '@/components/PageFooter'
 
 export const metadata = {
   title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
@@ -200,7 +201,7 @@ export default function Home() {
         </div>
 
         <div className="hub-footer mt-auto w-100">
-          <div className="signature-text">FYP × 2026</div>
+          <div className="signature-text">FYP × {new Date().getFullYear()}</div>
         </div>
       </div>
       {/* END MISSION SECTION */}
@@ -266,11 +267,7 @@ export default function Home() {
       {/* END CLIENTS SECTION */}
 
       {/* START FOOTER */}
-      <footer className="card-footer">
-        <p className="small opacity-50 fw-bold">
-          © 2026 Fery Yundara Putera.
-        </p>
-      </footer>
+      <PageFooter />
       {/* END FOOTER */}
     </div>
   )

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import PageFooter from '@/components/PageFooter'
 
 export const metadata = {
   title: 'Contact — Fery Yundara Putera',
@@ -69,7 +70,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="cci-label">WhatsApp</span>
-                <a href="https://wa.me/6281224641242?text=Hi%20Fery%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project%20with%20you." className="cci-value" target="_blank" rel="noopener noreferrer">+62 812-2464-1242</a>
+                <a href="https://wa.me/6281224641242?text=Hi%20Fery%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project%20with%20you." className="cci-value" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
               </div>
             </div>
             <div className="contact-channel-item">
@@ -174,15 +175,13 @@ export default function ContactPage() {
           </div>
 
           <div className="cta-footer">
-            <div className="signature-text">FYP × 2026</div>
+            <div className="signature-text">FYP × {new Date().getFullYear()}</div>
           </div>
         </div>
         {/* END CTA SECTION */}
 
         {/* START FOOTER */}
-        <footer className="card-footer col-12">
-          <p className="small opacity-50 fw-bold">© 2026 Fery Yundara Putera.</p>
-        </footer>
+        <PageFooter col12 />
         {/* END FOOTER */}
 
       </div>
