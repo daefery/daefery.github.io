@@ -958,8 +958,11 @@ img[src*="qadha"].client-logo-color {
     grid-template-columns: 1fr !important;
     padding: 24px 16px 200px !important; /* Extra bottom padding for nav */
     gap: 16px;
-    width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     overflow-x: hidden;
+    position: relative;
+    box-sizing: border-box;
   }
 
   .bento-card,
@@ -974,6 +977,11 @@ img[src*="qadha"].client-logo-color {
     grid-row: auto !important;
     width: 100% !important;
     max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bento-card {
+    padding: 28px 20px;
   }
 
   .hero-title {
@@ -2052,8 +2060,11 @@ img[src*="qadha"].client-logo-color {
 }
 
 .blog-page {
+  position: relative;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Page-specific bento grid overrides */
@@ -2417,25 +2428,50 @@ article:hover .post-tag {
   display: none !important;
 }
 
-/* Blog mobile responsive */
+/* Blog feed grid — CSS grid replaces Bootstrap row/col inside bento-container */
+.blog-top-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.blog-side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blog-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 991px) {
+  .blog-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 767px) {
-  .blog-grid-wrapper {
-    width: 100%;
+  .blog-top-row {
+    gap: 16px;
+    margin-bottom: 16px;
   }
 
-  .blog-grid-wrapper .row {
-    margin-left: 0;
-    margin-right: 0;
+  .blog-side-stack {
+    gap: 16px;
   }
 
-  .blog-grid-wrapper .row > * {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .blog-grid-wrapper .row.g-4 {
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 1rem;
+  .blog-grid-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .blog-featured {
@@ -2524,22 +2560,6 @@ article:hover .post-tag {
 
 .load-more-btn.loading .spinner-icon {
   animation: fa-spin 1s infinite linear;
-}
-
-/* Blog responsive */
-@media (max-width: 767px) {
-  .blog-featured {
-    min-height: 360px;
-  }
-
-  .bf-content {
-    padding: 28px;
-  }
-
-  .bsc-img {
-    width: 110px;
-    min-width: 110px;
-  }
 }
 
 /* Contact Layout Improvements */

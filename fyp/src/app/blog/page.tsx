@@ -71,7 +71,7 @@ export default function BlogPage() {
           <div className="logo-text">FYP.</div>
         </header>
 
-        <div className="bento-card card-hero wow animate__fadeInLeft">
+        <div className="bento-card card-hero wow animate__fadeInDown">
           <span className="card-number">01 / INSIGHTS</span>
           <div className="badge-status">
             <i className="fa-solid fa-circle"></i>
@@ -81,7 +81,7 @@ export default function BlogPage() {
           <p className="hero-desc">Notes on building, debugging, and occasionally overthinking things. Mostly EdTech and web.</p>
         </div>
 
-        <div className="bento-card card-feed-stats wow animate__fadeInRight">
+        <div className="bento-card card-feed-stats wow animate__fadeInUp">
           <span className="card-number">02 / CORE</span>
           <div className="stat-item mb-4">
             <div className="stat-num">
@@ -97,7 +97,7 @@ export default function BlogPage() {
           </div>
         </div>
 
-        <div className="blog-grid-wrapper col-12">
+        <div className="blog-grid-wrapper">
           {status === 'loading' && (
             <div id="blog-loading" className="text-center py-5">
               <i className="fa-solid fa-spinner fa-spin fa-2x opacity-30"></i>
@@ -118,11 +118,11 @@ export default function BlogPage() {
           )}
 
           {status === 'loaded' && (
-            <div className="row g-4" id="blog-feed">
-              {/* Featured article — items[0] */}
-              <div className="col-lg-8">
+            <div id="blog-feed">
+              {/* Top row: featured left, side stack right */}
+              <div className="blog-top-row">
                 <article
-                  className="blog-featured animate__animated animate__fadeInLeft blog-card-link"
+                  className="blog-featured animate__animated animate__fadeInUp blog-card-link"
                   onClick={() => window.open(items[0].link, '_blank')}
                   style={{ cursor: 'pointer' }}
                 >
@@ -144,61 +144,60 @@ export default function BlogPage() {
                   </div>
                   <div className="bf-arrow"><i className="fa-solid fa-arrow-up-right"></i></div>
                 </article>
-              </div>
 
-              {/* Side cards — items[1] and items[2] */}
-              {items.length > 1 && (
-                <div className="col-12 col-lg-4">
-                  <div className="row g-4 h-100">
-                    {items.slice(1, 3).map((item, i) => (
-                      <div key={item.guid} className="col-12">
-                        <article
-                          className="blog-side-card blog-card-link h-100 animate__animated animate__fadeInRight"
-                          onClick={() => window.open(item.link, '_blank')}
-                          style={{ cursor: 'pointer', animationDelay: i === 0 ? '0s' : '0.1s' }}
-                        >
-                          <div className="bsc-img">
-                            <PostImage guid={item.guid} alt={item.title} />
+                {items.length > 1 && (
+                  <div className="blog-side-stack">
+                    {items.slice(1, 3).map((item) => (
+                      <article
+                        key={item.guid}
+                        className="blog-side-card animate__animated animate__fadeInUp blog-card-link"
+                        onClick={() => window.open(item.link, '_blank')}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <div className="bsc-img">
+                          <PostImage guid={item.guid} alt={item.title} />
+                        </div>
+                        <div className="bsc-body">
+                          <span className="post-tag">{getCategories(item)}</span>
+                          <h5><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></h5>
+                          <div className="d-flex align-items-center gap-2 mt-auto pt-3">
+                            <span className="post-read"><i className="fa-regular fa-clock me-1"></i>{readTime(item.content)}</span>
+                            <span className="post-date ms-auto">{formatDate(item.pubDate)}</span>
                           </div>
-                          <div className="bsc-body">
-                            <span className="post-tag">{getCategories(item)}</span>
-                            <h5><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></h5>
-                            <div className="d-flex align-items-center gap-2 mt-auto pt-3">
-                              <span className="post-read"><i className="fa-regular fa-clock me-1"></i>{readTime(item.content)}</span>
-                              <span className="post-date ms-auto">{formatDate(item.pubDate)}</span>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
+                        </div>
+                      </article>
                     ))}
                   </div>
+                )}
+              </div>
+
+              {/* Grid row: items[3+] */}
+              {items.length > 3 && (
+                <div className="blog-grid-row">
+                  {items.slice(3).map((item) => (
+                    <article
+                      key={item.guid}
+                      className="blog-post-card animate__animated animate__fadeInUp blog-card-link"
+                      onClick={() => window.open(item.link, '_blank')}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <div className="bpc-img">
+                        <PostImage guid={item.guid} alt={item.title} />
+                        <span className="post-tag">{getCategories(item)}</span>
+                      </div>
+                      <div className="bpc-body">
+                        <h5><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></h5>
+                        <div className="d-flex align-items-center gap-2 mt-auto pt-3">
+                          <span className="post-read"><i className="fa-regular fa-clock me-1"></i>{readTime(item.content)}</span>
+                          <span className="post-date ms-auto">{formatDate(item.pubDate)}</span>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               )}
 
-              {/* Grid cards — items[3+] */}
-              {items.slice(3).map((item) => (
-                <div key={item.guid} className="col-12 col-sm-6 col-lg-4 animate__animated animate__fadeInUp">
-                  <article
-                    className="blog-post-card blog-card-link h-100"
-                    onClick={() => window.open(item.link, '_blank')}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <div className="bpc-img">
-                      <PostImage guid={item.guid} alt={item.title} />
-                      <span className="post-tag">{getCategories(item)}</span>
-                    </div>
-                    <div className="bpc-body">
-                      <h5><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></h5>
-                      <div className="d-flex align-items-center gap-2 mt-auto pt-3">
-                        <span className="post-read"><i className="fa-regular fa-clock me-1"></i>{readTime(item.content)}</span>
-                        <span className="post-date ms-auto">{formatDate(item.pubDate)}</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              ))}
-
-              <div className="col-12 text-center pt-4 pb-2">
+              <div className="text-center pt-4 pb-2">
                 <a
                   href="https://medium.com/@feryyp"
                   target="_blank"
