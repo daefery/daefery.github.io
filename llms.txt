@@ -7,6 +7,7 @@
 - **Name:** Fery Yundara Putera
 - **Role:** Senior Software Engineer
 - **Location:** Indonesia
+- **Email:** feryyp.work@gmail.com
 - **LinkedIn:** https://linkedin.com/in/feryyp
 - **GitHub:** https://github.com/daefery
 - **Blog:** https://medium.com/@feryyp
@@ -16,35 +17,63 @@
 
 Fery is a senior full-stack engineer specialising in EdTech platforms, AI-assisted development, and high-throughput web systems. Core developer on edbot.ai — an AI learning platform delivering 32M+ lessons across 10+ countries with 100K+ peak monthly active learners.
 
-12 years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
+12+ years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
+
+Available for senior engineering roles, technical consulting, and EdTech/AI product collaborations globally.
 
 ## Tech Stack
 
-React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, Android (Java), PostgreSQL, MySQL, SQL Server, Docker, GitHub Actions, Selenium, Figma
+**Frontend:** React, Next.js, Vue.js, Bootstrap, Tailwind CSS, Figma
+**Backend:** Node.js, Django, Laravel, ASP.NET MVC, REST APIs
+**Mobile:** React Native, Android (Java)
+**Data:** PostgreSQL, MySQL, SQL Server, Firebase
+**DevOps:** Docker, GitHub Actions, CI/CD, Selenium E2E
+**AI/ML:** LLM integration, agentic workflows, AI-assisted content generation
 
 ## Key Projects
 
 - **edbot.ai** — AI learning platform, 32M+ lessons, 10+ countries, 100K+ MAU (Solve Education!)
-- **Learnalytics** — Internal analytics dashboard for learner engagement (Solve Education!)
+- **edbot.ai v2** — Full rebuild with XP streaks, learning paths, interactive lessons, and spaced repetition
+- **Learnalytics** — Internal analytics dashboard for learner engagement tracking (Solve Education!)
 - **Dawn of Civilization** — Fullstack educational history game in Django (Solve Education!)
-- **Plareon: Daily Hoops** — Android basketball training game with IAP
-- **Solve Employment** — Job platform for edtech graduates across Southeast Asia
-- **Dompu Apps** — Government mobile app for public services (React Native + Figma)
-- **SICC Singapore** — Cricket club membership portal in ASP.NET MVC (Xtremax)
+- **Edbot Challenge** — Challenge platform transitioning Dawn of Civilization players to Edbot
+- **Ed The Bot** — Web portal for Solve Education's AI chatbot for English learning and job skills
+- **Plareon: Daily Hoops** — Android basketball training game with IAP and daily drills
+- **Qadha** — Android app for Muslims to log and track missed prayers with reminders
+- **Solve Employment** — Job platform for EdTech graduates across Southeast Asia
+- **Solve Education! Profile** — Company profile for social enterprise using AI to democratise learning
+- **Solve for Change** — Microgrant program site supporting youth-led projects across Southeast Asia
+- **Yayasan Muda Berdaya Berdikari** — NGO company profile for Solve Education's Indonesian foundation
 - **Localizy** — Localisation SaaS for multi-language content workflows (Xtremax)
 - **Content+** — AI-assisted content creation platform with LLM integration
+- **Dompu Apps** — Government mobile app for public services (React Native + Figma)
+- **SICC Singapore** — Cricket club membership portal in ASP.NET MVC (Xtremax)
 - **Mendaki Challenge** — Gamified youth engagement portal (Xtremax)
+- **Katalogin** — SaaS tool for restaurants and shops to build digital menus and product catalogs
+- **Lampalampa App** — Mobile UX design for Indonesia travel, local food, and artisan goods
+- **LampaGo** — WhatsApp bot for airport transfers, deliveries, and errands
+- **Playnology** — Online store for educational toys and STEM kits
 
 ## Career
 
-- **Solve Education!** — Core developer, EdTech platform engineering, AI-first product development
-- **Xtremax** — Enterprise web and government portal development
-- Independent mobile and UX/UI projects (Android, React Native, Figma)
+- **Solve Education!** — Core developer, EdTech platform engineering, AI-first product development. Built and maintained edbot.ai serving millions of learners in emerging markets.
+- **Xtremax** — Enterprise web and government portal development across Singapore and Southeast Asia.
+- **Independent** — Mobile, UX/UI, and SaaS projects (Android, React Native, Figma, WhatsApp bots).
+
+## Writing
+
+Engineering articles on Medium covering full-stack development, EdTech architecture, CI/CD, and AI-first engineering. Published regularly at https://medium.com/@feryyp
+
+Topics include: React, Next.js, Django, PostgreSQL, GitHub Actions, Selenium, LLM integration, software architecture, remote engineering.
 
 ## Site Structure
 
-- `/` — Overview, philosophy, stats
-- `/resume` — Full professional history and skills
-- `/works` — Portfolio of 12+ shipped products
+- `/` — Overview, philosophy, skills, and career stats
+- `/resume` — Full professional history, tech stack, and experience
+- `/works` — Portfolio of 12+ shipped products across web, mobile, and UX
 - `/blog` — Engineering articles and technical logs (via Medium RSS)
 - `/contact` — Contact and collaboration enquiries
+
+## Keywords
+
+Senior Software Engineer, Full Stack Developer, EdTech Engineer, AI Engineer, React Developer, Next.js Developer, Django Developer, Laravel Developer, Node.js Developer, React Native Developer, Android Developer, Indonesia, Remote Engineer, EdTech, AI Learning Platform, SaaS Developer, UX Engineer, Portfolio
