@@ -108,6 +108,8 @@ export default function ProductsPage() {
         <div key={p.slug} className="wow animate__fadeInUp" style={{ gridColumn: 'span 12' }}>
           <Link
             href={`/products/${p.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="spotlight-card"
             style={{ border: `1px solid rgba(${p.accentRgb},0.25)` }}
           >
