@@ -10,9 +10,9 @@ export const metadata = {
     title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
-    url: 'https://daefery.github.io',
+    url: 'https://feryyp.github.io',
   },
-  alternates: { canonical: 'https://daefery.github.io' },
+  alternates: { canonical: 'https://feryyp.github.io' },
 }
 
 const logos = [

@@ -9,9 +9,9 @@ export const metadata = {
   openGraph: {
     title: 'Products — Fery Yundara Putera | Senior Software Engineer',
     description: 'Live apps I designed and built myself — Zokuu, Plareon, and Qadha.',
-    url: 'https://daefery.github.io/products',
+    url: 'https://feryyp.github.io/products',
   },
-  alternates: { canonical: 'https://daefery.github.io/products' },
+  alternates: { canonical: 'https://feryyp.github.io/products' },
 }
 
 const products = [
