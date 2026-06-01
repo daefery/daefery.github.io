@@ -52,4 +52,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://daefery.github.io/feryyp/sitemap.xml
+Sitemap: https://feryyp.github.io/feryyp/sitemap.xml
