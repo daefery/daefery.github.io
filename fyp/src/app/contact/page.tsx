@@ -9,9 +9,9 @@ export const metadata = {
     title: 'Contact — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Get in touch for software engineering, EdTech, and AI-first product collaboration.',
-    url: 'https://feryyp.github.io/contact',
+    url: 'https://daefery.github.io/contact',
   },
-  alternates: { canonical: 'https://feryyp.github.io/contact' },
+  alternates: { canonical: 'https://daefery.github.io/contact' },
 }
 
 export default function ContactPage() {

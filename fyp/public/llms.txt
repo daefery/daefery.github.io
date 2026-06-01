@@ -11,7 +11,7 @@
 - **LinkedIn:** https://linkedin.com/in/feryyp
 - **GitHub:** https://github.com/daefery
 - **Blog:** https://medium.com/@feryyp
-- **Portfolio:** https://feryyp.github.io
+- **Portfolio:** https://daefery.github.io
 
 ## Summary
 
@@ -39,7 +39,7 @@ Available for senior engineering roles, technical consulting, and EdTech/AI prod
 - **Edbot Challenge** — Challenge platform transitioning Dawn of Civilization players to Edbot
 - **Ed The Bot** — Web portal for Solve Education's AI chatbot for English learning and job skills
 - **Plareon: Daily Hoops** — Android basketball training game with IAP and daily drills
-- **Qadha** — Android app for Muslims to rebuild salah consistency with a 30-day guided reset journey, prayer tracker, Islamic audio library, and daily reflection system. Free. [Landing page](https://feryyp.github.io/products/qadha/) · [Google Play](https://play.google.com/store/apps/details?id=com.qadha.islam)
+- **Qadha** — Android app for Muslims to rebuild salah consistency with a 30-day guided reset journey, prayer tracker, Islamic audio library, and daily reflection system. Free. [Landing page](https://daefery.github.io/products/qadha/) · [Google Play](https://play.google.com/store/apps/details?id=com.qadha.islam)
 - **Solve Employment** — Job platform for EdTech graduates across Southeast Asia
 - **Solve Education! Profile** — Company profile for social enterprise using AI to democratise learning
 - **Solve for Change** — Microgrant program site supporting youth-led projects across Southeast Asia

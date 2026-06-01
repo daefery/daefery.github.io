@@ -12,9 +12,9 @@ export const metadata = {
     title: 'Works — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Portfolio of web apps, mobile products, and UX designs built across EdTech, enterprise, and government sectors.',
-    url: 'https://feryyp.github.io/works',
+    url: 'https://daefery.github.io/works',
   },
-  alternates: { canonical: 'https://feryyp.github.io/works' },
+  alternates: { canonical: 'https://daefery.github.io/works' },
 }
 
 export default function WorksPage() {

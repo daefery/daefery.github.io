@@ -10,9 +10,9 @@ export const metadata = {
     title: 'Resume — Fery Yundara Putera | Senior Software Engineer',
     description:
       '12+ years of full-stack engineering across EdTech, enterprise, and government sectors.',
-    url: 'https://feryyp.github.io/resume',
+    url: 'https://daefery.github.io/resume',
   },
-  alternates: { canonical: 'https://feryyp.github.io/resume' },
+  alternates: { canonical: 'https://daefery.github.io/resume' },
 }
 
 export default function ResumePage() {
