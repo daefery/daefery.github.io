@@ -12,9 +12,9 @@ export const metadata = {
     title: 'Works — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Portfolio of web apps, mobile products, and UX designs built across EdTech, enterprise, and government sectors.',
-    url: 'https://daefery.github.io/feryyp/works',
+    url: 'https://daefery.github.io/works',
   },
-  alternates: { canonical: 'https://daefery.github.io/feryyp/works' },
+  alternates: { canonical: 'https://daefery.github.io/works' },
 }
 
 export default function WorksPage() {
@@ -26,6 +26,13 @@ export default function WorksPage() {
           <div className="logo-text">
             <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>FYP.</Link>
           </div>
+          <Link
+            href="/products"
+            className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
+            style={{ fontSize: 12, letterSpacing: 1 }}
+          >
+            Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
+          </Link>
         </header>
         {/* END HEADER */}
 

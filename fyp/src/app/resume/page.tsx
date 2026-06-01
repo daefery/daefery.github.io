@@ -10,9 +10,9 @@ export const metadata = {
     title: 'Resume — Fery Yundara Putera | Senior Software Engineer',
     description:
       '12+ years of full-stack engineering across EdTech, enterprise, and government sectors.',
-    url: 'https://daefery.github.io/feryyp/resume',
+    url: 'https://daefery.github.io/resume',
   },
-  alternates: { canonical: 'https://daefery.github.io/feryyp/resume' },
+  alternates: { canonical: 'https://daefery.github.io/resume' },
 }
 
 export default function ResumePage() {
@@ -23,6 +23,13 @@ export default function ResumePage() {
         <div className="logo-text">
           <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>FYP.</Link>
         </div>
+        <Link
+          href="/products"
+          className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
+          style={{ fontSize: 12, letterSpacing: 1 }}
+        >
+          Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
+        </Link>
       </header>
       {/* END HEADER */}
 

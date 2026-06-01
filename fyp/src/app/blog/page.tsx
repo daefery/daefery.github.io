@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 import PageFooter from '@/components/PageFooter'
 
@@ -68,7 +69,16 @@ export default function BlogPage() {
     <div className="blog-page">
       <div className="container bento-container">
         <header className="d-flex justify-content-between align-items-center mb-5 animate__animated animate__fadeInDown">
-          <div className="logo-text">FYP.</div>
+          <div className="logo-text">
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>FYP.</Link>
+          </div>
+          <Link
+            href="/products"
+            className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
+            style={{ fontSize: 12, letterSpacing: 1 }}
+          >
+            Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
+          </Link>
         </header>
 
         <div className="bento-card card-hero wow animate__fadeInDown">

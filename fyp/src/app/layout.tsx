@@ -6,7 +6,7 @@ import BootstrapClient from '@/components/BootstrapClient'
 import Preloader from '@/components/Preloader'
 import BASE_PATH from '@/lib/basePath'
 
-const SITE_URL = 'https://daefery.github.io/feryyp'
+const SITE_URL = 'https://daefery.github.io'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

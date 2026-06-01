@@ -10,9 +10,9 @@ export const metadata = {
     title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
-    url: 'https://daefery.github.io/feryyp',
+    url: 'https://daefery.github.io',
   },
-  alternates: { canonical: 'https://daefery.github.io/feryyp' },
+  alternates: { canonical: 'https://daefery.github.io' },
 }
 
 const logos = [
@@ -38,6 +38,13 @@ export default function Home() {
       {/* START HEADER */}
       <header className="d-flex justify-content-between align-items-center mb-5 animate__animated animate__fadeInDown">
         <div className="logo-text">FYP.</div>
+        <Link
+          href="/products"
+          className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
+          style={{ fontSize: 12, letterSpacing: 1 }}
+        >
+          Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
+        </Link>
       </header>
       {/* END HEADER */}
 

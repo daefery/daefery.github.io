@@ -1,2 +1,2 @@
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/feryyp' : ''
+const BASE_PATH = ''
 export default BASE_PATH

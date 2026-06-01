@@ -4562,3 +4562,278 @@ textarea.vx-input {
   from { width: 0% }
   to   { width: 100% }
 }
+
+/* ==========================================================================
+   PRODUCTS PAGE STYLES (Spotlight cards)
+   ========================================================================== */
+
+.product-section-name {
+  font-size: clamp(28px, 4vw, 64px);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.product-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.product-cat-pill .pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.product-section-desc {
+  font-size: 15px;
+  color: var(--velixo-text-muted);
+  line-height: 1.7;
+}
+
+.product-section-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--velixo-text-muted);
+  border: 1px solid var(--velixo-border);
+  transition: var(--velixo-transition);
+}
+
+.product-section-tag:hover {
+  border-color: var(--velixo-primary);
+  color: var(--velixo-primary);
+}
+
+/* Spotlight card — split layout: left content, right collage */
+.spotlight-card {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 520px;
+  transition: var(--velixo-transition);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 48px 100px -24px rgba(0, 0, 0, 0.4);
+}
+
+.spotlight-card:hover .spotlight-arrow {
+  transform: rotate(45deg) scale(1.1);
+  color: #fff;
+}
+
+/* Left panel */
+.spotlight-left {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-bg-text {
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 1;
+  opacity: 0.06;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: -6px;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-card:hover .spotlight-bg-text {
+  transform: scale(1.04) translateX(4px);
+}
+
+.spotlight-metrics {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.spotlight-metric-val {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: "Archivo", sans-serif;
+}
+
+.spotlight-metric-lbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.spotlight-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  transition: var(--velixo-transition);
+  align-self: flex-end;
+}
+
+/* Right panel — image collage */
+.spotlight-collage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Fan layout for multiple screenshots */
+.spotlight-collage .collage-img {
+  position: absolute;
+  height: 85%;
+  width: auto;
+  max-width: 55%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-collage .collage-img:nth-child(1) {
+  transform: rotate(-8deg) translateX(-30px) translateY(8px);
+  z-index: 1;
+  opacity: 0.75;
+}
+
+.spotlight-collage .collage-img:nth-child(2) {
+  transform: rotate(0deg);
+  z-index: 3;
+}
+
+.spotlight-collage .collage-img:nth-child(3) {
+  transform: rotate(7deg) translateX(30px) translateY(8px);
+  z-index: 1;
+  opacity: 0.75;
+}
+
+/* Single image — fill full panel */
+.spotlight-collage.collage-single .collage-img {
+  position: static;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  transform: none !important;
+  opacity: 1 !important;
+  object-fit: cover;
+}
+
+/* Hover: fan opens slightly */
+.spotlight-card:hover .collage-img:nth-child(1) {
+  transform: rotate(-12deg) translateX(-50px) translateY(4px);
+}
+
+.spotlight-card:hover .collage-img:nth-child(3) {
+  transform: rotate(11deg) translateX(50px) translateY(4px);
+}
+
+.spotlight-card:hover .collage-img:nth-child(2) {
+  transform: scale(1.03);
+}
+
+/* Spotlight card responsive — stack at bento mobile breakpoint */
+@media (max-width: 767px) {
+  .spotlight-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 280px; /* info auto, collage fixed height */
+  }
+  .spotlight-left {
+    padding: 24px;
+    gap: 16px;
+    justify-content: flex-start; /* no space-between: just stack naturally */
+  }
+  .spotlight-collage {
+    height: 280px; /* explicit — images use % of this */
+    padding: 20px;
+  }
+  .spotlight-metrics { gap: 16px; flex-wrap: wrap; }
+  .spotlight-metric-val { font-size: 22px; }
+  .product-section-desc { font-size: 13px; }
+  .product-section-tags { gap: 6px; }
+  .product-section-tag { font-size: 9px; padding: 4px 8px; }
+}
+
+@media (max-width: 480px) {
+  .spotlight-card {
+    grid-template-rows: auto 220px;
+  }
+  .spotlight-collage { height: 220px; }
+  /* Single center screenshot only */
+  .spotlight-collage .collage-img:nth-child(1),
+  .spotlight-collage .collage-img:nth-child(3) { display: none; }
+  .spotlight-collage .collage-img:nth-child(2) {
+    position: static;
+    height: 100%;
+    max-width: 75%;
+    border-radius: 16px;
+    transform: none !important;
+    opacity: 1 !important;
+    object-fit: contain;
+  }
+}
+
+/* Products page: hero card layout + mobile fixes */
+.products-page .card-hero {
+  grid-column: span 12 !important;
+  grid-row: auto !important;
+}
+
+@media (max-width: 767px) {
+  .products-page .card-hero {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page .card-hero {
+    padding: 24px;
+  }
+}

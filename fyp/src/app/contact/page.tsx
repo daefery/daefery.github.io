@@ -9,9 +9,9 @@ export const metadata = {
     title: 'Contact — Fery Yundara Putera | Senior Software Engineer',
     description:
       'Get in touch for software engineering, EdTech, and AI-first product collaboration.',
-    url: 'https://daefery.github.io/feryyp/contact',
+    url: 'https://daefery.github.io/contact',
   },
-  alternates: { canonical: 'https://daefery.github.io/feryyp/contact' },
+  alternates: { canonical: 'https://daefery.github.io/contact' },
 }
 
 export default function ContactPage() {
@@ -24,6 +24,13 @@ export default function ContactPage() {
           <div className="logo-text">
             <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>FYP.</Link>
           </div>
+          <Link
+            href="/products"
+            className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
+            style={{ fontSize: 12, letterSpacing: 1 }}
+          >
+            Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
+          </Link>
         </header>
         {/* END HEADER */}
 
