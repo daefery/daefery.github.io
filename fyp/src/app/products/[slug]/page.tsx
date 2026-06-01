@@ -80,7 +80,9 @@ const products: Record<string, {
 }
 
 export function generateStaticParams() {
-  return Object.keys(products).map((slug) => ({ slug }))
+  return Object.keys(products)
+    .filter((slug) => slug !== 'qadha')
+    .map((slug) => ({ slug }))
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
