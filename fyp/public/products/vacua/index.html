@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vacua: Mac Junk Cleaner</title>
+<meta name="description" content="Vacua clears junk files, duplicates, and hidden caches from your Mac. One-time $12. No subscription, no App Store.">
+<meta property="og:title" content="Vacua: Mac Junk Cleaner">
+<meta property="og:description" content="Clean your Mac once, own it forever. $12 one-time, direct DMG.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daefery.github.io/products/vacua/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vacua: Mac Junk Cleaner">
+<meta name="twitter:description" content="Scans junk, duplicates, privacy leaks, and system health. Pay $12 once, yours forever.">
+<link rel="canonical" href="https://daefery.github.io/products/vacua/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vacua","operatingSystem":"macOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"12","priceCurrency":"USD"},"description":"Mac junk cleaner with 9 scan categories. One-time purchase, no subscription."}</script>
+<link rel="icon" href="vacua-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="vacua-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────── */
+:root {
+  --bg:    #07070F;
+  --bg1:   #0D0B1A;
+  --bg2:   #141228;
+  --sur:   #1A1730;
+  --surhi: #221F3A;
+  --acc:   #7B6FDB;
+  --accl:  #A89FFF;
+  --accx:  #C4BEFF;
+  --glow:  rgba(123,111,219,.28);
+  --grn:   #1DD27A;
+  --grng:  rgba(29,210,122,.18);
+  --warn:  #F59E0B;
+  --txt:   #EDE9FF;
+  --txtm:  #8480A8;
+  --txtx:  #4E4B68;
+  --bdr:   rgba(139,128,255,.1);
+  --glass: rgba(13,11,26,.72);
+  --es:    cubic-bezier(.23,1,.32,1);
+  --esp:   cubic-bezier(.175,.885,.32,1.275);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+
+/* ─── REVEAL ─────────────────────────── */
+.reveal{opacity:0;transform:translateY(44px);transition:opacity 700ms var(--es),transform 700ms var(--es)}
+.reveal.left{transform:translateX(-44px)}
+.reveal.right{transform:translateX(44px)}
+.reveal.sc{transform:scale(.93)}
+.reveal.vis{opacity:1;transform:none}
+.stagger .reveal:nth-child(1){transition-delay:0ms}
+.stagger .reveal:nth-child(2){transition-delay:80ms}
+.stagger .reveal:nth-child(3){transition-delay:160ms}
+.stagger .reveal:nth-child(4){transition-delay:240ms}
+.stagger .reveal:nth-child(5){transition-delay:320ms}
+.stagger .reveal:nth-child(6){transition-delay:400ms}
+
+/* ─── ANIMATIONS ─────────────────────── */
+@keyframes blob-a{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-80px) scale(1.1)}66%{transform:translate(-40px,60px) scale(.9)}}
+@keyframes blob-b{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(-70px,50px) scale(1.08)}80%{transform:translate(50px,-40px) scale(.95)}}
+@keyframes spin-ring{to{stroke-dashoffset:0}}
+@keyframes float-up{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes word-up{to{transform:translateY(0)}}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ─── NAV ────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:background 300ms var(--es),backdrop-filter 300ms,box-shadow 300ms}
+nav.on{background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--bdr)}
+.n-logo{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--txt)}
+.n-logo img{width:28px;height:28px;border-radius:8px}
+.n-links{display:flex;align-items:center;gap:28px}
+.n-link{font-size:.82rem;color:var(--txtm);transition:color 200ms;cursor:pointer}
+.n-link:hover{color:var(--accl)}
+.n-dl{display:inline-flex;align-items:center;gap:8px;padding:9px 22px;background:var(--acc);color:#fff;border-radius:9999px;font-size:.8rem;font-weight:600;cursor:pointer;transition:transform 250ms var(--esp),box-shadow 250ms var(--es),background 200ms}
+.n-dl:hover{background:var(--accl);transform:translateY(-2px);box-shadow:0 8px 28px var(--glow)}
+.n-dl:active{transform:translateY(0)}
+
+/* ─── BLOBS ──────────────────────────── */
+.blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);z-index:0}
+.blob-1{width:600px;height:600px;top:-150px;left:-100px;background:radial-gradient(ellipse, rgba(90,75,180,.35) 0%, transparent 70%);animation:blob-a 18s ease-in-out infinite}
+.blob-2{width:500px;height:500px;top:100px;right:-100px;background:radial-gradient(ellipse, rgba(60,40,140,.28) 0%, transparent 70%);animation:blob-b 22s ease-in-out infinite}
+.blob-3{width:400px;height:400px;bottom:0;left:30%;background:radial-gradient(ellipse, rgba(29,210,122,.08) 0%, transparent 70%);animation:blob-a 26s ease-in-out infinite 6s}
+
+/* ─── HERO ───────────────────────────── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 48px 60px;text-align:center;position:relative;overflow:hidden}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(123,111,219,.12);border:1px solid rgba(123,111,219,.25);border-radius:9999px;padding:6px 16px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accl);margin-bottom:28px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--grn);animation:pulse-dot 2s ease-in-out infinite}
+.hero-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-.03em;margin-bottom:22px;position:relative;z-index:1}
+.hero-h .word{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.18em;margin-bottom:-.18em}
+.hero-h .word-in{display:inline-block;transform:translateY(110%);animation:word-up 700ms var(--es) forwards}
+.hero-h .word:nth-child(1) .word-in{animation-delay:80ms}
+.hero-h .word:nth-child(2) .word-in{animation-delay:160ms}
+.hero-h .word:nth-child(3) .word-in{animation-delay:240ms}
+.hero-h .word:nth-child(4) .word-in{animation-delay:320ms}
+.hero-h .word:nth-child(5) .word-in{animation-delay:400ms}
+.hero-h .word:nth-child(6) .word-in{animation-delay:480ms}
+.hero-h .purple{color:var(--accl)}
+.hero-sub{font-size:1.05rem;color:var(--txtm);font-weight:400;line-height:1.8;max-width:540px;margin:0 auto 44px;position:relative;z-index:1}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:72px}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;background:var(--acc);color:#fff;border-radius:9999px;font-size:.9rem;font-weight:600;cursor:pointer;transition:transform 300ms var(--esp),box-shadow 300ms var(--es),background 200ms}
+.btn-p:hover{background:var(--accl);transform:translateY(-3px);box-shadow:0 16px 40px var(--glow)}
+.btn-p:active{transform:translateY(0)}
+.btn-g{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;background:transparent;color:var(--txt);border:1.5px solid var(--bdr);border-radius:9999px;font-size:.9rem;font-weight:500;cursor:pointer;transition:transform 300ms var(--esp),border-color 200ms,background 200ms}
+.btn-g:hover{border-color:var(--acc);background:rgba(123,111,219,.07);transform:translateY(-2px)}
+.btn-ic{width:18px;height:18px;flex-shrink:0}
+
+/* MAC WINDOW */
+.mac-window{position:relative;z-index:1;width:100%;max-width:820px;margin:0 auto;transition:transform 600ms var(--es)}
+.mac-frame{background:#141420;border-radius:14px;border:1px solid rgba(255,255,255,.08);box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 1px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden}
+.mac-titlebar{height:38px;background:#1A1A2A;display:flex;align-items:center;padding:0 16px;gap:8px;border-bottom:1px solid rgba(255,255,255,.05)}
+.mac-dot{width:12px;height:12px;border-radius:50%}
+.mac-dot.cl{background:#FF5F57}
+.mac-dot.mn{background:#FFBD2E}
+.mac-dot.mx{background:#28CA41}
+.mac-title{font-size:.72rem;color:rgba(255,255,255,.4);margin-left:auto;margin-right:auto;letter-spacing:.03em}
+.mac-body{overflow:hidden}
+.mac-body img{width:100%;display:block}
+.mac-glow{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:80%;height:40px;background:var(--acc);filter:blur(40px);opacity:.35;pointer-events:none;border-radius:50%}
+
+/* ─── STATS ──────────────────────────── */
+.stats-sec{padding:60px 48px;background:var(--bg1);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:center;gap:0}
+.stat{flex:1;max-width:220px;text-align:center;padding:20px}
+.stat+.stat{border-left:1px solid var(--bdr)}
+.stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;color:var(--accl);line-height:1;margin-bottom:6px}
+.stat-l{font-size:.82rem;color:var(--txtm);font-weight:400}
+
+/* ─── FEATURES ───────────────────────── */
+.feat-sec{padding:100px 48px;max-width:1100px;margin:0 auto}
+.sec-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+.sec-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:0}
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:96px}
+.feat-row:last-child{margin-bottom:0}
+.feat-row.rev{direction:rtl}
+.feat-row.rev>*{direction:ltr}
+.feat-info{display:flex;flex-direction:column;gap:16px}
+.feat-icon{width:52px;height:52px;border-radius:16px;background:rgba(123,111,219,.12);border:1px solid rgba(123,111,219,.2);display:flex;align-items:center;justify-content:center;color:var(--accl)}
+.feat-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);opacity:.8}
+.feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;line-height:1.2}
+.feat-desc{font-size:.95rem;color:var(--txtm);line-height:1.8;max-width:380px}
+.feat-pills{display:flex;gap:8px;flex-wrap:wrap}
+.feat-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(123,111,219,.08);border:1px solid rgba(123,111,219,.15);color:var(--accl);border-radius:9999px;padding:4px 12px;font-size:.72rem;font-weight:500}
+.feat-pill.grn{background:rgba(29,210,122,.08);border-color:rgba(29,210,122,.2);color:var(--grn)}
+.feat-img{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06);box-shadow:0 32px 80px rgba(0,0,0,.5);transition:transform 400ms var(--es),box-shadow 400ms}
+.feat-img:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 48px 100px rgba(0,0,0,.6),0 0 40px rgba(123,111,219,.12)}
+.feat-img img{width:100%;display:block}
+
+/* ─── HOW IT WORKS ───────────────────── */
+.how-sec{padding:100px 48px;background:var(--bg1);position:relative;overflow:hidden}
+.how-inner{max-width:1000px;margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+.how-card{padding:36px 28px;background:var(--sur);border-radius:20px;border:1px solid var(--bdr);position:relative;overflow:hidden;transition:transform 300ms var(--es),box-shadow 300ms}
+.how-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px rgba(123,111,219,.15)}
+.how-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:4rem;font-weight:800;color:var(--acc);opacity:.15;line-height:1;margin-bottom:12px}
+.how-icon{width:44px;height:44px;border-radius:12px;background:rgba(123,111,219,.12);display:flex;align-items:center;justify-content:center;color:var(--accl);margin-bottom:16px}
+.how-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:10px}
+.how-p{font-size:.88rem;color:var(--txtm);line-height:1.75}
+.how-card-glow{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:var(--acc);filter:blur(50px);opacity:.06;pointer-events:none}
+
+/* ─── CTA / PRICING ──────────────────── */
+.cta-sec{padding:120px 48px 100px;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
+.cta-glow-a{position:absolute;top:40%;left:20%;transform:translate(-50%,-50%);width:600px;height:500px;background:radial-gradient(ellipse,rgba(123,111,219,.14) 0%,transparent 65%);pointer-events:none}
+.cta-glow-b{position:absolute;top:60%;right:10%;transform:translate(50%,-50%);width:400px;height:400px;background:radial-gradient(ellipse,rgba(29,210,122,.08) 0%,transparent 65%);pointer-events:none}
+
+.cta-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(123,111,219,.1);border:1px solid rgba(123,111,219,.2);color:var(--accl);border-radius:9999px;padding:6px 16px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px;position:relative;z-index:1}
+.cta-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.0;letter-spacing:-.025em;margin-bottom:12px;position:relative;z-index:1}
+.cta-h em{font-style:italic;color:var(--accl)}
+.cta-sub{font-size:1rem;color:var(--txtm);margin-bottom:56px;position:relative;z-index:1;font-weight:300}
+
+/* Two-column pricing cards */
+.pricing-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:860px;margin:0 auto;position:relative;z-index:1}
+
+/* Free card */
+.pc{border-radius:24px;padding:36px;text-align:left;position:relative;overflow:hidden;transition:transform 300ms var(--es),box-shadow 300ms}
+.pc:hover{transform:translateY(-5px)}
+.pc-free{background:var(--sur);border:1px solid var(--bdr)}
+.pc-free:hover{box-shadow:0 24px 60px rgba(0,0,0,.4)}
+
+/* Pro card — animated gradient border */
+@keyframes grad-rot{to{transform:rotate(360deg)}}
+.pc-pro{background:var(--bg2);border:none}
+.pc-pro::before{content:'';position:absolute;inset:-1px;border-radius:25px;z-index:0;background:conic-gradient(from 0deg,var(--acc),var(--accl),var(--grn),var(--acc));animation:grad-rot 4s linear infinite;opacity:.6}
+.pc-pro::after{content:'';position:absolute;inset:1px;border-radius:23px;background:var(--bg2);z-index:0}
+.pc-pro-inner{position:relative;z-index:1;height:100%}
+.pc-pro:hover{box-shadow:0 32px 80px rgba(123,111,219,.2)}
+
+/* Badge */
+.pc-badge{position:absolute;top:20px;right:20px;z-index:2;background:linear-gradient(135deg,var(--acc),var(--accd, #5E54C8));color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:9999px;box-shadow:0 4px 16px var(--glow)}
+
+/* Card top */
+.pc-tier{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txtm);margin-bottom:16px}
+.pc-tier.hi{color:var(--accl)}
+.pc-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.pc-price-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:3.4rem;font-weight:800;line-height:1;color:var(--txt)}
+.pc-price-n.muted{color:var(--txtm);font-size:2.4rem}
+.pc-price-cycle{font-size:.82rem;color:var(--txtm)}
+.pc-price-note{font-size:.76rem;color:var(--txtm);margin-bottom:28px}
+.pc-price-note.grn{color:var(--grn)}
+.pc-divider{width:100%;height:1px;background:var(--bdr);margin:20px 0}
+
+/* Feature list */
+.pc-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.pc-list li{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;line-height:1.5}
+.pc-list li .ic-wrap{width:18px;height:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.pc-list li.active{color:var(--txt)}
+.pc-list li.inactive{color:var(--txtx)}
+.pc-list .grn-ic{color:var(--grn)}
+.pc-list .dim-ic{color:var(--txtx)}
+
+/* Buttons */
+.pc-btn{width:100%;padding:15px;border-radius:13px;font-size:.92rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform 250ms var(--esp),box-shadow 250ms,background 200ms,border-color 200ms}
+.pc-btn-ghost{background:transparent;color:var(--txtm);border:1.5px solid var(--bdr)}
+.pc-btn-ghost:hover{border-color:var(--acc);color:var(--txt);transform:translateY(-2px)}
+.pc-btn-solid{background:linear-gradient(135deg,var(--acc),#5E54C8);color:#fff;border:none;box-shadow:0 6px 24px var(--glow)}
+.pc-btn-solid:hover{transform:translateY(-3px);box-shadow:0 14px 40px var(--glow)}
+.pc-btn-solid:active{transform:translateY(0)}
+
+/* Trust signals */
+.trust-row{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:36px;position:relative;z-index:1}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:.76rem;color:var(--txtm)}
+.trust-item svg{color:var(--grn);flex-shrink:0}
+
+/* ─── FOOTER ─────────────────────────── */
+footer{padding:28px 48px;border-top:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+footer p{font-size:.74rem;color:var(--txtx)}
+.foot-links{display:flex;gap:20px}
+.foot-link{font-size:.74rem;color:var(--txtx);transition:color 200ms;cursor:pointer}
+.foot-link:hover{color:var(--accl)}
+
+/* ─── TOP BTN ────────────────────────── */
+#topbtn{position:fixed;bottom:80px;right:32px;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px var(--glow);cursor:pointer;border:none;opacity:0;transform:translateY(16px) scale(.85);transition:opacity 280ms var(--es),transform 280ms var(--esp),background 200ms;pointer-events:none}
+#topbtn.on{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+#topbtn:hover{background:var(--accl);transform:translateY(-3px) scale(1.06)}
+
+/* ─── RESPONSIVE ─────────────────────── */
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .hero{padding:100px 24px 50px}
+  .feat-sec{padding:60px 24px}
+  .feat-row{grid-template-columns:1fr;gap:32px}
+  .feat-row.rev{direction:ltr}
+  .how-sec{padding:60px 24px}
+  .how-grid{grid-template-columns:1fr}
+  .cta-sec{padding:80px 24px}
+  .stats-sec{padding:40px 24px}
+  .stats-inner{flex-wrap:wrap}
+  footer{padding:20px 24px;flex-direction:column;gap:12px;text-align:center}
+}
+@media(max-width:700px){
+  .pricing-cols{grid-template-columns:1fr}
+  .trust-row{gap:16px}
+}
+@media(max-width:600px){
+  .n-links .n-link{display:none}
+  .feat-row{gap:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ICONS -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<defs>
+<symbol id="ic-dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+<symbol id="ic-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="ic-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+<symbol id="ic-disk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="ic-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></symbol>
+<symbol id="ic-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></symbol>
+<symbol id="ic-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+<symbol id="ic-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+<symbol id="ic-apple" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></symbol>
+</defs>
+</svg>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="Main">
+  <a href="#" class="n-logo" aria-label="Vacua home">
+    <img src="vacua-logo.png" alt="Vacua logo">
+    Vacua
+  </a>
+  <div class="n-links">
+    <a href="#features" class="n-link">Features</a>
+    <a href="#how" class="n-link">How it works</a>
+    <a href="#pricing" class="n-link">Pricing</a>
+    <a href="Vacua-1.0.dmg" download class="n-dl" aria-label="Download Vacua free trial">
+      <svg class="btn-ic" aria-hidden="true"><use href="#ic-dl"/></svg>
+      Download
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-label="Introduction">
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+
+  <div class="hero-tag">
+    <span class="hero-dot" aria-hidden="true"></span>
+    macOS · Universal · Apple Silicon + Intel
+  </div>
+
+  <h1 class="hero-h" aria-label="Clean your Mac. Reclaim your space.">
+    <span class="word"><span class="word-in">Clean</span></span>&nbsp;
+    <span class="word"><span class="word-in">your</span></span>&nbsp;
+    <span class="word"><span class="word-in">Mac.</span></span><br>
+    <span class="word purple"><span class="word-in">Reclaim</span></span>&nbsp;
+    <span class="word purple"><span class="word-in">your space.</span></span>
+  </h1>
+
+  <p class="hero-sub">Vacua scans your Mac and clears junk files, old caches, duplicates, and hidden leftovers. You pick what goes. Nothing gets deleted without your say.</p>
+
+  <div class="hero-btns">
+    <a href="Vacua-1.0.dmg" download class="btn-p mag" id="magBtn1" aria-label="Download Vacua">
+      <svg class="btn-ic" aria-hidden="true"><use href="#ic-dl"/></svg>
+      Download Free Trial
+    </a>
+    <a href="#features" class="btn-g mag" id="magBtn2" aria-label="See features">
+      See Features
+      <svg class="btn-ic" aria-hidden="true"><use href="#ic-arr"/></svg>
+    </a>
+  </div>
+
+  <div class="mac-window reveal sc">
+    <div class="mac-glow" aria-hidden="true"></div>
+    <div class="mac-frame" id="tiltFrame">
+      <div class="mac-titlebar">
+        <span class="mac-dot cl" aria-hidden="true"></span>
+        <span class="mac-dot mn" aria-hidden="true"></span>
+        <span class="mac-dot mx" aria-hidden="true"></span>
+        <span class="mac-title">Vacua</span>
+      </div>
+      <div class="mac-body">
+        <img src="screenshots/home.webp" alt="Vacua home screen showing 26GB reclaimable" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-sec" aria-label="Key stats">
+  <div class="stats-inner stagger">
+    <div class="stat reveal">
+      <div class="stat-n"><span data-count="9">0</span></div>
+      <div class="stat-l">Scan categories</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-n">$<span data-count="12">0</span></div>
+      <div class="stat-l">Pay once, own it</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-n"><span data-count="2">0</span>x</div>
+      <div class="stat-l">Intel + Apple Silicon</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="feat-sec" id="features" aria-labelledby="feat-h">
+
+  <div style="margin-bottom:64px;max-width:520px">
+    <p class="sec-label reveal">What Vacua does</p>
+    <h2 class="sec-h reveal" id="feat-h">Nine tools.<br>One clean Mac.</h2>
+  </div>
+
+  <!-- Junk Files -->
+  <div class="feat-row">
+    <div class="feat-info reveal left">
+      <div class="feat-icon" aria-hidden="true"><svg width="24" height="24"><use href="#ic-trash"/></svg></div>
+      <div class="feat-tag">01 / Junk Files</div>
+      <h3 class="feat-title">Scans deep. Labels everything.</h3>
+      <p class="feat-desc">Picks up caches, browser junk, crash reports, dev leftovers, node_modules, and old downloads. Every item gets a Safe or Moderate label so you know what's actually worth deleting.</p>
+      <div class="feat-pills">
+        <span class="feat-pill grn">Safe tier</span>
+        <span class="feat-pill grn">Moderate tier</span>
+        <span class="feat-pill">Confirm dialog</span>
+      </div>
+    </div>
+    <div class="feat-img reveal right">
+      <img src="screenshots/junk-files.webp" alt="Junk Files screen showing categorized items" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Privacy Audit -->
+  <div class="feat-row rev">
+    <div class="feat-info reveal right">
+      <div class="feat-icon" aria-hidden="true"><svg width="24" height="24"><use href="#ic-shield"/></svg></div>
+      <div class="feat-tag">02 / Privacy Audit</div>
+      <h3 class="feat-title">See exactly who can access what.</h3>
+      <p class="feat-desc">Shows every app that has camera, mic, or other sensitive permissions on your Mac. Everything stays on your device, nothing is sent anywhere.</p>
+      <div class="feat-pills">
+        <span class="feat-pill grn">On-device only</span>
+        <span class="feat-pill">Camera &amp; mic access</span>
+        <span class="feat-pill">Permission manager</span>
+      </div>
+    </div>
+    <div class="feat-img reveal left">
+      <img src="screenshots/privacy-audit.webp" alt="Privacy Audit screen showing app permissions" loading="lazy">
+    </div>
+  </div>
+
+  <!-- System Health -->
+  <div class="feat-row">
+    <div class="feat-info reveal left">
+      <div class="feat-icon" aria-hidden="true"><svg width="24" height="24"><use href="#ic-cpu"/></svg></div>
+      <div class="feat-tag">03 / System Health</div>
+      <h3 class="feat-title">CPU, RAM, disk. All in one place.</h3>
+      <p class="feat-desc">Live CPU temp, memory pressure, disk health, uptime, and startup items. See what your Mac is actually doing, not just a spinning wheel.</p>
+      <div class="feat-pills">
+        <span class="feat-pill">CPU status</span>
+        <span class="feat-pill">Memory pressure</span>
+        <span class="feat-pill grn">Disk smart</span>
+        <span class="feat-pill">Boot time</span>
+      </div>
+    </div>
+    <div class="feat-img reveal right">
+      <img src="screenshots/system-health.webp" alt="System Health screen showing CPU and memory" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Duplicates -->
+  <div class="feat-row rev">
+    <div class="feat-info reveal right">
+      <div class="feat-icon" aria-hidden="true"><svg width="24" height="24"><use href="#ic-copy"/></svg></div>
+      <div class="feat-tag">04 / Duplicates</div>
+      <h3 class="feat-title">Find every copy you forgot about.</h3>
+      <p class="feat-desc">Compares file content, not just names. Catches identical photos, docs, and downloads that ended up in multiple folders over time.</p>
+      <div class="feat-pills">
+        <span class="feat-pill">Content comparison</span>
+        <span class="feat-pill grn">Keep originals safe</span>
+      </div>
+    </div>
+    <div class="feat-img reveal left">
+      <img src="screenshots/duplicates.webp" alt="Duplicates finder screen" loading="lazy">
+    </div>
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec" id="how" aria-labelledby="how-h">
+  <div class="how-inner">
+    <div style="text-align:center;max-width:520px;margin:0 auto 0">
+      <p class="sec-label reveal">Simple workflow</p>
+      <h2 class="sec-h reveal" id="how-h">Three steps to a cleaner Mac.</h2>
+    </div>
+    <div class="how-grid stagger">
+      <div class="how-card reveal">
+        <div class="how-card-glow" aria-hidden="true"></div>
+        <div class="how-num" aria-hidden="true">01</div>
+        <div class="how-icon" aria-hidden="true"><svg width="22" height="22"><use href="#ic-scan"/></svg></div>
+        <div class="how-h">Scan on launch</div>
+        <p class="how-p">Open Vacua and it starts scanning right away. All categories run at the same time, so you get results in seconds.</p>
+      </div>
+      <div class="how-card reveal">
+        <div class="how-card-glow" aria-hidden="true"></div>
+        <div class="how-num" aria-hidden="true">02</div>
+        <div class="how-icon" aria-hidden="true"><svg width="22" height="22"><use href="#ic-check"/></svg></div>
+        <div class="how-h">Review &amp; select</div>
+        <p class="how-p">Each item is labeled Safe or Moderate. Pick what you want gone, or grab them all. Nothing gets deleted until you hit confirm.</p>
+      </div>
+      <div class="how-card reveal">
+        <div class="how-card-glow" aria-hidden="true"></div>
+        <div class="how-num" aria-hidden="true">03</div>
+        <div class="how-icon" aria-hidden="true"><svg width="22" height="22"><use href="#ic-bolt"/></svg></div>
+        <div class="how-h">Clean &amp; done</div>
+        <p class="how-p">Hit Clean Selected. If system files are in the list, macOS asks for your password once. That's it. Space freed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / PRICING -->
+<section class="cta-sec" id="pricing" aria-label="Download and pricing">
+  <div class="cta-glow-a" aria-hidden="true"></div>
+  <div class="cta-glow-b" aria-hidden="true"></div>
+
+  <div class="cta-eyebrow reveal">
+    <svg width="12" height="12" aria-hidden="true"><use href="#ic-check"/></svg>
+    One-time · No subscription
+  </div>
+
+  <h2 class="cta-h reveal">Own it. Forever.<br><em>No renewal.</em></h2>
+  <p class="cta-sub reveal">Try it free for 3 days. If you like it, pay $12 once and it's yours forever.</p>
+
+  <div class="pricing-cols">
+
+    <!-- Free Trial -->
+    <div class="pc pc-free reveal">
+      <div class="pc-tier">Free Trial</div>
+      <div class="pc-price-row">
+        <span class="pc-price-n muted">$0</span>
+      </div>
+      <p class="pc-price-note">3-day full access. No card needed.</p>
+      <div class="pc-divider"></div>
+      <ul class="pc-list">
+        <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>All 9 scan categories</li>
+        <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>Safe and Moderate labels on items</li>
+        <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>Native macOS app, no terminal needed</li>
+        <li class="inactive"><span class="ic-wrap dim-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-minus"/></svg></span>Menu bar + auto-scan schedule</li>
+        <li class="inactive"><span class="ic-wrap dim-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-minus"/></svg></span>Unlimited scans after trial</li>
+      </ul>
+      <a href="Vacua-1.0.dmg" download class="pc-btn pc-btn-ghost mag" aria-label="Download free trial">
+        <svg width="16" height="16" aria-hidden="true"><use href="#ic-dl"/></svg>
+        Download Free
+      </a>
+    </div>
+
+    <!-- Pro — animated gradient border -->
+    <div class="pc pc-pro reveal">
+      <span class="pc-badge">Most Popular</span>
+      <div class="pc-pro-inner">
+        <div class="pc-tier hi">Vacua Pro</div>
+        <div class="pc-price-row">
+          <span class="pc-price-n">$12</span>
+          <span class="pc-price-cycle">one-time</span>
+        </div>
+        <p class="pc-price-note grn">No subscription. Yours forever.</p>
+        <div class="pc-divider"></div>
+        <ul class="pc-list">
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>All 9 categories: junk, privacy, health and more</li>
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>Menu bar mode with auto-scan schedule</li>
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>Safe and Moderate labels so nothing is a guessing game</li>
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>One system password prompt, no terminal</li>
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>No App Store, no account. Just a DMG file.</li>
+          <li class="active"><span class="ic-wrap grn-ic"><svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg></span>All future updates included</li>
+        </ul>
+        <a href="#" class="pc-btn pc-btn-solid mag" aria-label="Buy Vacua Pro — $12 one-time">
+          <svg width="16" height="16" aria-hidden="true"><use href="#ic-dl"/></svg>
+          Buy Now for $12
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trust signals -->
+  <div class="trust-row reveal">
+    <div class="trust-item">
+      <svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg>
+      macOS 13+ ready
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg>
+      Apple Silicon &amp; Intel
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg>
+      No account required
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" aria-hidden="true"><use href="#ic-check"/></svg>
+      Direct DMG · No App Store
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <p>© <span id="yr"></span> Vacua. Made for Mac lovers.</p>
+  <div style="display:flex;align-items:center;gap:16px">
+    <p style="font-size:.74rem;color:var(--txtx)">Built for Mac users who hate bloat.</p>
+    <a href="https://www.instagram.com/fyp.work" target="_blank" rel="noopener" aria-label="Vacua on Instagram" style="color:var(--txtx);transition:color 200ms;display:flex;align-items:center" onmouseover="this.style.color='var(--accl)'" onmouseout="this.style.color='var(--txtx)'">
+      <svg width="18" height="18"><use href="#ic-instagram"/></svg>
+    </a>
+  </div>
+</footer>
+
+<button id="topbtn" aria-label="Back to top">
+  <svg width="18" height="18" aria-hidden="true"><use href="#ic-up"/></svg>
+</button>
+
+<script>
+(function(){
+  'use strict';
+
+  // Nav + top btn
+  const nav = document.getElementById('nav');
+  const tb = document.getElementById('topbtn');
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('on', y > 40);
+    tb.classList.toggle('on', y > 400);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  tb.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);} });
+  }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Counter
+  function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t)}
+  function countUp(el, target){
+    const start = performance.now(), dur = 1400;
+    const tick = (now) => {
+      const t = Math.min((now-start)/dur, 1);
+      el.textContent = Math.round(easeOutExpo(t)*target);
+      if(t<1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const cobs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){countUp(e.target, parseInt(e.target.dataset.count,10));cobs.unobserve(e.target);} });
+  }, {threshold:0.5});
+  document.querySelectorAll('[data-count]').forEach(el => cobs.observe(el));
+
+  // 3D tilt on mac window
+  const frame = document.getElementById('tiltFrame');
+  if(frame && window.matchMedia('(hover:hover)').matches){
+    let raf=null;
+    frame.parentElement.addEventListener('mousemove', e => {
+      const r = frame.getBoundingClientRect();
+      const dx = (e.clientX-(r.left+r.width/2))/(r.width/2);
+      const dy = (e.clientY-(r.top+r.height/2))/(r.height/2);
+      if(!raf) raf = requestAnimationFrame(()=>{
+        frame.style.transform = `perspective(1200px) rotateX(${-dy*4}deg) rotateY(${dx*5}deg)`;
+        frame.style.transition = 'transform 60ms ease';
+        raf=null;
+      });
+    });
+    frame.parentElement.addEventListener('mouseleave', () => {
+      if(raf){cancelAnimationFrame(raf);raf=null;}
+      frame.style.transform = '';
+      frame.style.transition = 'transform 600ms cubic-bezier(.23,1,.32,1)';
+    });
+  }
+
+  // Magnetic buttons
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.mag').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX-(r.left+r.width/2))*0.3;
+        const dy = (e.clientY-(r.top+r.height/2))*0.3;
+        btn.style.transform = `translate(${dx}px,${dy}px)`;
+        btn.style.transition = 'transform 100ms ease';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.transition = 'transform 500ms cubic-bezier(.175,.885,.32,1.275)';
+      });
+    });
+  }
+
+  // Parallax hero blobs
+  if(window.matchMedia('(prefers-reduced-motion:no-preference)').matches){
+    const blobs = document.querySelectorAll('.blob');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if(y < window.innerHeight){
+        blobs.forEach((b,i) => { b.style.transform += ` translateY(${y*(0.08+i*0.02)}px)`; });
+      }
+    }, {passive:true});
+  }
+
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
