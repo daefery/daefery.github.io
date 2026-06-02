@@ -82,6 +82,15 @@ export default function ContactPage() {
             </div>
             <div className="contact-channel-item">
               <div className="cci-icon">
+                <i className="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <span className="cci-label">Instagram</span>
+                <a href="https://www.instagram.com/fyp.work" className="cci-value" target="_blank" rel="noopener noreferrer">@fyp.work</a>
+              </div>
+            </div>
+            <div className="contact-channel-item">
+              <div className="cci-icon">
                 <i className="fa-solid fa-location-crosshairs"></i>
               </div>
               <div>
@@ -94,6 +103,7 @@ export default function ContactPage() {
           <div className="social-pill mt-auto pt-2">
             <a href="https://linkedin.com/in/feryyp" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/daefery" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/fyp.work" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
           </div>
         </div>
         {/* END CHANNELS SECTION */}
@@ -173,6 +183,10 @@ export default function ContactPage() {
                 <a href="https://github.com/daefery" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-ghost">
                   <i className="fa-brands fa-github"></i>
                   <span>GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/fyp.work" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-ghost">
+                  <i className="fa-brands fa-instagram"></i>
+                  <span>Instagram</span>
                 </a>
               </div>
               <p className="small opacity-30 fw-bold mt-4 mb-0 text-uppercase" style={{ letterSpacing: '1px' }}>
