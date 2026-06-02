@@ -16,8 +16,27 @@ export const metadata = {
 
 const products = [
   {
-    slug: 'qadha',
+    slug: 'vacua',
     num: '02',
+    name: 'Vacua',
+    category: 'Desktop · macOS · Utility',
+    desc: 'Mac junk cleaner with 9 scan categories. Clears caches, duplicates, privacy leaks, and system clutter. Safe and Moderate labels on every item. Pay $12 once, no subscription.',
+    tags: ['SwiftUI', 'macOS', 'Swift', 'AppKit'],
+    metrics: [
+      { val: '9', lbl: 'Scan cats' },
+      { val: '$12', lbl: 'One-time' },
+      { val: '0 Ads', lbl: 'Always' },
+    ],
+    accentColor: '#7B6FDB',
+    accentRgb: '123,111,219',
+    images: [
+      `${BASE_PATH}/assets/img/products/vacua-screen.webp`,
+      `${BASE_PATH}/assets/img/products/vacua-screen2.webp`,
+    ],
+  },
+  {
+    slug: 'qadha',
+    num: '03',
     name: 'Qadha',
     category: 'Mobile · iOS & Android · Islamic',
     desc: 'Islamic companion for Salah consistency. 30-day guided journey, prayer tracker, reflection system, and Islamic audio library. Action-driven — not just tracking. Live on Google Play.',
@@ -30,13 +49,13 @@ const products = [
     accentColor: '#9a7b4c',
     accentRgb: '154,123,76',
     images: [
-      `${BASE_PATH}/assets/img/products/qadha-screen.png`,
-      `${BASE_PATH}/assets/img/products/qadha-screen2.png`,
+      `${BASE_PATH}/assets/img/products/qadha-screen.webp`,
+      `${BASE_PATH}/assets/img/products/qadha-screen2.webp`,
     ],
   },
   {
     slug: 'plareon',
-    num: '03',
+    num: '04',
     name: 'Plareon',
     category: 'Mobile · iOS & Android · Sports',
     desc: 'Basketball training companion with daily plans, guided drill sessions with audio, XP/streak progress tracking, and achievement system. Supports 6 player archetypes and Elite subscription.',
@@ -49,14 +68,14 @@ const products = [
     accentColor: '#f97316',
     accentRgb: '249,115,22',
     images: [
-      `${BASE_PATH}/assets/img/products/plareon-screen.png`,
-      `${BASE_PATH}/assets/img/products/plareon-drills.png`,
-      `${BASE_PATH}/assets/img/products/plareon-welcome.png`,
+      `${BASE_PATH}/assets/img/products/plareon-screen.webp`,
+      `${BASE_PATH}/assets/img/products/plareon-drills.webp`,
+      `${BASE_PATH}/assets/img/products/plareon-welcome.webp`,
     ],
   },
   {
     slug: 'zokuu',
-    num: '04',
+    num: '05',
     name: 'Zokuu',
     category: 'Mobile · Android · Utility',
     desc: 'Offline-first Android alarm app with spoken (TTS) and custom-sound alarms. No account, no network, no ads — all data lives on-device. Built with Expo + a native Kotlin module for rock-solid background firing.',
@@ -69,9 +88,9 @@ const products = [
     accentColor: '#06b6d4',
     accentRgb: '6,182,212',
     images: [
-      `${BASE_PATH}/assets/img/products/zokuu-screen.png`,
-      `${BASE_PATH}/assets/img/products/zokuu-screen2.png`,
-      `${BASE_PATH}/assets/img/products/zokuu-screen3.png`,
+      `${BASE_PATH}/assets/img/products/zokuu-screen.webp`,
+      `${BASE_PATH}/assets/img/products/zokuu-screen2.webp`,
+      `${BASE_PATH}/assets/img/products/zokuu-screen3.webp`,
     ],
   },
 ]

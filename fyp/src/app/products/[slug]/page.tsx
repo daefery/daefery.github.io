@@ -32,7 +32,7 @@ const products: Record<string, {
       { label: 'Payments', value: 'None' },
     ],
     images: [
-      `${BASE_PATH}/assets/img/products/zokuu-screen.png`,
+      `${BASE_PATH}/assets/img/products/zokuu-screen.webp`,
     ],
   },
   plareon: {
@@ -51,9 +51,9 @@ const products: Record<string, {
       { label: 'Auth', value: 'Guest-first' },
     ],
     images: [
-      `${BASE_PATH}/assets/img/products/plareon-screen.png`,
-      `${BASE_PATH}/assets/img/products/plareon-drills.png`,
-      `${BASE_PATH}/assets/img/products/plareon-welcome.png`,
+      `${BASE_PATH}/assets/img/products/plareon-screen.webp`,
+      `${BASE_PATH}/assets/img/products/plareon-drills.webp`,
+      `${BASE_PATH}/assets/img/products/plareon-welcome.webp`,
     ],
   },
   qadha: {
@@ -72,8 +72,8 @@ const products: Record<string, {
       { label: 'Model', value: 'Donation' },
     ],
     images: [
-      `${BASE_PATH}/assets/img/products/qadha-screen.png`,
-      `${BASE_PATH}/assets/img/products/qadha-screen2.png`,
+      `${BASE_PATH}/assets/img/products/qadha-screen.webp`,
+      `${BASE_PATH}/assets/img/products/qadha-screen2.webp`,
     ],
     playStore: 'https://play.google.com/store/apps/details?id=com.qadha.islam',
   },
@@ -81,7 +81,7 @@ const products: Record<string, {
 
 export function generateStaticParams() {
   return Object.keys(products)
-    .filter((slug) => slug !== 'qadha')
+    .filter((slug) => slug !== 'qadha' && slug !== 'vacua')
     .map((slug) => ({ slug }))
 }
 
