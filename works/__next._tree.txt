@@ -46,4 +46,4 @@
 :HL["/assets/img/works/ed/1.webp","image"]
 :HL["/assets/img/works/ed/2.webp","image"]
 :HL["/assets/img/works/qadha/cover.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"works","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"xeYHzW34-Lq9by3ZJZJWw"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"works","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"F2pnmUWvSLM493JDGFsSJ"}
