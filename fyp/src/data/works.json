@@ -6,7 +6,7 @@
       "cats": ["web-app"],
       "catLabel": "Web App",
       "title": "edbot.ai",
-      "desc": "AI learning platform. Part of the core team that shipped 32M+ lessons across 10+ countries.",
+      "desc": "EdTech platform. I owned the frontend architecture — 32M+ lessons, 100K+ peak monthly users, 10+ countries.",
       "tags": ["React", "Next.js", "Django", "CI/CD", "Selenium"],
       "cover": "works/edbot/1.webp",
       "featured": { "size": "lg", "link": "https://edbot.ai", "stat": "32M+ lessons" },
@@ -19,11 +19,36 @@
           { "src": "works/edbot/4.webp", "alt": "edbot.ai — Fly High Course" },
           { "src": "works/edbot/5.webp", "alt": "edbot.ai — Profile" }
         ],
-        "brief": "Part of the core team that built edbot.ai from the ground up. I handled a lot of the fullstack work: architecture, CI/CD pipelines, and Selenium E2E testing. Peaked at 100K+ active learners in a month.",
+        "brief": "Core team. I owned the frontend architecture — framework choice, folder structure, state management, analytics, localization — behind Learning, Profile, Mission, Store, and Settings. Built the team's first CI/CD + Selenium E2E suite, replacing manual deploys. Peaked at 100K+ peak monthly users.",
         "info": [
           { "label": "Company", "value": "Solve Education!" },
           { "label": "Link", "href": "https://edbot.ai", "value": "edbot.ai" },
           { "label": "Tech Stack", "value": "React, Next.js, Node Express" }
+        ]
+      }
+    },
+    {
+      "id": "vacua",
+      "modalId": "projectModalVacua",
+      "cats": ["desktop"],
+      "catLabel": "Desktop",
+      "title": "Vacua",
+      "desc": "Mac junk cleaner with 9 scan categories. Clears caches, duplicates, and system clutter. $12 one-time, no subscription.",
+      "tags": ["SwiftUI", "macOS", "Swift"],
+      "cover": "products/vacua-screen.webp",
+      "featured": { "size": "sm", "link": "https://daefery.github.io/products/vacua/", "stat": "macOS" },
+      "modal": {
+        "badge": "Desktop App",
+        "images": [
+          { "src": "products/vacua-screen.webp", "alt": "Vacua — Main screen" },
+          { "src": "products/vacua-screen2.webp", "alt": "Vacua — Scan results" }
+        ],
+        "brief": "macOS junk cleaner built solo in SwiftUI. Nine scan categories: caches, duplicates, large files, privacy leaks, startup items, system health, disk map, app uninstaller, and top bar. Every item labelled Safe or Moderate before deletion. One-time $12 — no subscription, no ads.",
+        "info": [
+          { "label": "Platform", "value": "macOS" },
+          { "label": "Link", "href": "https://daefery.github.io/products/vacua/", "value": "Landing page" },
+          { "label": "Price", "value": "$12 one-time" },
+          { "label": "Tech Stack", "value": "SwiftUI, Swift, macOS" }
         ]
       }
     },
@@ -81,20 +106,46 @@
       "cats": ["mobile"],
       "catLabel": "Mobile",
       "title": "Plareon: Daily Hoops",
-      "desc": "Basketball training game for Android with daily drills and skill progression.",
-      "tags": ["Android"],
+      "desc": "Basketball training companion. Daily plans, guided drills with audio, XP/streak tracking, 6 player archetypes. iOS & Android.",
+      "tags": ["React Native", "Expo", "Supabase", "TypeScript", "Firebase"],
       "cover": "works/plareon/cover.webp",
       "featured": null,
       "modal": {
         "badge": "Mobile",
         "images": [
-          { "src": "works/plareon/cover.webp", "alt": "Plareon Detail" }
+          { "src": "works/plareon/cover.webp", "alt": "Plareon Detail" },
+          { "src": "products/plareon-screen.webp", "alt": "Plareon — Training screen" },
+          { "src": "products/plareon-drills.webp", "alt": "Plareon — Drills" }
         ],
-        "brief": "Basketball training game for Android. Daily drills, skill progression, and in-app purchases. Built for players who want to stay consistent with their training.",
+        "brief": "Basketball training companion built solo. Daily training plans mapped to 6 player archetypes (sharpshooter, slasher, hooper, and more). Guided sessions with drills and audio, XP/streak progress tracking, achievement system, and Google Sign-In. Elite subscription unlocks advanced content.",
+        "info": [
+          { "label": "Platform", "value": "iOS & Android" },
+          { "label": "Link", "href": "https://play.google.com/store/apps/details?id=com.plareon.ball", "value": "Play Store" },
+          { "label": "Tech Stack", "value": "React Native, Expo, Supabase, TypeScript" }
+        ]
+      }
+    },
+    {
+      "id": "zokuu",
+      "modalId": "projectModalZokuu",
+      "cats": ["mobile"],
+      "catLabel": "Mobile",
+      "title": "Zokuu",
+      "desc": "Offline-first Android alarm app. TTS + custom sounds, no account, no ads, no network required. Built with native Kotlin module.",
+      "tags": ["React Native", "Expo", "Kotlin", "TypeScript"],
+      "cover": "products/zokuu-screen.webp",
+      "featured": null,
+      "modal": {
+        "badge": "Mobile",
+        "images": [
+          { "src": "products/zokuu-screen.webp", "alt": "Zokuu — Alarm screen" },
+          { "src": "products/zokuu-screen2.webp", "alt": "Zokuu — Alarm settings" },
+          { "src": "products/zokuu-screen3.webp", "alt": "Zokuu — Alarm list" }
+        ],
+        "brief": "Offline-first Android alarm app built solo. Spoken (TTS) and custom-sound alarms. Fires reliably even when the app is killed, screen is off, device is in Doze mode, or after a reboot. No account, no network, no ads, no paywall — all data lives on-device. Built with Expo + a native Kotlin module using AlarmManager, MediaPlayer, TextToSpeech, and a full-screen lock-screen Activity.",
         "info": [
           { "label": "Platform", "value": "Android" },
-          { "label": "Link", "href": "https://play.google.com/store/apps/details?id=com.plareon.ball", "value": "Play Store" },
-          { "label": "Tech Stack", "value": "React Native" }
+          { "label": "Tech Stack", "value": "React Native, Expo, Kotlin, TypeScript" }
         ]
       }
     },
@@ -343,7 +394,7 @@
       "cats": ["web-app"],
       "catLabel": "Web App",
       "title": "edbot.ai v2",
-      "desc": "Full rebuild of edbot.ai. XP streaks, learning paths, interactive lessons, and skill assessments. In active development.",
+      "desc": "Contributor on the v2 rebuild. Setting up the frontend foundation — auth, analytics, state, localization. In active development.",
       "tags": ["Next.js", "Node Express"],
       "cover": "works/edbot-v2/1.webp",
       "featured": null,
@@ -355,7 +406,7 @@
           { "src": "works/edbot-v2/3.webp", "alt": "edbot.ai v2 — Interactive lesson view (Junior Frontend Developer path)" },
           { "src": "works/edbot-v2/4.webp", "alt": "edbot.ai v2 — Skill assessment module" }
         ],
-        "brief": "Rebuilding edbot.ai from scratch. Features XP streaks, structured learning paths like Junior Frontend Developer, interactive lessons, and skill assessments. Currently in development with Next.js and Node Express.",
+        "brief": "Contributor on the v2 rebuild. Setting up the frontend foundation: auth, analytics, state management, localization, and modular core. Features include XP streaks, structured learning paths, interactive lessons, and skill assessments. In active development.",
         "info": [
           { "label": "Company", "value": "Solve Education!" },
           { "label": "Link", "href": "https://edbot.ai", "value": "edbot.ai (in development)" },
@@ -416,20 +467,23 @@
       "cats": ["mobile"],
       "catLabel": "Mobile",
       "title": "Qadha",
-      "desc": "Android app for Muslims to log and track missed prayers with reminders.",
-      "tags": ["Android"],
+      "desc": "Islamic companion for Salah consistency. 30-day guided journey, Islamic audio library, daily reflection. Live on Google Play.",
+      "tags": ["React Native", "Expo", "Supabase", "TypeScript", "Firebase"],
       "cover": "works/qadha/cover.webp",
       "featured": { "size": "sm", "link": "https://play.google.com/store/apps/details?id=com.qadha.islam", "stat": "Play Store" },
       "modal": {
         "badge": "Mobile",
         "images": [
-          { "src": "works/qadha/cover.webp", "alt": "Qadha Detail" }
+          { "src": "works/qadha/cover.webp", "alt": "Qadha Detail" },
+          { "src": "products/qadha-screen.webp", "alt": "Qadha — 30-day journey" },
+          { "src": "products/qadha-screen2.webp", "alt": "Qadha — Audio library" }
         ],
-        "brief": "Android app for tracking qadha (missed) prayers. Has a prayer calendar, reminders, and progress tracking. Built to help users stay on top of their obligations.",
+        "brief": "Islamic companion for rebuilding Salah consistency. Not a tracker — an action-driven guidance system. Features a 30-day Salah Reset journey with daily focus, reminders, actions, dua, reflection, and encouragement. After Day 30, unlocks infinite Salah Rhythm content. Islamic audio library with 8 categories, offline playback, and sleep timer. Donation-based — no features paywalled.",
         "info": [
           { "label": "Platform", "value": "Android" },
           { "label": "Link", "href": "https://play.google.com/store/apps/details?id=com.qadha.islam", "value": "Play Store" },
-          { "label": "Tech Stack", "value": "React Native" }
+          { "label": "Landing", "href": "https://daefery.github.io/products/qadha/", "value": "products/qadha" },
+          { "label": "Tech Stack", "value": "React Native, Expo, Supabase, TypeScript" }
         ]
       }
     }

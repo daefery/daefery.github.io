@@ -4,7 +4,7 @@ import { useState } from 'react'
 import BASE_PATH from '@/lib/basePath'
 import worksData from '@/data/works.json'
 
-type FilterValue = '*' | '.web-app' | '.mobile' | '.ux-ui' | '.chatbot'
+type FilterValue = '*' | '.web-app' | '.mobile' | '.desktop' | '.ux-ui' | '.chatbot'
 
 type Project = (typeof worksData.projects)[number]
 type FeaturedProject = Project & { featured: NonNullable<Project['featured']> }
@@ -15,6 +15,7 @@ const filterButtons: { label: string; value: FilterValue }[] = [
   { label: 'All Work', value: '*' },
   { label: 'Web App', value: '.web-app' },
   { label: 'Mobile', value: '.mobile' },
+  { label: 'Desktop', value: '.desktop' },
   { label: 'UX/UI', value: '.ux-ui' },
   { label: 'Chatbot', value: '.chatbot' },
 ]
