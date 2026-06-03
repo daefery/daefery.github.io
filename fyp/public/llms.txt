@@ -10,6 +10,7 @@
 - **Email:** feryyp.work@gmail.com
 - **LinkedIn:** https://linkedin.com/in/feryyp
 - **GitHub:** https://github.com/daefery
+- **Instagram:** https://www.instagram.com/fyp.work
 - **Blog:** https://medium.com/@feryyp
 - **Portfolio:** https://daefery.github.io
 
@@ -25,10 +26,19 @@ Available for senior engineering roles, technical consulting, and EdTech/AI prod
 
 **Frontend:** React, Next.js, Vue.js, Bootstrap, Tailwind CSS, Figma
 **Backend:** Node.js, Django, Laravel, ASP.NET MVC, REST APIs
-**Mobile:** React Native, Android (Java)
+**Mobile:** React Native, Android (Java), SwiftUI, macOS
 **Data:** PostgreSQL, MySQL, SQL Server, Firebase
 **DevOps:** Docker, GitHub Actions, CI/CD, Selenium E2E
 **AI/ML:** LLM integration, agentic workflows, AI-assisted content generation
+
+## Personal Products
+
+Products designed, built, and shipped independently — not client work, not employer products.
+
+- **Vacua** — macOS junk cleaner with 9 scan categories. Clears caches, duplicates, privacy leaks, and system clutter. Safe/Moderate labels on every item. $12 one-time, no subscription. Built with SwiftUI. [Landing page](https://daefery.github.io/products/vacua/)
+- **Qadha** — Android/iOS app for Muslims to rebuild salah consistency with a 30-day guided reset journey, prayer tracker, Islamic audio library (8 categories), and daily reflection system. Donation-based, no paywall. [Landing page](https://daefery.github.io/products/qadha/) · [Google Play](https://play.google.com/store/apps/details?id=com.qadha.islam)
+- **Plareon** — Basketball training companion with daily plans mapped to 6 player archetypes, guided drill sessions with audio, XP/streak tracking, and Elite subscription. iOS & Android. [Detail page](https://daefery.github.io/products/plareon/)
+- **Zokuu** — Offline-first Android alarm app with TTS and custom-sound alarms. No account, no network, no ads. Built with Expo + native Kotlin module. [Detail page](https://daefery.github.io/products/zokuu/)
 
 ## Key Projects
 
@@ -38,8 +48,6 @@ Available for senior engineering roles, technical consulting, and EdTech/AI prod
 - **Dawn of Civilization** — Fullstack educational history game in Django (Solve Education!)
 - **Edbot Challenge** — Challenge platform transitioning Dawn of Civilization players to Edbot
 - **Ed The Bot** — Web portal for Solve Education's AI chatbot for English learning and job skills
-- **Plareon: Daily Hoops** — Android basketball training game with IAP and daily drills
-- **Qadha** — Android app for Muslims to rebuild salah consistency with a 30-day guided reset journey, prayer tracker, Islamic audio library, and daily reflection system. Free. [Landing page](https://daefery.github.io/products/qadha/) · [Google Play](https://play.google.com/store/apps/details?id=com.qadha.islam)
 - **Solve Employment** — Job platform for EdTech graduates across Southeast Asia
 - **Solve Education! Profile** — Company profile for social enterprise using AI to democratise learning
 - **Solve for Change** — Microgrant program site supporting youth-led projects across Southeast Asia
@@ -58,7 +66,7 @@ Available for senior engineering roles, technical consulting, and EdTech/AI prod
 
 - **Solve Education!** — Core developer, EdTech platform engineering, AI-first product development. Built and maintained edbot.ai serving millions of learners in emerging markets.
 - **Xtremax** — Enterprise web and government portal development across Singapore and Southeast Asia.
-- **Independent** — Mobile, UX/UI, and SaaS projects (Android, React Native, Figma, WhatsApp bots).
+- **Independent** — Mobile, UX/UI, and SaaS projects (Android, React Native, SwiftUI, macOS, Figma, WhatsApp bots).
 
 ## Writing
 
@@ -71,10 +79,14 @@ Topics include: React, Next.js, Django, PostgreSQL, GitHub Actions, Selenium, LL
 - `/` — Overview, philosophy, skills, and career stats
 - `/resume` — Full professional history, tech stack, and experience
 - `/works` — Portfolio of 12+ shipped products across web, mobile, and UX
+- `/products` — Personal products built and shipped independently
 - `/blog` — Engineering articles and technical logs (via Medium RSS)
 - `/contact` — Contact and collaboration enquiries
-- `/products/qadha/` — Landing page for Qadha, an Android app for rebuilding salah consistency
+- `/products/vacua/` — Landing page for Vacua, a macOS junk cleaner
+- `/products/qadha/` — Landing page for Qadha, an Android/iOS Islamic companion app
+- `/products/plareon/` — Detail page for Plareon, a basketball training app
+- `/products/zokuu/` — Detail page for Zokuu, an offline Android alarm app
 
 ## Keywords
 
-Senior Software Engineer, Full Stack Developer, EdTech Engineer, AI Engineer, React Developer, Next.js Developer, Django Developer, Laravel Developer, Node.js Developer, React Native Developer, Android Developer, Indonesia, Remote Engineer, EdTech, AI Learning Platform, SaaS Developer, UX Engineer, Portfolio
+Senior Software Engineer, Full Stack Developer, EdTech Engineer, AI Engineer, React Developer, Next.js Developer, Django Developer, Laravel Developer, Node.js Developer, React Native Developer, Android Developer, SwiftUI Developer, macOS Developer, Indonesia, Remote Engineer, EdTech, AI Learning Platform, SaaS Developer, UX Engineer, Portfolio
