@@ -1473,10 +1473,7 @@ img[src*="qadha"].client-logo-color {
   box-shadow: 0 32px 60px -16px rgba(var(--velixo-primary-rgb), 0.18);
 }
 
-.proj-featured-lg {
-  flex: 0 0 60%;
-}
-
+.proj-featured-lg,
 .proj-featured-sm {
   flex: 1;
 }
@@ -1487,14 +1484,6 @@ img[src*="qadha"].client-logo-color {
   aspect-ratio: 16/9;
   width: 100%;
   background: var(--velixo-bg);
-}
-
-.proj-featured-lg .pfc-img {
-  aspect-ratio: 21/9;
-}
-
-.proj-featured-sm .pfc-img {
-  aspect-ratio: 16/9;
 }
 
 .pfc-img img {
@@ -1539,9 +1528,6 @@ img[src*="qadha"].client-logo-color {
   margin: 0;
 }
 
-.proj-featured-lg .pfc-title {
-  font-size: 18px;
-}
 
 .pfc-title:hover {
   color: var(--velixo-primary);
