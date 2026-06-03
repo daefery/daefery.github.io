@@ -11,13 +11,13 @@ const SITE_URL = 'https://daefery.github.io'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+    default: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
     template: '%s | Fery Yundara Putera',
   },
   description:
-    'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products. Core developer on edbot.ai — 32M+ lessons across 10+ countries.',
+    'Senior Full-Stack Engineer with 12+ years building EdTech, AI-first systems, and full-stack products. Core developer on edbot.ai — 32M+ lessons across 10+ countries.',
   keywords: [
-    'Senior Software Engineer',
+    'Senior Full-Stack Engineer',
     'Full Stack Developer',
     'React',
     'Next.js',
@@ -39,23 +39,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'FYP. — Fery Yundara Putera',
-    title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+    title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
     description:
-      'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products.',
+      'Senior Full-Stack Engineer with 12+ years building EdTech, AI-first systems, and full-stack products.',
     images: [
       {
         url: `${SITE_URL}/assets/img/profile.webp`,
         width: 800,
         height: 800,
-        alt: 'Fery Yundara Putera — Senior Software Engineer',
+        alt: 'Fery Yundara Putera — Senior Full-Stack Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+    title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
     description:
-      'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products.',
+      'Senior Full-Stack Engineer with 12+ years building EdTech, AI-first systems, and full-stack products.',
     images: [`${SITE_URL}/assets/img/profile.webp`],
   },
   icons: {
@@ -71,9 +71,9 @@ const jsonLd = {
       '@id': `${SITE_URL}/#person`,
       name: 'Fery Yundara Putera',
       url: SITE_URL,
-      jobTitle: 'Senior Software Engineer',
+      jobTitle: 'Senior Full-Stack Engineer',
       description:
-        'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale.',
+        'Senior Full-Stack Engineer with 12+ years building EdTech, Frontend architecture at scale, AI content tools, and solo-shipped products across macOS, iOS, and Android.',
       image: `${SITE_URL}/assets/img/profile.webp`,
       sameAs: [
         'https://linkedin.com/in/feryyp',
@@ -83,14 +83,15 @@ const jsonLd = {
       knowsAbout: [
         'React',
         'Next.js',
+        'TypeScript',
         'Node.js',
         'Django',
-        'Laravel',
-        'ASP.NET MVC',
         'React Native',
+        'SwiftUI',
+        'Kotlin',
         'CI/CD',
         'EdTech',
-        'AI Engineering',
+        'LLM Integration',
       ],
     },
     {

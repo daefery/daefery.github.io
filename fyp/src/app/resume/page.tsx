@@ -5,11 +5,11 @@ import PageFooter from '@/components/PageFooter'
 export const metadata = {
   title: 'Resume — Fery Yundara Putera',
   description:
-    '12+ years of full-stack engineering across EdTech, enterprise, and government sectors. React, Next.js, Django, Laravel, .NET, React Native.',
+    '12+ years of full-stack engineering. Frontend architecture at scale, AI content tools, and solo-shipped products. React, Next.js, Node, Django, React Native, SwiftUI.',
   openGraph: {
-    title: 'Resume — Fery Yundara Putera | Senior Software Engineer',
+    title: 'Resume — Fery Yundara Putera | Senior Full-Stack Engineer',
     description:
-      '12+ years of full-stack engineering across EdTech, enterprise, and government sectors.',
+      '12+ years of full-stack engineering. Frontend architecture at scale, AI content tools, and solo-shipped products.',
     url: 'https://daefery.github.io/resume',
   },
   alternates: { canonical: 'https://daefery.github.io/resume' },
@@ -38,13 +38,13 @@ export default function ResumePage() {
         <span className="card-number">01 / EXPERTISE</span>
         <div className="badge-status">
           <i className="fa-solid fa-circle"></i>
-          Senior Software Engineer
+          Senior Full-Stack Engineer
         </div>
         <h1 className="hero-title">
           12 YEARS.<br /><span>5 COMPANIES.</span><br />STILL BUILDING.
         </h1>
         <p className="hero-desc">
-          From writing .NET for Suzuki dealerships to EdTech platforms running in 10+ countries. Here&apos;s the full story.
+          From .NET for Suzuki dealerships to owning the frontend architecture of an EdTech platform running in 10+ countries. Here&apos;s the full story.
         </p>
       </div>
       {/* END HERO SECTION */}
@@ -57,7 +57,7 @@ export default function ResumePage() {
           <span className="stat-label d-block">Years Building</span>
         </div>
         <p className="text-muted small fw-bold text-uppercase mt-4">
-          Full Stack &amp; AI-First
+          Frontend Architecture · Ships Products Solo
         </p>
         <div className="mt-auto w-100">
           <a
@@ -83,9 +83,9 @@ export default function ResumePage() {
               <span className="company">Solve Education!</span>
             </div>
             <div className="timeline-content">
-              <h4 className="role">Senior Software Engineer</h4>
+              <h4 className="role">Senior Full-Stack Engineer</h4>
               <p className="small text-muted">
-                Core developer of edbot.ai. 32M+ lessons, 10+ countries, 100K+ peak MAL. Built CI/CD pipelines and Selenium E2E testing. Products: Learnalytics, Content+, Localizy, Dawn of Civilization, Solve Employment. Indonesia.
+                Core engineer on edbot.ai (32M+ lessons, 100K+ peak monthly users, 10+ countries). Owned the frontend architecture — framework choice, folder structure, state management, analytics, localization — behind Learning, Profile, Mission, Store, and Settings. Built the team&apos;s first CI/CD + Selenium E2E suite, replacing manual deploys. Built two AI content tools: Content+ (with one other engineer) and DCS (solo). Mentored 3–5 interns. Now setting up the frontend foundation for the in-development edbot.ai v2. Indonesia.
               </p>
             </div>
           </div>
@@ -140,10 +140,12 @@ export default function ResumePage() {
         <span className="card-number">04 / STACK</span>
         <h3 className="text-uppercase mb-4">Tech Stack.</h3>
         <div className="tech-grid">
-          {['React / Next.js', 'TypeScript', 'Node.js / Express', 'Django', 'Laravel',
-            '.NET / C#', 'MongoDB / MySQL', 'CI/CD / DevOps', 'Selenium / JEST',
-            'AI Agentic Workflows', 'Figma', 'React Native / Android',
-            'REST API / GraphQL', 'WordPress'].map((tag) => (
+          {[
+            'React / Next.js', 'TypeScript', 'Node.js / Express', 'Django',
+            'React Native / Expo', 'SwiftUI / macOS', 'Kotlin',
+            'PostgreSQL / Supabase', 'MongoDB / MySQL', 'CI/CD / DevOps',
+            'Selenium / Jest', 'LLM Integration', 'Figma', 'REST API / GraphQL',
+          ].map((tag) => (
             <div key={tag} className="tech-tag">{tag}</div>
           ))}
         </div>
@@ -179,20 +181,31 @@ export default function ResumePage() {
         <span className="card-number">06 / MASTERY</span>
         <h3 className="text-uppercase mb-5">Skills.</h3>
 
-        <div className="skill-meter-grid">
+        <div className="skill-tier-grid">
           {[
-            { name: 'React / Next.js Engineering', pct: 95 },
-            { name: 'Node.js / Backend Systems', pct: 88 },
-            { name: 'AI-Agentic Workflows', pct: 85 },
-            { name: 'CI/CD & DevOps', pct: 82 },
-          ].map(({ name, pct }) => (
-            <div key={name} className="skill-meter-item">
-              <div className="d-flex justify-content-between mb-2">
-                <span className="skill-name">{name}</span>
-                <span className="skill-percent">{pct}%</span>
-              </div>
-              <div className="skill-track">
-                <div className="skill-fill" style={{ width: `${pct}%` }}></div>
+            {
+              tier: 'Core',
+              skills: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Django'],
+            },
+            {
+              tier: 'Mobile & Native',
+              skills: ['React Native', 'Expo', 'SwiftUI (macOS)', 'Kotlin'],
+            },
+            {
+              tier: 'Data & Infra',
+              skills: ['PostgreSQL', 'Supabase', 'MongoDB', 'CI/CD', 'Selenium', 'Jest'],
+            },
+            {
+              tier: 'AI',
+              skills: ['LLM Integration', 'Prompt Engineering'],
+            },
+          ].map(({ tier, skills }) => (
+            <div key={tier} className="skill-tier-item">
+              <div className="skill-tier-label">{tier}</div>
+              <div className="skill-tier-tags">
+                {skills.map((s) => (
+                  <span key={s} className="tech-tag">{s}</span>
+                ))}
               </div>
             </div>
           ))}

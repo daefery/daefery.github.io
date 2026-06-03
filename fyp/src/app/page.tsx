@@ -3,13 +3,13 @@ import BASE_PATH from '@/lib/basePath'
 import PageFooter from '@/components/PageFooter'
 
 export const metadata = {
-  title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+  title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
   description:
-    'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
+    'Senior Full-Stack Engineer. Frontend architect on edbot.ai (32M+ lessons, 100K+ peak monthly users). Ships products solo — 4 apps live across macOS, iOS, and Android.',
   openGraph: {
-    title: 'FYP. — Fery Yundara Putera | Senior Software Engineer',
+    title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
     description:
-      'Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale across 10+ countries.',
+      'Senior Full-Stack Engineer. Frontend architect on edbot.ai (32M+ lessons, 100K+ peak monthly users). Ships products solo — 4 apps live across macOS, iOS, and Android.',
     url: 'https://daefery.github.io',
   },
   alternates: { canonical: 'https://daefery.github.io' },
@@ -56,10 +56,10 @@ export default function Home() {
           Open to work
         </div>
         <h1 className="hero-title">
-          32 MILLION<br /><span>LESSONS.</span><br />PART OF THE TEAM.
+          FRONTEND<br /><span>ARCHITECT.</span><br />PRODUCT BUILDER.
         </h1>
         <p className="hero-desc">
-          12 years across industrial, telecom, and software. The last 8 at Solve Education, building the platform behind 32M+ lessons. React, Next.js, Node.js, and a lot of AI tooling lately.
+          12 years building software, the last 8 on the core team behind edbot.ai (32M+ lessons, 100K+ peak monthly users). I owned the frontend architecture there. On the side I design and ship my own apps — four live now across macOS, iOS, and Android.
         </p>
       </div>
       {/* END HERO SECTION */}
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
         <h3 className="mb-1 text-uppercase">Fery Yundara Putera</h3>
         <p className="text-muted small fw-bold text-uppercase">
-          Senior Software Engineer
+          Senior Full-Stack Engineer
         </p>
 
         <div className="social-pill">
@@ -98,18 +98,18 @@ export default function Home() {
           <div className="pillar-item">
             <div className="pillar-title">EdTech at scale</div>
             <p className="pill-text">
-              Core developer on platform powering 32M+ lessons across 10+ countries.
+              Owned the frontend architecture of a platform serving 100K+ peak monthly users across 10+ countries.
             </p>
           </div>
           <div className="pillar-item">
-            <div className="pillar-title">AI in the workflow</div>
+            <div className="pillar-title">Ships products solo</div>
             <p className="pill-text">
-              I use AI tools daily. Not as a novelty, but because they genuinely speed things up.
+              Four apps live across macOS, iOS, and Android — native code, payments, subscriptions.
             </p>
           </div>
           <div className="pillar-item">
             <div className="pillar-title">Top to bottom</div>
-            <p className="pill-text">12 years across React, Node.js, Django, Laravel, .NET.</p>
+            <p className="pill-text">12 years across React, Next.js, Node.js, and Django.</p>
           </div>
           <div className="pillar-item">
             <div className="pillar-title">Shipping without drama</div>
@@ -142,11 +142,31 @@ export default function Home() {
           <span className="stat-label d-block">Lessons Delivered</span>
         </div>
       </div>
+      <div
+        className="bento-card card-skills wow animate__fadeInUp"
+        data-wow-delay="0.3s"
+      >
+        <span className="card-number">06 / STATS</span>
+        <div className="stat-item">
+          <span className="stat-num">4</span>
+          <span className="stat-label d-block">Solo Apps Live</span>
+        </div>
+      </div>
+      <div
+        className="bento-card card-skills wow animate__fadeInUp"
+        data-wow-delay="0.4s"
+      >
+        <span className="card-number">07 / STATS</span>
+        <div className="stat-item">
+          <span className="stat-num">100K+</span>
+          <span className="stat-label d-block">Peak Monthly Users</span>
+        </div>
+      </div>
       {/* END STATS SECTION */}
 
       {/* START RESUME SECTION */}
       <div className="bento-card card-resume wow animate__fadeInUp">
-        <span className="card-number">06 / JOURNEY</span>
+        <span className="card-number">08 / JOURNEY</span>
         <h3 className="text-uppercase mb-2">My Resume.</h3>
         <p className="small mb-4">
           See where I&apos;ve worked and what I&apos;ve shipped.
@@ -164,7 +184,7 @@ export default function Home() {
 
       {/* START MISSION SECTION */}
       <div className="bento-card card-hub wow animate__fadeInUp">
-        <span className="card-number">07 / PHILOSOPHY</span>
+        <span className="card-number">09 / PHILOSOPHY</span>
 
         <div className="mission-header mb-4">
           <h3 className="text-uppercase">What I value.</h3>
@@ -181,7 +201,7 @@ export default function Home() {
             <div>
               <div className="value-title">FULL STACK DEPTH</div>
               <p className="small opacity-60 mb-0">
-                12 years across React, Next.js, Node.js, Django, Laravel, .NET.
+                12 years across React, Next.js, Node.js, and Django.
               </p>
             </div>
           </div>
@@ -197,11 +217,11 @@ export default function Home() {
           </div>
 
           <div className="value-item d-flex align-items-start gap-3">
-            <div className="value-icon"><i className="fa-solid fa-infinity"></i></div>
+            <div className="value-icon"><i className="fa-solid fa-layer-group"></i></div>
             <div>
-              <div className="value-title">AI-FIRST ENGINEERING</div>
+              <div className="value-title">FRONTEND ARCHITECTURE</div>
               <p className="small opacity-60 mb-0">
-                Not just prompting. I build workflows where AI handles the repetitive parts.
+                Framework choice, state, analytics, localization, modular structure — built to scale.
               </p>
             </div>
           </div>
@@ -215,7 +235,7 @@ export default function Home() {
 
       {/* START SERVICES SECTION */}
       <div className="bento-card card-services wow animate__fadeInUp">
-        <span className="card-number">08 / MASTERY</span>
+        <span className="card-number">10 / MASTERY</span>
         <h3 className="text-uppercase mb-4">What I do well.</h3>
         <div className="expertise-list">
           <div className="expertise-item">
@@ -223,16 +243,20 @@ export default function Home() {
             <span className="fw-bold text-uppercase">React / Next.js Engineering</span>
           </div>
           <div className="expertise-item">
+            <i className="fa-solid fa-layer-group"></i>
+            <span className="fw-bold text-uppercase">Frontend Architecture</span>
+          </div>
+          <div className="expertise-item">
             <i className="fa-solid fa-shield-halved"></i>
             <span className="fw-bold text-uppercase">Node.js / Backend Systems</span>
           </div>
           <div className="expertise-item">
-            <i className="fa-solid fa-brain"></i>
-            <span className="fw-bold text-uppercase">AI-Agentic Workflows</span>
+            <i className="fa-solid fa-chart-pie"></i>
+            <span className="fw-bold text-uppercase">CI/CD &amp; DevOps</span>
           </div>
           <div className="expertise-item">
-            <i className="fa-solid fa-chart-pie"></i>
-            <span className="fw-bold text-uppercase">CI/CD & DevOps</span>
+            <i className="fa-solid fa-brain"></i>
+            <span className="fw-bold text-uppercase">LLM Integration</span>
           </div>
         </div>
       </div>
@@ -240,9 +264,9 @@ export default function Home() {
 
       {/* START CLIENTS SECTION */}
       <div className="bento-card card-clients wow animate__fadeInUp">
-        <span className="card-number">09 / NETWORK</span>
+        <span className="card-number">11 / NETWORK</span>
         <p className="small text-uppercase fw-black opacity-30 mb-5">
-          Companies & Products
+          Companies &amp; Products
         </p>
         <div className="client-marquee">
           <div className="client-track">

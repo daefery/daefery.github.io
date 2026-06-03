@@ -5,10 +5,10 @@ import PageFooter from '@/components/PageFooter'
 export const metadata = {
   title: 'Products — Fery Yundara Putera',
   description:
-    'Live apps I designed and built myself — Zokuu, Plareon, and Qadha. No client work, no vendor stuff. Real users, real scale.',
+    'Live apps I designed and built myself — Vacua, Qadha, Plareon, and Zokuu. No client work, no vendor stuff. Real users, real scale.',
   openGraph: {
-    title: 'Products — Fery Yundara Putera | Senior Software Engineer',
-    description: 'Live apps I designed and built myself — Zokuu, Plareon, and Qadha.',
+    title: 'Products — Fery Yundara Putera | Senior Full-Stack Engineer',
+    description: 'Live apps I designed and built myself — Vacua, Qadha, Plareon, and Zokuu.',
     url: 'https://daefery.github.io/products',
   },
   alternates: { canonical: 'https://daefery.github.io/products' },

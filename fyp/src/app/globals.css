@@ -1206,6 +1206,39 @@ img[src*="qadha"].client-logo-color {
   box-shadow: 0 0 15px rgba(var(--velixo-primary-rgb), 0.4);
 }
 
+/* Skill tier grid (replaces % bars) */
+.skill-tier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+}
+
+.skill-tier-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-tier-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--velixo-primary);
+}
+
+.skill-tier-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .skill-tier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================================================
    WORKS PAGE STYLES
    ========================================================================== */
