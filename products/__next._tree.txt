@@ -13,4 +13,4 @@
 :HL["/assets/img/products/zokuu-screen.webp","image"]
 :HL["/assets/img/products/zokuu-screen2.webp","image"]
 :HL["/assets/img/products/zokuu-screen3.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"CRsrFH2i4x_z1bMDPEAn3"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Y6Sjje92KrSRHIeEwlGua"}
