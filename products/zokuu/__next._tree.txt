@@ -1,6 +1,6 @@
 :HL["/_next/static/chunks/04za3hu5nilvo.css","style"]
 :HL["/_next/static/chunks/01~n2tv9ilc5i.css","style"]
-:HL["/_next/static/chunks/0.w9vrkjlqa.8.css","style"]
+:HL["/_next/static/chunks/0-p1g4m91r~xz.css","style"]
 :HC["/",""]
 :HL["https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&family=Archivo:wght@300&family=Space+Grotesk:wght@300&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"zokuu","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"F2pnmUWvSLM493JDGFsSJ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"zokuu","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"qvbQNtyjGgSafXXgWFlS1"}
