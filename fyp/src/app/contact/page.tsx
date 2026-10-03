@@ -1,18 +1,9 @@
 import Link from 'next/link'
 import PageFooter from '@/components/PageFooter'
 
-export const metadata = {
-  title: 'Contact — Fery Yundara Putera',
-  description:
-    'Get in touch with Fery Yundara Putera for software engineering, EdTech, and AI-first product collaboration.',
-  openGraph: {
-    title: 'Contact — Fery Yundara Putera | Senior Software Engineer',
-    description:
-      'Get in touch for software engineering, EdTech, and AI-first product collaboration.',
-    url: 'https://daefery.github.io/contact',
-  },
-  alternates: { canonical: 'https://daefery.github.io/contact' },
-}
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata('Contact', 'Contact Fery Yundara Putera about remote application and AI systems design, with responsibility for delivery. Based in Indonesia, UTC+7.', '/contact/')
 
 export default function ContactPage() {
   return (
@@ -42,7 +33,7 @@ export default function ContactPage() {
             Open to work, available now
           </div>
           <h1 className="hero-title">LET&apos;S<br /><span>BUILD</span><br />TOGETHER.</h1>
-          <p className="hero-desc">Available for full-stack, EdTech, and AI-first engineering projects. Drop a message and I&apos;ll respond within 24 hours.</p>
+          <p className="hero-desc">I&apos;m looking for remote work in application and AI systems design, with responsibility for delivery. Tell me what your team needs to build.</p>
         </div>
         {/* END HERO SECTION */}
 
@@ -86,7 +77,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="cci-label">Instagram</span>
-                <a href="https://www.instagram.com/fyp.work" className="cci-value" target="_blank" rel="noopener noreferrer">@fyp.work</a>
+                <a href="https://www.instagram.com/feryyp.id" className="cci-value" target="_blank" rel="noopener noreferrer">@feryyp.id</a>
               </div>
             </div>
             <div className="contact-channel-item">
@@ -103,7 +94,7 @@ export default function ContactPage() {
           <div className="social-pill mt-auto pt-2">
             <a href="https://linkedin.com/in/feryyp" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/daefery" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/fyp.work" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/feryyp.id" className="social-btn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
           </div>
         </div>
         {/* END CHANNELS SECTION */}
@@ -184,7 +175,7 @@ export default function ContactPage() {
                   <i className="fa-brands fa-github"></i>
                   <span>GitHub</span>
                 </a>
-                <a href="https://www.instagram.com/fyp.work" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-ghost">
+                <a href="https://www.instagram.com/feryyp.id" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-ghost">
                   <i className="fa-brands fa-instagram"></i>
                   <span>Instagram</span>
                 </a>

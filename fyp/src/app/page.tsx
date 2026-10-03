@@ -1,305 +1,488 @@
-import Link from 'next/link'
-import BASE_PATH from '@/lib/basePath'
-import PageFooter from '@/components/PageFooter'
+import './portfolio.css'
+import PortfolioNav from '@/components/PortfolioNav'
+import PortfolioFooter from '@/components/PortfolioFooter'
+import VerificationConsole from '@/components/VerificationConsole'
+import StructuredData from '@/components/StructuredData'
+import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from '@/lib/site'
 
-export const metadata = {
-  title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
-  description:
-    'Senior Full-Stack Engineer. Frontend architect on edbot.ai (32M+ lessons, 100K+ peak monthly users). Ships products solo — 4 apps live across macOS, iOS, and Android.',
-  openGraph: {
-    title: 'FYP. — Fery Yundara Putera | Senior Full-Stack Engineer',
-    description:
-      'Senior Full-Stack Engineer. Frontend architect on edbot.ai (32M+ lessons, 100K+ peak monthly users). Ships products solo — 4 apps live across macOS, iOS, and Android.',
-    url: 'https://daefery.github.io',
-  },
-  alternates: { canonical: 'https://daefery.github.io' },
-}
-
-const logos = [
-  { src: 'edbot.webp', alt: 'Edbot.ai' },
-  { src: 'learnalytics.webp', alt: 'Learnalytics' },
-  { src: 'se.webp', alt: 'Solve Education' },
-  { src: 'localizy.webp', alt: 'Localizy' },
-  { src: 'xtremax.png', alt: 'Xtremax' },
-  { src: 'etak.webp', alt: 'Elephant Talk' },
-  { src: 'suzuki.webp', alt: 'Suzuki' },
-  { src: 'kuntoem.webp', alt: 'Kuntoem' },
-  { src: 'content.webp', alt: 'Content' },
-  { src: 'ymbb.webp', alt: 'YMBB' },
-  { src: 'plareon.webp', alt: 'Plareon' },
-  { src: 'qadha.webp', alt: 'Qadha' },
-  { src: 'lampalampa.webp', alt: 'Lampalampa' },
-  { src: 'playnology.webp', alt: 'Playnology' },
-]
+export const metadata = pageMetadata(
+  'System design and AI-assisted delivery',
+  SITE_DESCRIPTION,
+  '/',
+)
 
 export default function Home() {
   return (
-    <div className="container bento-container">
-      {/* START HEADER */}
-      <header className="d-flex justify-content-between align-items-center mb-5 animate__animated animate__fadeInDown">
-        <div className="logo-text">FYP.</div>
-        <Link
-          href="/products"
-          className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
-          style={{ fontSize: 12, letterSpacing: 1 }}
-        >
-          Products <i className="fa-solid fa-arrow-right-long ms-2"></i>
-        </Link>
-      </header>
-      {/* END HEADER */}
-
-      {/* START HERO SECTION */}
-      <div className="bento-card card-hero wow animate__fadeInLeft">
-        <span className="card-number">01 / CONCEPT</span>
-        <div className="badge-status">
-          <i className="fa-solid fa-circle"></i>
-          Open to work
-        </div>
-        <h1 className="hero-title">
-          FRONTEND<br /><span>ARCHITECT.</span><br />PRODUCT BUILDER.
-        </h1>
-        <p className="hero-desc">
-          12 years building software, the last 8 on the core team behind edbot.ai (32M+ lessons, 100K+ peak monthly users). I owned the frontend architecture there. On the side I design and ship my own apps — four live now across macOS, iOS, and Android.
-        </p>
+    <div className="portfolio">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ProfilePage',
+          '@id': `${SITE_URL}/#profile`,
+          url: `${SITE_URL}/`,
+          name: 'Fery Yundara Putera: system design and AI-assisted delivery',
+          mainEntity: { '@id': `${SITE_URL}/#person` },
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+        }}
+      />
+      <div className="bg" aria-hidden="true">
+        <div className="orb o1"></div>
+        <div className="orb o2"></div>
+        <div className="orb o3"></div>
+        <div className="grid"></div>
       </div>
-      {/* END HERO SECTION */}
-
-      {/* START PROFILE SECTION */}
-      <div className="bento-card card-profile wow animate__fadeInRight">
-        <span className="card-number">02 / IDENTITY</span>
-        <div className="avatar-box">
-          <img src={`${BASE_PATH}/assets/img/profile.webp`} alt="Fery Yundara Putera" />
-        </div>
-        <h3 className="mb-1 text-uppercase">Fery Yundara Putera</h3>
-        <p className="text-muted small fw-bold text-uppercase">
-          Senior Full-Stack Engineer
-        </p>
-
-        <div className="social-pill">
-          <a href="https://linkedin.com/in/feryyp" className="social-btn" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/daefery" className="social-btn" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-github"></i>
-          </a>
-        </div>
-      </div>
-      {/* END PROFILE SECTION */}
-
-      {/* START ABOUT SECTION */}
-      <div className="bento-card card-about wow animate__fadeInUp">
-        <span className="card-number">03 / ABOUT</span>
-        <h2 className="text-uppercase">How I<br />work.</h2>
-        <p className="text-muted small mb-4">
-          I care about systems that hold up in production. Not just demos that work once.
-        </p>
-
-        <div className="pillar-grid">
-          <div className="pillar-item">
-            <div className="pillar-title">EdTech at scale</div>
-            <p className="pill-text">
-              Owned the frontend architecture of a platform serving 100K+ peak monthly users across 10+ countries.
-            </p>
-          </div>
-          <div className="pillar-item">
-            <div className="pillar-title">Ships products solo</div>
-            <p className="pill-text">
-              Four apps live across macOS, iOS, and Android — native code, payments, subscriptions.
-            </p>
-          </div>
-          <div className="pillar-item">
-            <div className="pillar-title">Top to bottom</div>
-            <p className="pill-text">12 years across React, Next.js, Node.js, and Django.</p>
-          </div>
-          <div className="pillar-item">
-            <div className="pillar-title">Shipping without drama</div>
-            <p className="pill-text">
-              CI/CD and Selenium so deploys don&apos;t feel like coin flips.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* END ABOUT SECTION */}
-
-      {/* START STATS SECTION */}
-      <div
-        className="bento-card card-skills wow animate__fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <span className="card-number">04 / STATS</span>
-        <div className="stat-item">
-          <span className="stat-num">12+</span>
-          <span className="stat-label d-block">Years Exp.</span>
-        </div>
-      </div>
-      <div
-        className="bento-card card-skills wow animate__fadeInUp"
-        data-wow-delay="0.2s"
-      >
-        <span className="card-number">05 / STATS</span>
-        <div className="stat-item">
-          <span className="stat-num">32M+</span>
-          <span className="stat-label d-block">Lessons Delivered</span>
-        </div>
-      </div>
-      <div
-        className="bento-card card-skills wow animate__fadeInUp"
-        data-wow-delay="0.3s"
-      >
-        <span className="card-number">06 / STATS</span>
-        <div className="stat-item">
-          <span className="stat-num">4</span>
-          <span className="stat-label d-block">Solo Apps Live</span>
-        </div>
-      </div>
-      <div
-        className="bento-card card-skills wow animate__fadeInUp"
-        data-wow-delay="0.4s"
-      >
-        <span className="card-number">07 / STATS</span>
-        <div className="stat-item">
-          <span className="stat-num">100K+</span>
-          <span className="stat-label d-block">Peak Monthly Users</span>
-        </div>
-      </div>
-      {/* END STATS SECTION */}
-
-      {/* START RESUME SECTION */}
-      <div className="bento-card card-resume wow animate__fadeInUp">
-        <span className="card-number">08 / JOURNEY</span>
-        <h3 className="text-uppercase mb-2">My Resume.</h3>
-        <p className="small mb-4">
-          See where I&apos;ve worked and what I&apos;ve shipped.
-        </p>
-        <div className="mt-auto">
-          <Link
-            href="/resume"
-            className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase"
-          >
-            Explore Resume <i className="fa-solid fa-arrow-right-long ms-2"></i>
-          </Link>
-        </div>
-      </div>
-      {/* END RESUME SECTION */}
-
-      {/* START MISSION SECTION */}
-      <div className="bento-card card-hub wow animate__fadeInUp">
-        <span className="card-number">09 / PHILOSOPHY</span>
-
-        <div className="mission-header mb-4">
-          <h3 className="text-uppercase">What I value.</h3>
-          <p className="small opacity-50 fw-bold">
-            Things I&apos;ve learned building products that actually matter.
+      <div className="wrap">
+        <PortfolioNav />
+        <header className="hero">
+          <span className="chip">
+            <b></b>Fery Yundara Putera · Senior Software Engineer · Indonesia,
+            UTC+7
+          </span>
+          <h1>
+            I design systems.
+            <br />
+            <span className="grad">I build with AI.</span>
+          </h1>
+          <p className="sub">
+            I'm Fery. I design applications and the workflows around them, using
+            AI to help plan, implement and review. I set the constraints and
+            check the result.
           </p>
+          <div className="btns">
+            <a className="btn main" href="#work">
+              See the work
+            </a>
+            <a
+              className="btn ghost"
+              href="/assets/fery-yundara-putera-cv.pdf"
+              download="Fery-Yundara-Putera-CV.pdf"
+            >
+              Download CV
+            </a>
+          </div>
+          <VerificationConsole />
+          <div className="note">
+            Illustration of the rule my orchestrator enforces: an agent saying
+            "done" never closes a task.
+          </div>
+        </header>
+        <div className="stats reveal">
+          <div>
+            <b>12 yrs</b>
+            <span>software design and delivery</span>
+          </div>
+          <div>
+            <b>32M+</b>
+            <span>lessons on edbot.ai</span>
+          </div>
+          <div>
+            <b>4 apps</b>
+            <span>built and shipped solo</span>
+          </div>
+          <div>
+            <b>8 yrs</b>
+            <span>fully remote, 10+ countries</span>
+          </div>
         </div>
-
-        <div className="value-stack w-100">
-          <div className="value-item d-flex align-items-start gap-3 mb-4">
-            <div className="value-icon">
-              <i className="fa-solid fa-chess-knight"></i>
-            </div>
-            <div>
-              <div className="value-title">FULL STACK DEPTH</div>
-              <p className="small opacity-60 mb-0">
-                12 years across React, Next.js, Node.js, and Django.
+        <section id="approach">
+          <div className="kick reveal">// how I work</div>
+          <h2 className="reveal">From a workflow to working software.</h2>
+          <p className="lead reveal">
+            AI helps with planning and implementation. I keep the design
+            decisions explicit and check the result against the original need.
+          </p>
+          <div className="bento">
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>01 / define</span>
+                <em>requirements</em>
+              </div>
+              <h3>Start with the workflow</h3>
+              <p>
+                Map who uses the system, where work gets stuck, and what needs a
+                person's approval. Set the scope before asking an agent to
+                build.
               </p>
-            </div>
-          </div>
-
-          <div className="value-item d-flex align-items-start gap-3 mb-4">
-            <div className="value-icon"><i className="fa-solid fa-vial"></i></div>
-            <div>
-              <div className="value-title">CONTINUOUS DELIVERY</div>
-              <p className="small opacity-60 mb-0">
-                CI/CD and E2E testing. Because manual deploys at midnight aren&apos;t fun.
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>02 / design</span>
+                <em>architecture</em>
+              </div>
+              <h3>Make the trade-offs explicit</h3>
+              <p>
+                Define system boundaries and data flow. Record failure paths and
+                release checks, so the plan explains how the system will run.
               </p>
-            </div>
-          </div>
-
-          <div className="value-item d-flex align-items-start gap-3">
-            <div className="value-icon"><i className="fa-solid fa-layer-group"></i></div>
-            <div>
-              <div className="value-title">FRONTEND ARCHITECTURE</div>
-              <p className="small opacity-60 mb-0">
-                Framework choice, state, analytics, localization, modular structure — built to scale.
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>03 / direct</span>
+                <em>AI-assisted delivery</em>
+              </div>
+              <h3>Give agents bounded tasks</h3>
+              <p>
+                Use AI to turn a reviewed plan into small changes. Give each
+                task a clear scope and acceptance criteria, with isolated
+                workspaces where needed.
               </p>
-            </div>
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>04 / verify</span>
+                <em>review and testing</em>
+              </div>
+              <h3>Check the whole path</h3>
+              <p>
+                Review the changes and test the user's workflow. An agent's
+                completion message is a claim to check; passing unit tests alone
+                can still miss a broken first run.
+              </p>
+            </article>
           </div>
-        </div>
-
-        <div className="hub-footer mt-auto w-100">
-          <div className="signature-text">FYP × {new Date().getFullYear()}</div>
-        </div>
-      </div>
-      {/* END MISSION SECTION */}
-
-      {/* START SERVICES SECTION */}
-      <div className="bento-card card-services wow animate__fadeInUp">
-        <span className="card-number">10 / MASTERY</span>
-        <h3 className="text-uppercase mb-4">What I do well.</h3>
-        <div className="expertise-list">
-          <div className="expertise-item">
-            <i className="fa-solid fa-gem"></i>
-            <span className="fw-bold text-uppercase">React / Next.js Engineering</span>
-          </div>
-          <div className="expertise-item">
-            <i className="fa-solid fa-layer-group"></i>
-            <span className="fw-bold text-uppercase">Frontend Architecture</span>
-          </div>
-          <div className="expertise-item">
-            <i className="fa-solid fa-shield-halved"></i>
-            <span className="fw-bold text-uppercase">Node.js / Backend Systems</span>
-          </div>
-          <div className="expertise-item">
-            <i className="fa-solid fa-chart-pie"></i>
-            <span className="fw-bold text-uppercase">CI/CD &amp; DevOps</span>
-          </div>
-          <div className="expertise-item">
-            <i className="fa-solid fa-brain"></i>
-            <span className="fw-bold text-uppercase">LLM Integration</span>
-          </div>
-        </div>
-      </div>
-      {/* END SERVICES SECTION */}
-
-      {/* START CLIENTS SECTION */}
-      <div className="bento-card card-clients wow animate__fadeInUp">
-        <span className="card-number">11 / NETWORK</span>
-        <p className="small text-uppercase fw-black opacity-30 mb-5">
-          Companies &amp; Products
-        </p>
-        <div className="client-marquee">
-          <div className="client-track">
-            <div className="client-group">
-              {logos.map((logo) => (
-                <div className="client-item" key={logo.src}>
-                  <img
-                    src={`${BASE_PATH}/assets/img/${logo.src}`}
-                    className="client-logo client-logo-color"
-                    alt={logo.alt}
-                  />
+        </section>
+        <section id="work">
+          <div className="kick reveal">// selected work</div>
+          <h2 className="reveal">The design behind the software.</h2>
+          <p className="lead reveal">
+            Human approval in marketing automation. Task isolation in
+            coding-agent tools. Application architecture and release automation
+            for edbot.ai.
+          </p>
+          <div className="bento">
+            <a className="tile w4 reveal" href="/case-studies/marketing-agent/">
+              <div className="tag">
+                <span>production · 2026</span>
+                <em>Claude on Bedrock</em>
+              </div>
+              <h3>A marketing agent that can't publish on its own</h3>
+              <p>
+                I designed the path from staff updates to draft posts, with
+                human approval required before publication. Built on AWS
+                Bedrock.
+              </p>
+              <div className="flow">
+                <span>update</span>
+                <b>→</b>
+                <span>draft</span>
+                <b>→</b>
+                <span>review</span>
+                <b>→</b>
+                <span className="gate">human gate</span>
+                <b>→</b>
+                <span>publish</span>
+              </div>
+            </a>
+            <article className="tile reveal">
+              <div className="tag">
+                <span>platform</span>
+                <em>2026</em>
+              </div>
+              <h3>0 → 7</h3>
+              <p>
+                live tools on Solve Education's automation platform in one
+                quarter.
+              </p>
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>personal project · Brodev</span>
+                <em>orchestration</em>
+              </div>
+              <h3>Rules for agent-led delivery</h3>
+              <p>
+                I designed a coding-agent orchestrator with isolated git
+                worktrees and task closure based on passing project checks.
+                Architecture decisions live in ADRs.
+              </p>
+              <div className="pills">
+                <span>Rust</span>
+                <span>git worktrees</span>
+                <span>verification gates</span>
+              </div>
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>personal project · mnem</span>
+                <em>data reliability</em>
+              </div>
+              <h3>Memory across agent sessions</h3>
+              <p>
+                Local-first memory built from agent transcripts. Events and read
+                progress commit in one SQLite transaction, so interrupted
+                capture can resume.
+              </p>
+              <div className="pills">
+                <span>Rust</span>
+                <span>SQLite</span>
+                <span>Claude Code / Codex / pi</span>
+              </div>
+            </article>
+            <a className="tile w6 shot reveal" href="https://edbot.ai">
+              <div>
+                <div className="tag">
+                  <span>edtech at scale · 2018 to 2025</span>
+                  <em>edbot.ai ↗</em>
                 </div>
-              ))}
-            </div>
-            <div className="client-group" aria-hidden="true">
-              {logos.map((logo) => (
-                <div className="client-item" key={logo.src}>
-                  <img
-                    src={`${BASE_PATH}/assets/img/${logo.src}`}
-                    className="client-logo client-logo-color"
-                    alt=""
-                  />
+                <h3>Application architecture at learning-platform scale</h3>
+                <p>
+                  I owned the frontend architecture of edbot.ai, which delivered
+                  32M+ lessons across 10+ countries. I also introduced the
+                  team's first CI/CD pipeline and end-to-end tests.
+                </p>
+                <div className="pills">
+                  <span>React</span>
+                  <span>Next.js</span>
+                  <span>CI/CD</span>
+                  <span>100K+ peak monthly users</span>
                 </div>
-              ))}
+              </div>
+              <img
+                src="/assets/img/works/edbot/1.webp"
+                alt="edbot.ai landing page"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+          <div className="earlier reveal">
+            <h4>Earlier at Solve Education</h4>
+            <div className="chips">
+              <a href="https://content.solveeducation.org/">
+                <b>Content+</b>
+                <span>LLM drafting tool, real-time collaboration</span>
+              </a>
+              <a href="https://learnalytics.solveeducation.org/">
+                <b>Learnalytics</b>
+                <span>learner analytics dashboard</span>
+              </a>
+              <a href="https://localizy.dawnofcivilization.net/">
+                <b>Localizy</b>
+                <span>translation workflows</span>
+              </a>
+              <a href="https://ed.solveeducation.org/">
+                <b>Ed The Bot</b>
+                <span>portal for an English-learning chatbot</span>
+              </a>
+              <a href="https://dawnofcivilization.net">
+                <b>Dawn of Civilization</b>
+                <span>history learning game, Django</span>
+              </a>
             </div>
           </div>
+        </section>
+        <section id="research" aria-labelledby="research-heading">
+          <div className="kick reveal">// evaluation and verification</div>
+          <h2 className="reveal" id="research-heading">
+            Selected research.
+          </h2>
+          <div className="bento">
+            <article className="tile w6 reveal research-card">
+              <div className="tag">
+                <span>Accepted workshop poster</span>
+                <em>2026 · non-archival</em>
+              </div>
+              <h3>When a forecasting score rewards the wrong report</h3>
+              <p>
+                A benchmark can reward a forecaster for reporting something
+                other than what it believes. We examine why, test the mechanism
+                in simulation and practice tasks, and propose normalization
+                fixed before the outcome.
+              </p>
+              <p className="citation">
+                <strong>
+                  Per-Outcome Baseline Normalization Makes Proper Forecast
+                  Scores Improper
+                </strong>
+                <span>Fery Yundara Putera and Bramantya Farid Prakoso.</span>
+                <span>
+                  Accepted for poster presentation at Agenthon 2026: Verifiable
+                  AI for Quantitative Finance, a workshop at NeurIPS 2026.
+                </span>
+              </p>
+              <a
+                className="all"
+                href="https://www.agenthon.net/#call-for-papers"
+              >
+                Workshop details ↗
+              </a>
+            </article>
+          </div>
+        </section>
+        <section id="products">
+          <div className="kick reveal">// side products</div>
+          <h2 className="reveal">Four apps, from idea to release.</h2>
+          <p className="lead reveal">
+            Personal products I designed and shipped solo, each with a different
+            workflow and platform constraint.
+          </p>
+          <div className="apps">
+            <a className="app reveal" href="/products/vacua/">
+              <img
+                src="/assets/img/products/vacua-screen.webp"
+                alt="Vacua scanning a Mac for junk files"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <b>Vacua</b>
+                <p>
+                  Mac cleaner with a Safe or Moderate label on every item. 9
+                  scan categories, $12 once.
+                </p>
+                <span className="meta">macOS · SwiftUI</span>
+              </div>
+            </a>
+            <a
+              className="app reveal"
+              href="https://play.google.com/store/apps/details?id=com.qadha.islam"
+            >
+              <img
+                src="/assets/img/products/qadha-screen.webp"
+                alt="Qadha showing the day's prayer focus"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <b>Qadha</b>
+                <p>
+                  A 30-day guided reset for prayer consistency. Donation-based,
+                  nothing paywalled.
+                </p>
+                <span className="meta">Google Play · React Native</span>
+              </div>
+            </a>
+            <a className="app reveal" href="/products/plareon/">
+              <img
+                src="/assets/img/products/plareon-screen.webp"
+                alt="Plareon cover: a basketball player dribbling on court"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <b>Plareon</b>
+                <p>
+                  Daily basketball plans for 6 player types, with audio drills
+                  and an Elite tier.
+                </p>
+                <span className="meta">iOS, Android · Supabase</span>
+              </div>
+            </a>
+            <a className="app reveal" href="/products/zokuu/">
+              <img
+                src="/assets/img/products/zokuu-screen.webp"
+                alt="Zokuu alarm screens"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <b>Zokuu</b>
+                <p>
+                  Alarms that fire even in Doze mode or after a reboot. No
+                  account, no network.
+                </p>
+                <span className="meta">Android · native Kotlin</span>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section>
+          <div className="two">
+            <div>
+              <div className="kick reveal">// experience</div>
+              <h2 className="reveal" style={{ marginBottom: '28px' }}>
+                Twelve years, mostly remote.
+              </h2>
+              <div className="tl reveal">
+                <div>
+                  <b>Solve Education!</b>
+                  <span>2018 to now</span>
+                  <p>
+                    Senior Software Engineer. I lead the AI automation platform.
+                    Before that I owned edbot.ai's frontend and built the team's
+                    first CI/CD.
+                  </p>
+                </div>
+                <div>
+                  <b>Xtremax</b>
+                  <span>2016 to 2018</span>
+                  <p>
+                    Backend Developer. Maintained three live client projects for
+                    teams in Singapore and Indonesia. Certified in Sitefinity
+                    CRM.
+                  </p>
+                </div>
+                <div>
+                  <b>Elephant Talk</b>
+                  <span>2015 to 2017</span>
+                  <p>
+                    Software Developer. C# microservices and two AngularJS web
+                    apps, Spain and Indonesia.
+                  </p>
+                </div>
+                <div>
+                  <b>Suzuki Indomobil</b>
+                  <span>2014 to 2015</span>
+                  <p>
+                    .NET Developer. Dealer management system used in every main
+                    branch office.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="writing">
+              <div className="kick reveal">// writing</div>
+              <h2 className="reveal" style={{ marginBottom: '28px' }}>
+                Notes from the gate.
+              </h2>
+              <div className="posts reveal">
+                <div className="unpublished">
+                  Close only on evidence: running coding agents I don't trust
+                  <span>
+                    <em className="soon">soon</em>
+                  </span>
+                </div>
+                <a href="https://feryyp.medium.com/ship-more-break-less-ci-cd-pipelines-that-actually-work-b4ef58857c4e">
+                  Ship more, break less: CI/CD pipelines that actually work
+                  <span>May 2026</span>
+                </a>
+                <a href="https://feryyp.medium.com/how-we-scaled-edbot-ai-to-32-million-lessons-793416c7b0b7">
+                  How we scaled edbot.ai to 32 million lessons
+                  <span>May 2026</span>
+                </a>
+                <a href="https://feryyp.medium.com/building-ai-agentic-workflows-lessons-from-edtech-at-scale-7fc95cfc836d">
+                  Building AI-agentic workflows: lessons from EdTech at scale
+                  <span>May 2026</span>
+                </a>
+                <a href="https://feryyp.medium.com/from-net-to-next-js-a-12-year-engineering-journey-b31ee3462a2a">
+                  From .NET to Next.js: a 12-year engineering journey
+                  <span>May 2026</span>
+                </a>
+              </div>
+              <a className="all reveal" href="https://medium.com/@feryyp">
+                All posts on Medium →
+              </a>
+            </div>
+          </div>
+        </section>
+        <div className="final reveal">
+          <h2>Need someone to design the system?</h2>
+          <p>
+            I'm looking for remote work in application and AI systems design,
+            with responsibility for delivery. Tell me what your team needs to
+            build.
+          </p>
+          <div className="btns">
+            <a className="btn main" href="mailto:feryyp.work@gmail.com">
+              feryyp.work@gmail.com
+            </a>
+            <a className="btn ghost" href="https://linkedin.com/in/feryyp">
+              LinkedIn
+            </a>
+          </div>
         </div>
+        <PortfolioFooter />
       </div>
-      {/* END CLIENTS SECTION */}
-
-      {/* START FOOTER */}
-      <PageFooter />
-      {/* END FOOTER */}
     </div>
   )
 }

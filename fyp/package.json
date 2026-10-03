@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -p 7007",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
@@ -17,6 +19,7 @@
     "styled-jsx": "^5.1.6"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

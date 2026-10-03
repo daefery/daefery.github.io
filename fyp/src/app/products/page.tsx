@@ -2,17 +2,9 @@ import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 import PageFooter from '@/components/PageFooter'
 
-export const metadata = {
-  title: 'Products — Fery Yundara Putera',
-  description:
-    'Live apps I designed and built myself — Vacua, Qadha, Plareon, and Zokuu. No client work, no vendor stuff. Real users, real scale.',
-  openGraph: {
-    title: 'Products — Fery Yundara Putera | Senior Full-Stack Engineer',
-    description: 'Live apps I designed and built myself — Vacua, Qadha, Plareon, and Zokuu.',
-    url: 'https://daefery.github.io/products',
-  },
-  alternates: { canonical: 'https://daefery.github.io/products' },
-}
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata('Personal products', 'Vacua, Qadha, Plareon and Zokuu: personal applications designed and shipped by Fery Yundara Putera across macOS, iOS and Android.', '/products/')
 
 const products = [
   {

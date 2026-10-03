@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fery's portfolio
 
-## Getting Started
+Next.js static export for https://daefery.github.io/. The production source is **`master/fyp`**. The repository's `main` branch contains an older site.
 
-First, run the development server:
+## Local development
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:7007. Node 20.9+ is required; CI uses Node 20.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validate the production export
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build
+npm run typecheck
+npx playwright install chromium
+npm test
+```
 
-## Learn More
+Tests start a local Python 3 static server on port 7008 and exercise the exported `out/` files. They cover mobile navigation and layouts, no-JavaScript readability, the verification illustration, page metadata, structured data, internal links, crawler policy, sitemap URLs, the CV and product downloads.
 
-To learn more about Next.js, take a look at the following resources:
+To use an existing Chrome installation:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/google-chrome npm test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content and design
 
-## Deploy on Vercel
+- `src/app/page.tsx`: approved design-first homepage, selected work, research and products.
+- `src/app/portfolio.css`: dark purple/cyan design, scoped to `.portfolio` so existing routes retain their styles.
+- `src/components/PortfolioNav.tsx`: desktop and native, keyboard-accessible mobile navigation.
+- `src/components/VerificationConsole.tsx`: illustrative task verification, with pause/replay and reduced-motion support. This is not a live execution log.
+- `src/app/case-studies/marketing-agent/page.tsx`: public design overview without internal prompts, code or operational metrics.
+- `src/lib/site.ts`: shared canonical, Open Graph and Twitter metadata, plus Person/WebSite structured data.
+- `src/components/StructuredData.tsx`: safely serializes JSON-LD.
+- `public/assets/fery-yundara-putera-cv.pdf`: current one-page CV, retaining the existing public URL.
+- `public/assets/og-portfolio.png`: 1200 × 630 social preview.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The accepted research entry is a non-archival Agenthon workshop poster at NeurIPS 2026. Do not describe it as a NeurIPS main-track publication or publish the paper/code without separate approval.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Crawlers and existing URLs
+
+Keep `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt` and the Google verification HTML file. Existing crawler permissions are retained. Update sitemap modification dates only when the relevant page changes; do not stamp all URLs on every build.
+
+Vacua and Qadha have standalone landing pages under `public/products/`. Preserve their URLs, assets and downloads. Plareon and Zokuu use generated Next.js routes. Dynamic route parameters must be awaited on Next.js 16.
+
+Content remains visible without animation JavaScript. Existing archive pages and their links remain available. The blog still uses its existing external Medium RSS service.
+
+## Deployment
+
+`.github/workflows/deploy-fyp.yml` builds and runs browser checks before deployment. Pull requests targeting `master` run checks without publishing. A push to `master` affecting `fyp/` or the workflow publishes `fyp/out` to `gh-pages`; GitHub Pages then serves that branch. Manual runs publish only when run on `master`.
+
+Do not edit generated `gh-pages` content directly. Check both the export workflow and the subsequent GitHub Pages deployment, then verify the live homepage and crawler files. To roll back, revert the source commit on `master` and let the same workflow publish the previous version.

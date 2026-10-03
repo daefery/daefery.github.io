@@ -4,18 +4,9 @@ import ProjectGrid from '@/components/ProjectGrid'
 import worksData from '@/data/works.json'
 import PageFooter from '@/components/PageFooter'
 
-export const metadata = {
-  title: 'Works — Fery Yundara Putera',
-  description:
-    'Portfolio of web apps, mobile products, and UX designs built across EdTech, enterprise, and government sectors. 12+ shipped products.',
-  openGraph: {
-    title: 'Works — Fery Yundara Putera | Senior Software Engineer',
-    description:
-      'Portfolio of web apps, mobile products, and UX designs built across EdTech, enterprise, and government sectors.',
-    url: 'https://daefery.github.io/works',
-  },
-  alternates: { canonical: 'https://daefery.github.io/works' },
-}
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata('Project archive', 'Web applications, mobile products and UX work across education, enterprise and government. Selected projects by Fery Yundara Putera.', '/works/')
 
 export default function WorksPage() {
   return (

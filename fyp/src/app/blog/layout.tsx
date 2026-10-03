@@ -1,17 +1,6 @@
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata: Metadata = {
-  title: 'Blog — Fery Yundara Putera',
-  description:
-    'Engineering articles and technical logs from 12+ years of full-stack development, EdTech architecture, and AI-first engineering.',
-  openGraph: {
-    title: 'Blog — Fery Yundara Putera | Senior Software Engineer',
-    description:
-      'Engineering articles and technical logs from 12+ years of full-stack development, EdTech architecture, and AI-first engineering.',
-    url: 'https://daefery.github.io/blog',
-  },
-  alternates: { canonical: 'https://daefery.github.io/blog' },
-}
+export const metadata = pageMetadata('Engineering notes', 'Notes on application architecture, CI/CD, AI workflows and education technology from Fery Yundara Putera. Read the latest writing on Medium.', '/blog/')
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>

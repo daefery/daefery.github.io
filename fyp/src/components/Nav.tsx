@@ -25,8 +25,10 @@ export default function Nav() {
 
   const handleScrollTop = (e: React.MouseEvent) => {
     e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
   }
+
+  if (pathname === '/' || pathname.startsWith('/case-studies/')) return null
 
   return (
     <div className="nav-container animate__animated animate__fadeInUp">

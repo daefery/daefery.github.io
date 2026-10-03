@@ -1,7 +1,10 @@
+import './product-details.css'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import BASE_PATH from '@/lib/basePath'
 import PageFooter from '@/components/PageFooter'
+import StructuredData from '@/components/StructuredData'
+import { pageMetadata, SITE_URL } from '@/lib/site'
 
 const products: Record<string, {
   name: string
@@ -85,25 +88,30 @@ export function generateStaticParams() {
     .map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const p = products[params.slug]
-  if (!p) return {}
-  return {
-    title: `${p.name} — Fery Yundara Putera`,
-    description: p.description.slice(0, 160),
-    openGraph: {
-      title: `${p.name} — Fery Yundara Putera`,
-      description: p.description.slice(0, 160),
-    },
-  }
+type ProductProps = { params: Promise<{ slug: string }> }
+
+export async function generateMetadata({ params }: ProductProps) {
+  const { slug } = await params
+  const p = products[slug]
+  if (!p) notFound()
+  return pageMetadata(p.name, `${p.name}: ${p.tagline}. A personal application designed and shipped by Fery Yundara Putera.`, `/products/${slug}/`)
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const p = products[params.slug]
+export default async function ProductPage({ params }: ProductProps) {
+  const { slug } = await params
+  const p = products[slug]
   if (!p) notFound()
 
   return (
-    <div className="products-page">
+    <div className="products-page product-detail">
+      <StructuredData data={{ '@context': 'https://schema.org', '@graph': [
+        { '@type': 'SoftwareApplication', name: p.name, description: p.tagline, url: `${SITE_URL}/products/${slug}/`, applicationCategory: slug === 'plareon' ? 'SportsApplication' : 'UtilitiesApplication', operatingSystem: slug === 'plareon' ? 'iOS, Android' : 'Android', author: { '@id': `${SITE_URL}/#person` } },
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: 'Products', item: `${SITE_URL}/products/` },
+          { '@type': 'ListItem', position: 3, name: p.name, item: `${SITE_URL}/products/${slug}/` },
+        ] },
+      ] }} />
 
       {/* HEADER */}
       <div className="products-page-header">

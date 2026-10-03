@@ -5,6 +5,17 @@ on:
     branches: [master]
     paths:
       - 'fyp/**'
+      - '.github/workflows/deploy-fyp.yml'
+  pull_request:
+    branches: [master]
+    paths:
+      - 'fyp/**'
+      - '.github/workflows/deploy-fyp.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: fyp-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -31,7 +42,14 @@ jobs:
       - name: Build static export
         run: npm run build
 
+      - name: Install browser for regression checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify exported pages, SEO, assets and mobile layouts
+        run: npm test
+
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

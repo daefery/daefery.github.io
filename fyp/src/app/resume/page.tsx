@@ -2,18 +2,9 @@ import Link from 'next/link'
 import BASE_PATH from '@/lib/basePath'
 import PageFooter from '@/components/PageFooter'
 
-export const metadata = {
-  title: 'Resume — Fery Yundara Putera',
-  description:
-    '12+ years of full-stack engineering. Frontend architecture at scale, AI content tools, and solo-shipped products. React, Next.js, Node, Django, React Native, SwiftUI.',
-  openGraph: {
-    title: 'Resume — Fery Yundara Putera | Senior Full-Stack Engineer',
-    description:
-      '12+ years of full-stack engineering. Frontend architecture at scale, AI content tools, and solo-shipped products.',
-    url: 'https://daefery.github.io/resume',
-  },
-  alternates: { canonical: 'https://daefery.github.io/resume' },
-}
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata('Resume', 'Senior Software Engineer focused on system design and AI-assisted delivery. Twelve years in software, eight fully remote. Download the current one-page CV.', '/resume/')
 
 export default function ResumePage() {
   return (
@@ -38,7 +29,7 @@ export default function ResumePage() {
         <span className="card-number">01 / EXPERTISE</span>
         <div className="badge-status">
           <i className="fa-solid fa-circle"></i>
-          Senior Full-Stack Engineer
+          Senior Software Engineer
         </div>
         <h1 className="hero-title">
           12 YEARS.<br /><span>5 COMPANIES.</span><br />STILL BUILDING.
@@ -57,7 +48,7 @@ export default function ResumePage() {
           <span className="stat-label d-block">Years Building</span>
         </div>
         <p className="text-muted small fw-bold text-uppercase mt-4">
-          Frontend Architecture · Ships Products Solo
+          System Design · AI-Assisted Delivery
         </p>
         <div className="mt-auto w-100">
           <a
@@ -83,9 +74,9 @@ export default function ResumePage() {
               <span className="company">Solve Education!</span>
             </div>
             <div className="timeline-content">
-              <h4 className="role">Senior Full-Stack Engineer</h4>
+              <h4 className="role">Senior Software Engineer</h4>
               <p className="small text-muted">
-                Core engineer on edbot.ai (32M+ lessons, 100K+ peak monthly users, 10+ countries). Owned the frontend architecture — framework choice, folder structure, state management, analytics, localization — behind Learning, Profile, Mission, Store, and Settings. Built the team&apos;s first CI/CD + Selenium E2E suite, replacing manual deploys. Built two AI content tools: Content+ (with one other engineer) and DCS (solo). Mentored 3–5 interns. Now setting up the frontend foundation for the in-development edbot.ai v2. Indonesia.
+                I lead the AI automation platform, which grew from zero to seven live tools in one quarter. I designed and built a Claude-on-Bedrock marketing workflow with human approval before publication. Previously, I owned edbot.ai&apos;s frontend architecture (32M+ lessons, 100K+ peak monthly users, 10+ countries) and introduced the team&apos;s first CI/CD pipeline and end-to-end tests. Indonesia.
               </p>
             </div>
           </div>
