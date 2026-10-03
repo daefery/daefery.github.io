@@ -1,6 +1,6 @@
 # Fery Yundara Putera — Portfolio
 
-> Senior Software Engineer with 12+ years building EdTech, AI-first systems, and full-stack products shipped at scale.
+> Senior Software Engineer focused on system design and AI-assisted delivery. Twelve years in software, eight fully remote. Based in Indonesia, UTC+7.
 
 ## Identity
 
@@ -10,17 +10,17 @@
 - **Email:** feryyp.work@gmail.com
 - **LinkedIn:** https://linkedin.com/in/feryyp
 - **GitHub:** https://github.com/daefery
-- **Instagram:** https://www.instagram.com/fyp.work
+- **Instagram:** https://www.instagram.com/feryyp.id
 - **Blog:** https://medium.com/@feryyp
 - **Portfolio:** https://daefery.github.io
 
 ## Summary
 
-Fery is a senior full-stack engineer specialising in EdTech platforms, AI-assisted development, and high-throughput web systems. Core developer on edbot.ai — an AI learning platform delivering 32M+ lessons across 10+ countries with 100K+ peak monthly active learners.
+Fery designs applications and AI workflows, uses AI to help plan and implement, and verifies the result against the original need. At Solve Education!, he leads the AI automation platform and built an AWS Bedrock/Claude marketing workflow with human approval before publication. Previously, he owned edbot.ai's frontend architecture. The platform delivered 32M+ lessons across 10+ countries, with 100K+ peak monthly users.
 
 12+ years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
 
-Available for senior engineering roles, technical consulting, and EdTech/AI product collaborations globally.
+Seeking remote application and AI systems-design roles with responsibility for delivery.
 
 ## Tech Stack
 
@@ -30,6 +30,14 @@ Available for senior engineering roles, technical consulting, and EdTech/AI prod
 **Data:** PostgreSQL, MySQL, SQL Server, Firebase
 **DevOps:** Docker, GitHub Actions, CI/CD, Selenium E2E
 **AI/ML:** LLM integration, agentic workflows, AI-assisted content generation
+
+## Selected Work and Research
+
+- [Marketing workflow case study](https://daefery.github.io/case-studies/marketing-agent/): draft generation with human approval before publication. Production work at Solve Education!.
+- Brodev: personal coding-agent orchestrator with isolated git worktrees and closure based on project checks. Personal work, not an employer product.
+- mnem: personal local-first agent memory tool. Events and read progress commit in one SQLite transaction.
+- Selected research: "Per-Outcome Baseline Normalization Makes Proper Forecast Scores Improper", Fery Yundara Putera and Bramantya Farid Prakoso. Accepted poster, Agenthon 2026 workshop at NeurIPS 2026, non-archival. This is not a NeurIPS main-track publication or a competition result. [Workshop details](https://www.agenthon.net/#call-for-papers).
+- [Current CV](https://daefery.github.io/assets/fery-yundara-putera-cv.pdf)
 
 ## Personal Products
 
@@ -52,7 +60,7 @@ Products designed, built, and shipped independently — not client work, not emp
 - **Solve Education! Profile** — Company profile for social enterprise using AI to democratise learning
 - **Solve for Change** — Microgrant program site supporting youth-led projects across Southeast Asia
 - **Yayasan Muda Berdaya Berdikari** — NGO company profile for Solve Education's Indonesian foundation
-- **Localizy** — Localisation SaaS for multi-language content workflows (Xtremax)
+- **Localizy** — Localisation SaaS for multi-language content workflows (Solve Education!)
 - **Content+** — AI-assisted content creation platform with LLM integration
 - **Dompu Apps** — Government mobile app for public services (React Native + Figma)
 - **SICC Singapore** — Cricket club membership portal in ASP.NET MVC (Xtremax)
@@ -64,7 +72,7 @@ Products designed, built, and shipped independently — not client work, not emp
 
 ## Career
 
-- **Solve Education!** — Core developer, EdTech platform engineering, AI-first product development. Built and maintained edbot.ai serving millions of learners in emerging markets.
+- **Solve Education!** — Senior Software Engineer since 2018. Leads the AI automation platform. Previously owned edbot.ai's frontend architecture and introduced CI/CD and end-to-end tests.
 - **Xtremax** — Enterprise web and government portal development across Singapore and Southeast Asia.
 - **Independent** — Mobile, UX/UI, and SaaS projects (Android, React Native, SwiftUI, macOS, Figma, WhatsApp bots).
 
@@ -76,7 +84,8 @@ Topics include: React, Next.js, Django, PostgreSQL, GitHub Actions, Selenium, LL
 
 ## Site Structure
 
-- `/` — Overview, philosophy, skills, and career stats
+- `/` — System design, AI-assisted delivery, selected work, accepted research and personal products
+- `/case-studies/marketing-agent/` — Approval-controlled marketing workflow
 - `/resume` — Full professional history, tech stack, and experience
 - `/works` — Portfolio of 12+ shipped products across web, mobile, and UX
 - `/products` — Personal products built and shipped independently
