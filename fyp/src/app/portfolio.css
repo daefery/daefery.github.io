@@ -257,6 +257,8 @@
   .btn.main {
     color: #fff;
     background: linear-gradient(135deg, var(--v), #6366f1 50%, var(--c));
+    /* Bootstrap gives .btn a transparent border; paint the gradient under it so it does not tile into the edge. */
+    background-origin: border-box;
     box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.8);
   }
   .btn.main:hover {
