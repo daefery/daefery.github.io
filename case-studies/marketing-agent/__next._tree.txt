@@ -2,6 +2,6 @@
 :HL["/_next/static/chunks/01~n2tv9ilc5i.css","style"]
 :HL["/_next/static/chunks/0c.bsxeb60y3s.css","style"]
 :HC["/",""]
-:HL["/_next/static/chunks/11ic78xov7.d6.css","style"]
+:HL["/_next/static/chunks/0e7.fngsiind5.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&family=Archivo:wght@300&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"case-studies","param":null,"prefetchHints":0,"slots":{"children":{"name":"marketing-agent","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"1CNxLWgQnEkol5wHB-UrL"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"case-studies","param":null,"prefetchHints":0,"slots":{"children":{"name":"marketing-agent","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"nVNoch6xnLtm0nkK5dFvH"}
