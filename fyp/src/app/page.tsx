@@ -201,10 +201,13 @@ export default function Home() {
                 <span>verification gates</span>
               </div>
             </article>
-            <article className="tile w3 reveal">
+            <a
+              className="tile w3 reveal"
+              href="https://github.com/daefery/mnem"
+            >
               <div className="tag">
-                <span>personal project · mnem</span>
-                <em>data reliability</em>
+                <span>open source · mnem</span>
+                <em>released ↗</em>
               </div>
               <h3>Memory across agent sessions</h3>
               <p>
@@ -217,7 +220,7 @@ export default function Home() {
                 <span>SQLite</span>
                 <span>Claude Code / Codex / pi</span>
               </div>
-            </article>
+            </a>
             <a className="tile w6 shot reveal" href="https://edbot.ai">
               <div>
                 <div className="tag">
@@ -398,8 +401,8 @@ export default function Home() {
                   <b>Solve Education!</b>
                   <span>2018 to now</span>
                   <p>
-                    Senior Software Engineer. I lead the AI automation platform.
-                    Before that I owned edbot.ai's frontend and built the team's
+                    Senior Software Engineer. I lead the AI automation platform
+                    and built the team's AI coding-agent setup. Before that I owned edbot.ai's frontend and built the team's
                     first CI/CD.
                   </p>
                 </div>

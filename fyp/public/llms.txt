@@ -16,7 +16,7 @@
 
 ## Summary
 
-Fery designs applications and AI workflows, uses AI to help plan and implement, and verifies the result against the original need. At Solve Education!, he leads the AI automation platform and built an AWS Bedrock/Claude marketing workflow with human approval before publication. Previously, he owned edbot.ai's frontend architecture. The platform delivered 32M+ lessons across 10+ countries, with 100K+ peak monthly users.
+Fery designs applications and AI workflows, uses AI to help plan and implement, and verifies the result against the original need. At Solve Education!, he leads the AI automation platform, built an AWS Bedrock/Claude marketing workflow with human approval before publication, and built the team's AI coding-agent setup (shared rules, required checks and delivery commands). Previously, he owned edbot.ai's frontend architecture. The platform delivered 32M+ lessons across 10+ countries, with 100K+ peak monthly users.
 
 12+ years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
 
@@ -35,7 +35,7 @@ Seeking remote application and AI systems-design roles with responsibility for d
 
 - [Marketing workflow case study](https://daefery.github.io/case-studies/marketing-agent/): draft generation with human approval before publication. Production work at Solve Education!.
 - Brodev: personal coding-agent orchestrator with isolated git worktrees and closure based on project checks. Personal work, not an employer product.
-- mnem: personal local-first agent memory tool. Events and read progress commit in one SQLite transaction.
+- [mnem](https://github.com/daefery/mnem): open-source, released local-first memory for coding agents (Claude Code, Codex, pi). Events and read progress commit in one SQLite transaction. Personal work, AGPL-3.0.
 - Selected research: "Per-Outcome Baseline Normalization Makes Proper Forecast Scores Improper", Fery Yundara Putera and Bramantya Farid Prakoso. Accepted poster, Agenthon 2026 workshop at NeurIPS 2026, non-archival. This is not a NeurIPS main-track publication or a competition result. [Workshop details](https://www.agenthon.net/#call-for-papers).
 - [Current CV](https://daefery.github.io/assets/fery-yundara-putera-cv.pdf)
 
@@ -72,7 +72,7 @@ Products designed, built, and shipped independently — not client work, not emp
 
 ## Career
 
-- **Solve Education!** — Senior Software Engineer since 2018. Leads the AI automation platform. Previously owned edbot.ai's frontend architecture and introduced CI/CD and end-to-end tests.
+- **Solve Education!** — Senior Software Engineer since 2018. Leads the AI automation platform and built the team's AI coding-agent setup. Engineer on the 2026 edbot.ai rebuild. Previously owned edbot.ai's frontend architecture and introduced CI/CD and end-to-end tests.
 - **Xtremax** — Enterprise web and government portal development across Singapore and Southeast Asia.
 - **Independent** — Mobile, UX/UI, and SaaS projects (Android, React Native, SwiftUI, macOS, Figma, WhatsApp bots).
 
