@@ -1,10 +1,13 @@
 .portfolio {
-  position: relative;
-  isolation: isolate;
-  min-height: 100vh;
-  padding-top: 1px;
-
+  /* Plain declarations here are dropped by the CSS minifier when nested
+     rules follow; keep root styles inside `& {}` so they ship. */
   & {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    /* stops the nav's top margin collapsing through and exposing the
+       legacy body::before dot grid above the page */
+    padding-top: 1px;
     --bg: #07080d;
     --panel: rgba(255, 255, 255, 0.035);
     --edge: rgba(255, 255, 255, 0.09);

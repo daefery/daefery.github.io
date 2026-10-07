@@ -59,6 +59,13 @@ for (const width of [360, 390, 768, 960, 1440]) {
       ),
     ).toBeTruthy()
     expect(errors).toEqual([])
+    // the portfolio must start at the very top; a gap exposes the legacy dot grid
+    expect(
+      await page.evaluate(() =>
+        document.querySelector('.portfolio')!.getBoundingClientRect().top +
+        scrollY,
+      ),
+    ).toBe(0)
     await expect(page.locator('.apps')).toHaveCSS(
       'grid-template-columns',
       width <= 600
