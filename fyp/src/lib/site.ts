@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const SITE_URL = 'https://daefery.github.io'
 export const SITE_NAME = 'Fery Yundara Putera'
 export const SITE_DESCRIPTION =
-  'Senior software engineer in Indonesia (UTC+7). Application architecture, AI workflows and AI-assisted delivery. Twelve years in software, eight fully remote.'
+  'Senior software engineer in Indonesia (UTC+7). Application architecture, AI workflows and AI-assisted delivery. Twelve years in software, eight fully remote. Open to remote roles and project work.'
 
 export function pageMetadata(
   title: string,

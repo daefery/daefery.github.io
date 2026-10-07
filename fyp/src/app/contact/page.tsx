@@ -3,7 +3,7 @@ import PageFooter from '@/components/PageFooter'
 
 import { pageMetadata } from '@/lib/site'
 
-export const metadata = pageMetadata('Contact', 'Contact Fery Yundara Putera about remote application and AI systems design, with responsibility for delivery. Based in Indonesia, UTC+7.', '/contact/')
+export const metadata = pageMetadata('Contact', 'Contact Fery Yundara Putera about a full-time remote role in application and AI systems design, or a project-based or freelance build. Based in Indonesia, UTC+7.', '/contact/')
 
 export default function ContactPage() {
   return (
@@ -30,10 +30,10 @@ export default function ContactPage() {
           <span className="card-number">01 / CONNECTION</span>
           <div className="badge-status">
             <i className="fa-solid fa-circle"></i>
-            Open to work, available now
+            Open to roles and projects
           </div>
           <h1 className="hero-title">LET&apos;S<br /><span>BUILD</span><br />TOGETHER.</h1>
-          <p className="hero-desc">I&apos;m looking for remote work in application and AI systems design, with responsibility for delivery. Tell me what your team needs to build.</p>
+          <p className="hero-desc">I&apos;m open to a full-time remote role in application and AI systems design, and to project-based or freelance work. Tell me what you want to build.</p>
         </div>
         {/* END HERO SECTION */}
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
             <i className="fa-solid fa-circle-check"></i>
           </div>
           <div className="ccs-metric ccs-green">Open</div>
-          <div className="ccs-title">Open to Work</div>
+          <div className="ccs-title">Roles and projects</div>
           <div className="ccs-desc">Available now. Let&apos;s build something great.</div>
         </div>
 
@@ -153,7 +153,7 @@ export default function ContactPage() {
           <div className="cta-inner">
             <div className="cta-left">
               <p className="cta-eyebrow text-uppercase fw-bold small opacity-50 mb-3">Got a project in mind?</p>
-              <h2 className="cta-headline text-uppercase">Let&apos;s Build<br /><span>Something</span><br />Great.</h2>
+              <h2 className="cta-headline text-uppercase">Let&apos;s Build<br /><span>Something</span><br />World-Class.</h2>
               <p className="cta-sub mt-3 mb-0 opacity-60 small">Drop a message. I reply within 24 hours.</p>
             </div>
 

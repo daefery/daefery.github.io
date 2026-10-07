@@ -248,3 +248,29 @@ test('all homepage internal links resolve and research does not publish the pape
   )
   await expect(page.getByText('[n]', { exact: true })).toHaveCount(0)
 })
+
+test('work-with-me offers roles and projects, and every contact action reaches the inbox', async ({
+  page,
+}) => {
+  await page.goto('/')
+  const section = page.locator('#work-with-me')
+  await expect(section.getByRole('heading', { level: 2 })).toHaveText(
+    'Two ways to work together.',
+  )
+  await expect(section.getByRole('heading', { level: 3 })).toHaveCount(5)
+  await expect(page.locator('nav .cta')).toHaveAttribute('href', '/#work-with-me')
+  const contact = page.locator('#contact')
+  await expect(contact.getByRole('heading')).toHaveText(
+    'Want to build something world\u2011class?',
+  )
+  await expect(contact.getByRole('link', { name: 'Start a project' })).toHaveAttribute(
+    'href',
+    /^mailto:feryyp\.work@gmail\.com\?subject=Project/,
+  )
+  await expect(
+    contact.getByRole('link', { name: 'Discuss a full-time role' }),
+  ).toHaveAttribute('href', /^mailto:feryyp\.work@gmail\.com\?subject=Full-time/)
+  await expect(
+    contact.getByRole('link', { name: 'feryyp.work@gmail.com' }),
+  ).toHaveAttribute('href', 'mailto:feryyp.work@gmail.com')
+})

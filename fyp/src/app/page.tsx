@@ -35,8 +35,8 @@ export default function Home() {
         <PortfolioNav />
         <header className="hero">
           <span className="chip">
-            <b></b>Fery Yundara Putera · Senior Software Engineer · Indonesia,
-            UTC+7
+            <b></b>Fery Yundara Putera · Open to roles and projects ·
+            Indonesia, UTC+7
           </span>
           <h1>
             I design systems.
@@ -468,21 +468,107 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="final reveal">
-          <h2>Need someone to design the system?</h2>
+        <section id="work-with-me" aria-labelledby="work-with-me-heading">
+          <div className="kick reveal">// work with me</div>
+          <h2 className="reveal" id="work-with-me-heading">
+            Two ways to work together.
+          </h2>
+          <p className="lead reveal">
+            I'm open to a full-time remote role, and to project-based or
+            freelance work. Both follow the same process: define, design, build
+            with AI, verify.
+          </p>
+          <div className="bento">
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>full-time · remote</span>
+                <em>UTC+7</em>
+              </div>
+              <h3>Join your team</h3>
+              <p>
+                Application and AI systems design, with responsibility for
+                delivery. My working day overlaps with Asia, Australia and the
+                European morning.
+              </p>
+            </article>
+            <article className="tile w3 reveal">
+              <div className="tag">
+                <span>project · freelance</span>
+                <em>open now</em>
+              </div>
+              <h3>Build one thing, well</h3>
+              <p>
+                A project with a clear finish line: a new product, an AI
+                workflow or a rebuild. You get a written plan before any code,
+                working software at each step, and a handover your team can run.
+              </p>
+            </article>
+            <article className="tile reveal">
+              <div className="tag">
+                <span>AI workflows</span>
+                <em>human approval</em>
+              </div>
+              <h3>Automation that knows when to stop</h3>
+              <p>
+                Workflows that do the routine work and wait where a person must
+                decide. Proof: a marketing workflow on AWS Bedrock that can't
+                publish without approval.
+              </p>
+            </article>
+            <article className="tile reveal">
+              <div className="tag">
+                <span>products</span>
+                <em>idea to release</em>
+              </div>
+              <h3>From idea to the app store</h3>
+              <p>
+                Web and mobile products shipped end to end. Proof: four apps I
+                designed and released solo on macOS, iOS and Android.
+              </p>
+            </article>
+            <article className="tile reveal">
+              <div className="tag">
+                <span>teams</span>
+                <em>AI-assisted delivery</em>
+              </div>
+              <h3>Coding agents your team can trust</h3>
+              <p>
+                Shared rules, required checks and delivery commands, so agent
+                work passes review. Proof: the setup my team uses today.
+              </p>
+            </article>
+          </div>
+        </section>
+        <div className="final reveal" id="contact">
+          <h2>
+            Want to build something{' '}
+            <span className="nowrap">world‑class?</span>
+          </h2>
           <p>
-            I'm looking for remote work in application and AI systems design,
-            with responsibility for delivery. Tell me what your team needs to
-            build.
+            Tell me what you want to build, as a project or a full-time role. I
+            reply within 24 hours with questions and a first take on scope.
           </p>
           <div className="btns">
-            <a className="btn main" href="mailto:feryyp.work@gmail.com">
-              feryyp.work@gmail.com
+            <a
+              className="btn main"
+              href="mailto:feryyp.work@gmail.com?subject=Project%3A%20"
+            >
+              Start a project
+            </a>
+            <a
+              className="btn ghost"
+              href="mailto:feryyp.work@gmail.com?subject=Full-time%20role%3A%20"
+            >
+              Discuss a full-time role
             </a>
             <a className="btn ghost" href="https://linkedin.com/in/feryyp">
               LinkedIn
             </a>
           </div>
+          <p className="final-mail">
+            Or email{' '}
+            <a href="mailto:feryyp.work@gmail.com">feryyp.work@gmail.com</a>
+          </p>
         </div>
         <PortfolioFooter />
       </div>

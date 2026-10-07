@@ -46,8 +46,8 @@ export default function PortfolioNav() {
           ))}
         </div>
       </details>
-      <a className="cta" href="mailto:feryyp.work@gmail.com">
-        Get in touch
+      <a className="cta" href="/#work-with-me">
+        Work with me
       </a>
     </nav>
   )

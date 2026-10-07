@@ -816,6 +816,19 @@
     max-width: 520px;
     margin: 0 auto 30px;
   }
+  .nowrap {
+    white-space: nowrap;
+  }
+  .final .final-mail {
+    margin: 22px auto 0;
+    font: 13px 'JetBrains Mono';
+    color: var(--muted);
+  }
+  .final .final-mail a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   footer {
     padding: 40px 0 56px;
     display: flex;

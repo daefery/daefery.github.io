@@ -20,7 +20,7 @@ Fery designs applications and AI workflows, uses AI to help plan and implement, 
 
 12+ years of professional experience spanning React, Next.js, Node.js, Django, Laravel, ASP.NET MVC, React Native, and Android. Skilled in CI/CD pipelines, Selenium E2E testing, agentic AI workflows, and UX-to-production delivery.
 
-Seeking remote application and AI systems-design roles with responsibility for delivery.
+Seeking remote application and AI systems-design roles with responsibility for delivery. Also open to project-based and freelance work: AI workflows with human approval, web and mobile products from idea to release, and AI coding-agent setups for teams. Contact: feryyp.work@gmail.com.
 
 ## Tech Stack
 
