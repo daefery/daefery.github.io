@@ -36,6 +36,7 @@ Seeking remote application and AI systems-design roles with responsibility for d
 - [Marketing workflow case study](https://daefery.github.io/case-studies/marketing-agent/): draft generation with human approval before publication. Production work at Solve Education!.
 - Brodev: personal coding-agent orchestrator with isolated git worktrees and closure based on project checks. Personal work, not an employer product.
 - [mnem](https://github.com/daefery/mnem): open-source, released local-first memory for coding agents (Claude Code, Codex, pi). Events and read progress commit in one SQLite transaction. Personal work, AGPL-3.0.
+- [Lariksa](https://github.com/daefery/lariksa): open-source, released Windows app that records Meet, Zoom or Teams calls and writes the transcript and meeting minutes with AI running on the laptop (whisper.cpp and Qwen3-4B via llama.cpp). Each action item and decision cites a transcript line; code checks the references. Indonesian and English. Rust and Tauri, personal work, Apache-2.0.
 - Selected research: "Per-Outcome Baseline Normalization Makes Proper Forecast Scores Improper", Fery Yundara Putera and Bramantya Farid Prakoso. Accepted poster, Agenthon 2026 workshop at NeurIPS 2026, non-archival. This is not a NeurIPS main-track publication or a competition result. [Workshop details](https://www.agenthon.net/#call-for-papers).
 - [Current CV](https://daefery.github.io/assets/fery-yundara-putera-cv.pdf)
 
