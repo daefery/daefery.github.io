@@ -184,7 +184,7 @@ export default function Home() {
                 quarter.
               </p>
             </article>
-            <article className="tile w3 reveal">
+            <article className="tile reveal">
               <div className="tag">
                 <span>personal project · Brodev</span>
                 <em>orchestration</em>
@@ -201,10 +201,7 @@ export default function Home() {
                 <span>verification gates</span>
               </div>
             </article>
-            <a
-              className="tile w3 reveal"
-              href="https://github.com/daefery/mnem"
-            >
+            <a className="tile reveal" href="https://github.com/daefery/mnem">
               <div className="tag">
                 <span>open source · mnem</span>
                 <em>released ↗</em>
@@ -219,6 +216,26 @@ export default function Home() {
                 <span>Rust</span>
                 <span>SQLite</span>
                 <span>Claude Code / Codex / pi</span>
+              </div>
+            </a>
+            <a
+              className="tile reveal"
+              href="https://github.com/daefery/lariksa"
+            >
+              <div className="tag">
+                <span>open source · Lariksa</span>
+                <em>released ↗</em>
+              </div>
+              <h3>Meeting notes that cite their source</h3>
+              <p>
+                A Windows app that records a call and writes the minutes with
+                AI on the laptop. Every action item points to a transcript
+                line, and code drops any reference that doesn't exist.
+              </p>
+              <div className="pills">
+                <span>Rust</span>
+                <span>Tauri</span>
+                <span>local Whisper + LLM</span>
               </div>
             </a>
             <a className="tile w6 shot reveal" href="https://edbot.ai">
