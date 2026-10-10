@@ -201,9 +201,9 @@ export default function Home() {
                 <span>verification gates</span>
               </div>
             </article>
-            <a className="tile reveal" href="https://github.com/daefery/mnem">
+            <a className="tile reveal" href="https://github.com/daefery/ravnori">
               <div className="tag">
-                <span>open source · mnem</span>
+                <span>open source · ravnori</span>
                 <em>released ↗</em>
               </div>
               <h3>Memory across agent sessions</h3>
