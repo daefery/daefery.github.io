@@ -266,6 +266,15 @@ export default function Home() {
             </a>
           </div>
           <div className="earlier reveal">
+            <h4>Open source contributions</h4>
+            <div className="chips">
+              <a href="https://github.com/Automattic/jetpack/pull/53543">
+                <b>Automattic/jetpack #53543</b>
+                <span>PHP, merged after review</span>
+              </a>
+            </div>
+          </div>
+          <div className="earlier reveal">
             <h4>Earlier at Solve Education</h4>
             <div className="chips">
               <a href="https://content.solveeducation.org/">

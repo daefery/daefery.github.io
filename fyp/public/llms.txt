@@ -34,6 +34,7 @@ Seeking remote application and AI systems-design roles with responsibility for d
 ## Selected Work and Research
 
 - [Marketing workflow case study](https://daefery.github.io/case-studies/marketing-agent/): draft generation with human approval before publication. Production work at Solve Education!.
+- Open source contribution: [Automattic/jetpack#53543](https://github.com/Automattic/jetpack/pull/53543), merged 13 October 2026. Replaced do_shortcode() with apply_shortcodes() in the Jetpack plugin (PHP), and left directly echoed calls unchanged to satisfy WordPress coding-standard escaping rules.
 - Brodev: personal coding-agent orchestrator with isolated git worktrees and closure based on project checks. Personal work, not an employer product.
 - [ravnori](https://github.com/daefery/ravnori) (formerly mnem): open-source, released local-first memory for coding agents (Claude Code, Codex, pi). Events and read progress commit in one SQLite transaction. Personal work, AGPL-3.0.
 - [Lariksa](https://github.com/daefery/lariksa): open-source, released Windows app that records Meet, Zoom or Teams calls and writes the transcript and meeting minutes with AI running on the laptop (whisper.cpp and Qwen3-4B via llama.cpp). Each action item and decision cites a transcript line; code checks the references. Indonesian and English. Rust and Tauri, personal work, Apache-2.0.
