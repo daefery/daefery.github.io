@@ -268,6 +268,10 @@ export default function Home() {
           <div className="earlier reveal">
             <h4>Open source contributions</h4>
             <div className="chips">
+              <a href="https://github.com/Automattic/jetpack/pull/53574">
+                <b>Automattic/jetpack #53574</b>
+                <span>PHP bug fix with tests, merged</span>
+              </a>
               <a href="https://github.com/Automattic/jetpack/pull/53543">
                 <b>Automattic/jetpack #53543</b>
                 <span>PHP, merged after review</span>
