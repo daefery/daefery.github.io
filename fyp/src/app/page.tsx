@@ -184,7 +184,7 @@ export default function Home() {
                 quarter.
               </p>
             </article>
-            <article className="tile reveal">
+            <article className="tile w3 reveal">
               <div className="tag">
                 <span>personal project · Brodev</span>
                 <em>orchestration</em>
@@ -201,7 +201,10 @@ export default function Home() {
                 <span>verification gates</span>
               </div>
             </article>
-            <a className="tile reveal" href="https://github.com/daefery/ravnori">
+            <a
+              className="tile w3 reveal"
+              href="https://github.com/daefery/ravnori"
+            >
               <div className="tag">
                 <span>open source · ravnori</span>
                 <em>released ↗</em>
@@ -219,7 +222,7 @@ export default function Home() {
               </div>
             </a>
             <a
-              className="tile reveal"
+              className="tile w3 reveal"
               href="https://github.com/daefery/lariksa"
             >
               <div className="tag">
@@ -236,6 +239,26 @@ export default function Home() {
                 <span>Rust</span>
                 <span>Tauri</span>
                 <span>local Whisper + LLM</span>
+              </div>
+            </a>
+            <a
+              className="tile w3 reveal"
+              href="https://github.com/daefery/penadf"
+            >
+              <div className="tag">
+                <span>open source · PenaDF</span>
+                <em>new ↗</em>
+              </div>
+              <h3>An offline PDF app for Windows</h3>
+              <p>
+                Open PDFs in tabs, then sign, comment, fill forms, reorder
+                pages, compare two versions or add a password. Every edit runs
+                on the PC; nothing is uploaded.
+              </p>
+              <div className="pills">
+                <span>Rust</span>
+                <span>PDFium</span>
+                <span>16 MB installed</span>
               </div>
             </a>
             <a className="tile w6 shot reveal" href="https://edbot.ai">
