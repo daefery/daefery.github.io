@@ -199,6 +199,21 @@
   .cta:hover {
     box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25);
   }
+  /* language switch: a small two-letter pill next to the main call to action */
+  .lang-switch {
+    flex: none;
+    font: 500 12.5px 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
+    color: var(--body);
+    padding: 8px 10px;
+    border: 1px solid var(--edge);
+    border-radius: 99px;
+  }
+  .lang-switch:hover,
+  .lang-switch:focus-visible {
+    color: var(--text);
+    border-color: var(--c);
+  }
 
   /* hero */
   .hero {

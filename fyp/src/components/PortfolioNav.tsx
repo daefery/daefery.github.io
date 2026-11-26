@@ -1,18 +1,18 @@
 'use client'
 
-const sections = [
-  ['/#approach', 'Approach'],
-  ['/#work', 'Work'],
-  ['/#research', 'Research'],
-  ['/#products', 'Products'],
-  ['/#writing', 'Writing'],
-  ['/assets/fery-yundara-putera-cv.pdf', 'CV'],
-]
+import LanguageSwitch from '@/components/LanguageSwitch'
+import { home, LANG_PATH, type Lang } from '@/i18n/home'
 
-export default function PortfolioNav() {
+export default function PortfolioNav({ lang = 'en' }: { lang?: Lang }) {
+  const t = home[lang].nav
+  const base = LANG_PATH[lang]
+  const sections: [string, string][] = [
+    ...t.sections.map(([hash, label]) => [`${base}${hash}`, label] as [string, string]),
+    ['/assets/fery-yundara-putera-cv.pdf', 'CV'],
+  ]
   return (
-    <nav aria-label="Portfolio navigation">
-      <a className="logo" href="/" aria-label="Fery Yundara Putera, home">
+    <nav aria-label={t.aria}>
+      <a className="logo" href={base} aria-label={t.home}>
         <span className="ring">
           <img src="/assets/avatar.webp" alt="" width="26" height="26" />
         </span>
@@ -37,7 +37,7 @@ export default function PortfolioNav() {
           }
         }}
       >
-        <summary>Explore</summary>
+        <summary>{t.explore}</summary>
         <div className="mobile-links">
           {sections.map(([href, label]) => (
             <a key={href} href={href}>
@@ -46,8 +46,9 @@ export default function PortfolioNav() {
           ))}
         </div>
       </details>
-      <a className="cta" href="/#work-with-me">
-        Work with me
+      <LanguageSwitch lang={lang} />
+      <a className="cta" href={`${base}#work-with-me`}>
+        {t.cta}
       </a>
     </nav>
   )

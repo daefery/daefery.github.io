@@ -1,17 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { home, type HomeCopy } from '@/i18n/home'
 
-const steps = [
-  { who: 'agent', text: 'edit 3 files, run tests', tone: '' },
-  { who: 'agent', text: '"done, all tests pass"', tone: 'claim' },
-  { who: 'gate', text: "run the project's own checks …", tone: '' },
-  { who: 'gate', text: '✗ 2 failing → task stays open', tone: 'bad' },
-  { who: 'agent', text: 'fix the failures, try again', tone: '' },
-  { who: 'gate', text: '✓ all checks pass → closed on evidence', tone: 'ok' },
-]
+// Who speaks and the tone of each line; the words come from the page language.
+const shape = [
+  { who: 'agent', tone: '' },
+  { who: 'agent', tone: 'claim' },
+  { who: 'gate', tone: '' },
+  { who: 'gate', tone: 'bad' },
+  { who: 'agent', tone: '' },
+  { who: 'gate', tone: 'ok' },
+] as const
 
-export default function VerificationConsole() {
+export default function VerificationConsole({ copy = home.en.console }: { copy?: HomeCopy['console'] }) {
+  const steps = shape.map((s, i) => ({ who: copy.who[s.who], text: copy.steps[i], tone: s.tone }))
   // Render a complete illustration for crawlers, no-JS and reduced-motion visitors.
   const [count, setCount] = useState(steps.length)
   const [running, setRunning] = useState(false)
@@ -54,7 +57,7 @@ export default function VerificationConsole() {
     <div
       className="console"
       role="group"
-      aria-label="Illustration of how an agent's work gets verified"
+      aria-label={copy.aria}
     >
       <div className="in">
         <div className="top">
@@ -63,7 +66,7 @@ export default function VerificationConsole() {
           <i aria-hidden="true" />
           <span>verify --close-on-evidence</span>
           <em data-console-state>
-            {complete ? 'verified' : running ? 'running' : 'paused'}
+            {complete ? copy.verified : running ? copy.running : copy.paused}
           </em>
         </div>
         <div className="body">
@@ -76,41 +79,41 @@ export default function VerificationConsole() {
             ))}
           </div>
           <div className="ledger">
-            <h4>Task ledger</h4>
+            <h4>{copy.ledger}</h4>
             <div className="ledger-row">
-              <span>Agent says</span>
-              <b>{count >= 2 ? '"done"' : 'waiting'}</b>
+              <span>{copy.agentSays}</span>
+              <b>{count >= 2 ? copy.done : copy.waiting}</b>
             </div>
             <div className="ledger-row">
-              <span>Project checks</span>
+              <span>{copy.checks}</span>
               <b className={complete ? 'st-closed' : failed ? 'st-open' : ''}>
                 {complete
-                  ? 'passing'
+                  ? copy.passing
                   : failed
-                    ? '2 failing'
+                    ? copy.failing
                     : count >= 3
-                      ? 'running'
-                      : 'waiting'}
+                      ? copy.running
+                      : copy.waiting}
               </b>
             </div>
             <div className="ledger-row">
-              <span>Attempts</span>
+              <span>{copy.attempts}</span>
               <b>{count >= 5 ? 2 : count >= 1 ? 1 : 0}</b>
             </div>
             <div className="ledger-row">
-              <span>Status</span>
+              <span>{copy.status}</span>
               <b className={complete ? 'st-closed' : 'st-open'}>
-                {complete ? 'closed' : 'open'}
+                {complete ? copy.closed : copy.open}
               </b>
             </div>
           </div>
         </div>
         <button type="button" className="console-control" onClick={toggle}>
           {complete
-            ? 'Replay illustration'
+            ? copy.replay
             : running
-              ? 'Pause illustration'
-              : 'Resume illustration'}
+              ? copy.pause
+              : copy.resume}
         </button>
       </div>
     </div>

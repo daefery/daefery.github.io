@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import './globals.css'
-import './accessibility.css'
+import '@/app/globals.css'
+import '@/app/accessibility.css'
 import Nav from '@/components/Nav'
 import WowObserver from '@/components/WowObserver'
 import BootstrapClient from '@/components/BootstrapClient'
 import StructuredData from '@/components/StructuredData'
+import LanguageRedirect from '@/components/LanguageRedirect'
 import {
   identity,
   pageMetadata,
@@ -13,7 +14,7 @@ import {
   SITE_DESCRIPTION,
 } from '@/lib/site'
 
-export const metadata: Metadata = {
+export const rootMetadata: Metadata = {
   ...pageMetadata(
     'System design and AI-assisted delivery',
     SITE_DESCRIPTION,
@@ -59,15 +60,23 @@ export const metadata: Metadata = {
   },
 }
 
-export const viewport: Viewport = { themeColor: '#07080d' }
+export const rootViewport: Viewport = { themeColor: '#07080d' }
 
-export default function RootLayout({
+/**
+ * The document shell shared by both languages. Each language has its own root layout in a route group,
+ * so the exported HTML carries the right <html lang> without JavaScript.
+ */
+export default function RootShell({
   children,
+  lang = 'en',
+  skip = 'Skip to content',
 }: {
   children: React.ReactNode
+  lang?: 'en' | 'id'
+  skip?: string
 }) {
   return (
-    <html lang="en" className="dark-theme" data-scroll-behavior="smooth">
+    <html lang={lang} className="dark-theme" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -83,8 +92,9 @@ export default function RootLayout({
       </head>
       <body>
         <a className="skip-link" href="#main-content">
-          Skip to content
+          {skip}
         </a>
+        <LanguageRedirect />
         <Nav />
         <WowObserver />
         <BootstrapClient />

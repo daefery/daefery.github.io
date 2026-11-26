@@ -28,7 +28,8 @@ export default function Nav() {
     window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
   }
 
-  if (pathname === '/' || pathname.startsWith('/case-studies/')) return null
+  // The portfolio pages (both languages) and case studies have their own navigation.
+  if (pathname === '/' || pathname === '/id' || pathname.startsWith('/case-studies/')) return null
 
   return (
     <div className="nav-container animate__animated animate__fadeInUp">

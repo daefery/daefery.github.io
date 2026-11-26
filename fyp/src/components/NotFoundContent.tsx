@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-export const metadata = {
+export const notFoundMetadata = {
   title: '404 — Fery Yundara Putera',
   description: 'Page not found.',
 }
 
-export default function NotFound() {
+export default function NotFoundContent() {
   return (
     <div className="container bento-container">
 

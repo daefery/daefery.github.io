@@ -1,4 +1,4 @@
-import '../../portfolio.css'
+import '@/app/portfolio.css'
 import PortfolioNav from '@/components/PortfolioNav'
 import PortfolioFooter from '@/components/PortfolioFooter'
 import StructuredData from '@/components/StructuredData'

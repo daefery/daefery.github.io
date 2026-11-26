@@ -1,13 +1,15 @@
-export default function PortfolioFooter() {
+import { home, type Lang } from '@/i18n/home'
+
+export default function PortfolioFooter({ lang = 'en' }: { lang?: Lang }) {
   return (
     <footer>
       <span>© 2026 Fery Yundara Putera</span>
       <div className="footer-links">
-        <a href="/resume/">Resume</a>
-        <a href="/works/">Project archive</a>
-        <a href="/products/">All products</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
+        {home[lang].footer.pages.map(([href, label]) => (
+          <a key={href} href={href}>
+            {label}
+          </a>
+        ))}
       </div>
       <div className="footer-links">
         <a href="https://linkedin.com/in/feryyp">LinkedIn</a>
